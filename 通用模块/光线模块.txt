@@ -1,0 +1,157 @@
+强度 / 亮度（Intensity）：光有多亮。
+方向（Direction）：顺光、侧光、逆光、顶光、底光等。
+角度 / 高度（Angle / Elevation）：光源相对主体的位置角度。
+色温（Color Temperature）：偏暖或偏冷，常用 K 表示，如 3200K、5600K。
+颜色（Color / Tint）：除了色温，还可以直接设置红、蓝、绿等颜色。
+光源大小（Size）：决定阴影软硬；光源越大，通常越柔和。
+距离（Distance）：影响照度和明暗衰减。
+衰减（Falloff）：光随距离减弱的速度。
+范围 / 射程（Range）：光能有效影响多远。
+光束角（Beam Angle）：聚光还是散光，如 Spot Light 的锥形角度。
+柔和度 / 硬度（Softness / Hardness）：影响阴影边缘是否锐利。
+阴影（Shadow）：阴影强度、颜色、模糊程度、方向。
+光源形状（Shape）：点光、面光、条形光、圆形光、环境光等。
+
+1. 光源基础参数
+
+光源类型：Directional Light 平行光｜Point Light 点光｜Spot Light 聚光｜Area Light 面光｜Rect Light 矩形光｜Disk Light 圆盘光｜Tube Light 管灯｜Sky Light 天空光｜Emissive Light 自发光｜IES Light 配光灯；位置参数：Position XYZ｜Rotation XYZ｜高度｜距离｜方位角 Azimuth｜俯仰角 Elevation｜目标点 Target；光源尺寸：Source Radius｜Source Length｜Source Width/Height｜Angular Diameter｜Soft Source Size；亮度参数：Intensity｜Exposure｜EV｜Lumens｜Candelas｜Lux｜Nits｜Intensity Multiplier；颜色参数：RGB｜HSV｜色温 Kelvin 1800K–12000K｜Tint｜White Balance。
+
+2. 主光 Key Light
+
+方向：正面光｜前侧光 30°/45°/60°｜侧光 90°｜后侧光｜顶光｜底光；高度：眼平｜高位 30°｜高位 45°｜高位 60°｜顶置；强度：Key Intensity｜Key EV｜Key/Fill Ratio｜曝光贡献；色温：暖光 2700–4500K｜中性 5000–5600K｜冷光 6500–10000K；质感：Hard Light 硬光｜Soft Light 柔光｜半硬光｜Source Size｜Shadow Softness；影视作用：塑造脸部结构｜建立视觉方向｜控制明暗关系｜制造戏剧性；游戏参数：Cast Shadow｜Volumetric Scattering｜Affect World｜Indirect Lighting Intensity｜Specular Scale。
+
+3. 辅光 Fill Light
+
+方向：摄影机方向填充｜主光反方向｜顶部填充｜环境填充；强度比例：Key:Fill 2:1｜4:1｜8:1｜16:1｜32:1；亮度：Fill Intensity｜Fill EV｜Shadow Lift；颜色：中性填充｜暖填充｜冷填充｜环境色偏；影视效果：降低反差｜保留暗部信息｜控制人物肤色｜维持动态范围；游戏效果：Skylight Intensity｜Ambient Cubemap｜Indirect Diffuse｜GI Contribution｜SSGI/Lumen Fill。
+
+4. 轮廓光 Rim / Back Light
+
+位置：人物后方｜左后 135°｜右后 225°｜正后 180°｜顶部后方；强度：Rim Intensity｜Backlight EV｜Edge Exposure；颜色：冷蓝｜暖橙｜白光｜综合色；范围：Edge Width｜Cone Angle｜Falloff｜Source Size；影视作用：人物与背景分离｜强化发丝｜肩线｜轮廓层次；游戏作用：Rim Lighting Shader｜Fresnel｜Character Outline Lighting｜Specular Rim｜Light Channel。
+
+5. 顶光 / 底光 / 特殊方向光
+
+顶光 Top Light：高度｜角度｜Intensity｜Source Size｜面部眼窝阴影｜头肩高光；底光 Under Light：低位角度｜Intensity｜颜色｜恐怖感｜不自然面部塑形；侧光 Side Light：90°左右｜明暗分割｜高反差｜角色轮廓；逆光 Backlight：曝光补偿｜光晕｜剪影程度｜Lens Flare；交叉光 Cross Light：左右双色｜冷暖对冲｜人物边缘分离。
+
+6. 灯光比例与曝光关系
+
+Key/Fill Ratio：1:1 平光｜2:1 柔和｜4:1 标准戏剧｜8:1 高反差｜16:1 强戏剧｜32:1 黑色电影；Key/Rim Ratio：1:0.5｜1:1｜1:2；Foreground/Background Ratio：前景曝光｜人物曝光｜背景曝光；曝光指标：EV100｜Middle Gray 18%｜False Color｜Waveform｜Histogram｜Highlight Clipping｜Shadow Crushing；游戏曝光：Auto Exposure Min EV｜Max EV｜Exposure Compensation｜Metering Mode｜Speed Up｜Speed Down。
+
+7. 阴影参数
+
+阴影类型：Hard Shadow｜Soft Shadow｜Contact Shadow｜Ray Traced Shadow｜Virtual Shadow Map｜Shadow Map；参数：Shadow Density｜Shadow Opacity｜Shadow Bias｜Normal Bias｜Slope Bias｜Contact Shadow Length｜Penumbra Width｜Shadow Resolution｜Cascade Count｜Shadow Distance；影视表现：阴影边缘硬度｜黑位深度｜阴影综合色｜人物接触阴影｜背景投影；游戏优化：CSM Distance｜VSM Page Resolution｜PCF/PCSS｜Shadow Cache｜Distance Field Shadow。
+
+8. 光线衰减与范围
+
+衰减方式：Inverse Square Falloff 物理平方反比｜Linear Falloff｜Custom Falloff；参数：Attenuation Radius｜Falloff Exponent｜Source Radius｜Max Distance｜Fade Distance；聚光参数：Inner Cone Angle｜Outer Cone Angle｜Barn Door Angle｜Barn Door Length；影视表现：近亮远暗｜光斑边缘｜局部照明｜背景压暗；游戏表现：Cull Distance｜Lighting Channel｜Max Draw Distance。
+
+9. 间接光 / 全局光照 GI
+
+基础参数：Indirect Lighting Intensity｜Bounce Count｜Diffuse Bounce｜Specular Bounce｜GI Strength｜GI Saturation；实时技术：Lumen GI｜SSGI｜DDGI｜RTXGI｜Voxel GI；离线技术：Path Tracing｜Lightmass｜Baked GI｜Photon Mapping；影视表现：墙面反弹光｜地面综合色｜肤色自然回填｜综合色污染；游戏参数：Final Gather Quality｜Lumen Scene Detail｜Lumen Scene Lighting Quality｜Max Trace Distance｜Surface Cache。
+
+10. 天空光与环境光
+
+Sky Light：HDRI｜天空颜色｜Intensity｜Exposure｜Lower Hemisphere Color｜Real Time Capture；太阳光：Sun Angle｜Solar Elevation｜Azimuth｜Directional Intensity｜Angular Diameter；环境参数：Ambient Intensity｜Environment Color｜Ground Bounce｜Sky Diffuse｜Sky Specular；影视作用：自然日光综合色｜阴影填充｜时间段表现；游戏作用：Skylight Cubemap Resolution｜Recapture Sky｜Distance Field AO｜Lumen Skylighting。
+
+11. HDRI 灯光
+
+HDRI 参数：HDRI Rotation｜Exposure｜Intensity｜Contrast｜Saturation｜Blur｜Resolution 2K/4K/8K/16K；光照作用：综合色环境光｜真实反射｜高光方向｜环境综合色；影视应用：棚拍环境模拟｜车漆反射｜产品摄影｜综合色统一；游戏应用：Skybox｜Reflection Capture｜IBL｜Diffuse Irradiance｜Specular Prefilter。
+
+12. 体积光 Volumetric Lighting
+
+参数：Volumetric Scattering Intensity｜Fog Density｜Extinction Scale｜Scattering Distribution｜Albedo｜Anisotropy｜Fog Height Falloff｜Start Distance｜View Distance；光柱：God Rays｜Light Shaft Bloom｜Light Shaft Occlusion｜Directional Inscattering；影视表现：空气层次｜烟雾光束｜窗光｜舞台光柱｜逆光颗粒；游戏表现：Volumetric Fog Grid Pixel Size｜Grid Size Z｜Temporal Reprojection｜Scattering Quality。
+
+13. 雾、烟、空气介质
+
+雾参数：Density｜Height｜Height Falloff｜Fog Color｜Start Distance｜Max Opacity；烟雾：Smoke Density｜Volume Density｜Noise Scale｜Velocity｜Turbulence｜Dissipation；空气颗粒：Dust Amount｜Particle Size｜Particle Lighting｜Bloom Response；影视效果：增强景深｜层次分离｜光束可视化；游戏效果：Niagara/VFX Volume｜Local Fog Volume｜Volumetric Material。
+
+14. 高光与镜面反射
+
+材质光响应：Specular｜Roughness｜Metallic｜IOR｜Clear Coat｜Anisotropy｜Sheen｜Subsurface；灯光参数：Specular Scale｜Diffuse Scale｜Reflection Contribution｜Highlight Intensity；影视表现：眼神光｜皮肤油光｜金属高光｜车漆高光｜玻璃反射；游戏表现：SSR｜Ray Traced Reflection｜Lumen Reflection｜Reflection Capture｜Planar Reflection。
+
+15. 皮肤与人物灯光
+
+肤色参数：Skin Exposure｜SSS Strength｜Subsurface Color｜Scatter Radius｜Specular Roughness｜Oiliness；人物布光：Key 45°｜Fill 15–30°｜Rim 120–160°｜Eye Light｜Hair Light｜Background Separation；影视要求：肤色不过曝｜额头鼻梁高光控制｜眼窝保留细节｜眼神光位置；游戏参数：Subsurface Profile｜Dual Specular｜Transmission｜Screen Space SSS。
+
+16. 眼神光 Catch Light
+
+位置：10 点钟｜11 点钟｜1 点钟｜2 点钟；大小：小型硬光｜中型柔光｜大型窗光；强度：Catchlight Intensity｜Specular Intensity；影视效果：眼睛有神｜人物情绪强化；游戏效果：Cornea Specular｜Eye Reflection｜Wetness｜SSR/RT Reflection。
+
+17. 自发光 Emissive
+
+参数：Emissive Color｜Emissive Intensity｜Nits｜Bloom Contribution｜GI Contribution；类型：霓虹灯｜屏幕｜灯带｜火焰｜魔法｜广告牌；影视效果：实际光源感｜局部综合色｜综合色高光；游戏效果：Emissive Material｜Lumen Emissive GI｜Bloom Threshold｜Static Emissive Bake。
+
+18. 实景灯 Practical Light
+
+类型：台灯｜吊灯｜壁灯｜路灯｜烛光｜电视｜手机屏幕｜霓虹牌；参数：Intensity｜Kelvin｜Flicker｜Falloff｜Shadow｜IES Profile；影视逻辑：画面中看得见的灯必须与人物受光方向一致；游戏逻辑：模型 Emissive + 实际 Point/Rect/Spot Light 组合，避免只有发光材质没有照明。
+
+19. IES 配光
+
+参数：IES Profile｜Brightness Scale｜Cone Distribution｜Cutoff｜Orientation｜Attenuation；适用：路灯｜射灯｜壁灯｜商业空间｜办公室；影视效果：真实灯具投射纹理；游戏效果：IES Texture｜IES Intensity Scale｜Spot Profile。
+
+20. 色温与冷暖关系
+
+常见色温：烛光 1800–2200K｜钨丝灯 2800–3200K｜室内暖灯 3000–4000K｜中性 4500–5000K｜日光 5500–6500K｜阴天 6500–7500K｜蓝调时刻 8000–12000K；组合方式：暖主光+冷环境｜冷主光+暖轮廓｜室内暖+窗外冷｜日落暖光+蓝色阴影；参数：Kelvin｜Tint｜White Balance｜Color Grading Temperature。
+
+21. 明暗结构
+
+High Key 高调：高环境光｜低反差｜浅阴影｜柔光｜适合商业/喜剧/美容；Low Key 低调：低环境光｜高反差｜深阴影｜局部光｜适合悬疑/动作/恐怖；Chiaroscuro 明暗对照：强方向光｜深黑阴影｜局部人物高光；Silhouette 剪影：背景曝光高于人物 2–5EV｜人物暗部接近黑色。
+
+22. 经典影视布光
+
+三点布光：Key 主光｜Fill 辅光｜Rim/Back 轮廓光；伦勃朗光：侧前高位主光｜鼻影与脸颊形成三角光；蝴蝶光：正前高位光｜鼻下蝴蝶形阴影；环形光 Loop：前侧 30–45°｜鼻影轻微偏向脸颊；分割光 Split：侧面 90°｜半脸亮半脸暗；顶光：强调骨骼结构；负补光 Negative Fill：黑旗吸光｜加深暗侧。
+
+23. 游戏角色灯光
+
+Character Key Light：独立主光｜Lighting Channel｜角色亮度补偿；Character Rim：Fresnel Rim｜Back Rim｜Enemy Highlight｜Team Color Rim；Gameplay Lighting：保证敌人与背景分离｜暗区最低可读性｜重要交互物体突出；参数：Min Character Exposure｜Rim Strength｜Rim Width｜Gameplay Contrast｜Highlight Priority。
+
+24. 游戏环境灯光
+
+室外：Sun｜Skylight｜Atmosphere｜Cloud Shadow｜Fog｜GI；室内：Rect Light｜Spot Light｜Practical Light｜Bounce Light｜Reflection Probe；地下空间：低环境光｜局部人工灯｜体积雾｜高反差；夜景：Moon Light｜Cool Skylight｜Warm Practical｜Neon Emissive｜Wet Reflection。
+
+25. 动态时间灯光
+
+时间参数：Time of Day｜Sun Rotation｜Moon Rotation｜Sky Exposure｜Color Temperature Curve｜Shadow Length；日出：暖色低角度｜长阴影｜薄雾；正午：高位硬光｜短阴影｜综合色温偏中性；日落：橙红低角度｜蓝紫阴影；夜晚：低曝光｜冷环境｜局部暖灯；游戏实现：Day/Night Cycle｜Light Curve｜Sky Atmosphere｜Dynamic GI。
+
+26. 天气灯光
+
+晴天：高强度太阳｜硬阴影｜高对比；阴天：大面积柔光｜低对比｜冷综合色｜弱阴影；雨天：低天空亮度｜湿地高反射｜路灯综合色｜雾化高光；雪天：地面高反弹｜整体曝光提升｜冷综合色；沙尘/雾霾：暖色散射｜低能见度｜远景低反差。
+
+27. 光与材质关系
+
+Roughness 0–0.2：强镜面、高光集中；0.3–0.6：半粗糙、自然表面；0.7–1.0：高光宽而弱；Metallic 0/1：非金属/金属；Normal Strength：表面细节影响受光；SSS：皮肤、蜡、叶片；Transmission：玻璃、薄布、树叶；Clear Coat：车漆、清漆材质。
+
+28. 光晕与镜头响应
+
+Bloom：Intensity｜Threshold｜Radius｜Convolution；Lens Flare：Intensity｜Ghost Count｜Halo｜Bokeh Shape｜Anamorphic Streak；Halation：Strength｜Radius｜Red Edge；Glare：Starburst｜Diffraction｜Streak；影视用途：电影镜头光晕｜逆光情绪；游戏用途：Post Process Bloom｜Lens Dirt｜Flare Material。
+
+29. 光线与摄影机曝光
+
+摄影参数：ISO 100–12800｜Shutter 1/24–1/1000｜Shutter Angle 90°/180°/270°｜Aperture f/1.2–f/16｜ND 0.3–2.1；曝光关系：光圈控制景深和进光量｜快门控制运动模糊｜ISO 控制敏感度和噪声；游戏模拟：Manual Exposure｜Physical Camera Exposure｜ISO｜Shutter Speed｜Aperture。
+
+30. 光线与后期调色
+
+Tone Mapping：ACES｜Filmic｜Reinhard｜Custom Curve；曝光：Exposure Compensation｜Highlight Roll-off｜Shadow Lift｜Black Point｜White Point；颜色：Temperature｜Tint｜Saturation｜Contrast｜Gamma｜Gain｜Lift；局部光感：Bloom｜Vignette｜Local Exposure｜Color Grading LUT；影视目标：高光不过曝、暗部不死黑、肤色稳定；游戏目标：不同场景亮度过渡稳定、HDR 显示一致。
+
+31. 光追参数
+
+Ray Traced Shadows：Samples Per Pixel｜Max Distance｜Softness；Ray Traced Reflection：Bounce Count｜Roughness Cutoff｜Samples；Ray Traced GI：Diffuse Bounce｜Samples｜Denoiser；Path Tracing：Samples Per Pixel｜Max Bounces｜Russian Roulette｜Firefly Clamp；影视特点：更自然间接光和反射；游戏特点：质量与性能之间需要平衡。
+
+32. 实时灯光性能参数
+
+Light Mobility：Static｜Stationary｜Movable；性能：Visible Lights｜Shadow Casting Lights｜Overdraw｜Light Complexity｜Shader Complexity｜GPU Time；优化参数：Cull Distance｜Max Draw Distance｜Shadow Distance｜LOD｜Light Channel｜Bake Static Lighting｜Reflection Probe Density；原则：重要光动态、环境光烘焙、非关键光关闭阴影。
+
+33. 分辨率与采样
+
+Shadow Resolution：512｜1024｜2048｜4096｜8192；GI Samples：1–64+ spp；Path Tracing：64｜128｜256｜512｜1024+ spp；Denoise：Spatial｜Temporal｜AI Denoiser；体积采样：Volumetric Sample Count｜Step Size｜Temporal Samples；影视离线：质量优先；游戏实时：帧率优先。
+
+34. Cinematic 游戏灯光统一参数
+
+Lighting Quality：Low｜Medium｜High｜Epic｜Cinematic；GI：Lumen High/Cinematic｜Hardware RT｜Path Tracing；Shadow：VSM｜RT Shadow｜Contact Shadow；Reflection：Lumen Reflection｜SSR｜RT Reflection；Atmosphere：Sky Atmosphere｜Volumetric Fog｜Cloud｜Exponential Height Fog；Post：ACES｜Bloom｜Local Exposure｜Color LUT｜Film Grain。
+
+35. 一套可直接套用的影视+游戏光线格式
+
+主光：左前 45°高位 Rect Light｜4800K｜Intensity 8｜Source Size 2m｜Soft Shadow｜人物曝光基准 0EV；辅光：摄影机右前低强度 Area Light｜6500K｜Key:Fill 4:1｜Shadow Lift 20%；轮廓光：右后 140° Spot Light｜7500K｜Intensity 5｜窄范围 Rim｜轻微体积散射；环境光：HDRI + Sky Light｜6500K｜Intensity 0.7｜Indirect Lighting 1.2｜Lumen GI；阴影：Virtual Shadow Map｜Softness 0.4｜Contact Shadow ON｜高分辨率阴影；体积光：Fog Density 0.02｜Volumetric Scattering 1.2｜Anisotropy 0.6｜God Rays Medium；反射：Lumen/RT Reflection｜Wet Surface Roughness 0.15–0.3｜Specular 0.5；曝光：Manual EV｜ISO 800｜1/48s｜f/2.8｜24fps｜Highlight Roll-off Soft；色彩：暖主光+冷环境｜低饱和｜ACES Filmic｜轻微 Bloom/Halation；实时渲染：UE5｜Lumen GI｜Nanite｜VSM｜TSR｜Cinematic Quality｜4K Output。
+
+36. 推荐统一填写模板
+
+光源：类型｜位置 XYZ｜旋转 XYZ｜方位角｜俯仰角｜距离｜尺寸；亮度：Intensity｜EV｜Lumens/Lux/Nits｜曝光贡献；颜色：Kelvin｜RGB｜Tint｜冷暖关系；方向：正面｜侧面｜逆光｜顶光｜底光；光质：Hard/Soft｜Source Size｜Penumbra｜Falloff；阴影：Opacity｜Bias｜Contact｜Resolution｜Distance｜RT/VSM；GI：Indirect Intensity｜Bounce｜Lumen/RT/Path Tracing；体积：Fog Density｜Scattering｜Anisotropy｜God Rays；反射：Specular｜Roughness｜SSR/Lumen/RT；曝光：ISO｜Shutter｜Aperture｜EV｜Auto/Manual Exposure；后期：ACES｜Bloom｜Halation｜Flare｜Local Exposure；性能：Mobility｜Cull Distance｜Shadow Cost｜Samples｜GPU Cost；最终视觉：高调/低调｜冷暖｜对比度｜人物分离度｜氛围｜电影感｜游戏可读性。
