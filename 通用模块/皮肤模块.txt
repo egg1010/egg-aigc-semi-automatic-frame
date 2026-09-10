@@ -1,191 +1,383 @@
-【1. Skin Material Base 皮肤材质基础】Skin Material 皮肤材质｜Skin Shader 皮肤着色器｜Shading Model 着色模型｜Subsurface Profile 次表面配置｜Surface Type 表面类型｜Two Sided 双面材质｜Material Quality 材质质量｜Skin Quality 皮肤质量｜Physical Material 物理材质｜Skin Material Instance 皮肤材质实例｜Skin Layer Count 皮肤层数｜Skin Thickness 皮肤厚度｜Skin Scale 皮肤比例
-
-【2. Base Color / Albedo 皮肤基础颜色】Base Color 基础颜色｜Albedo 反照率｜Diffuse Color 漫反射颜色｜Skin Tone 肤色｜Skin Tint 肤色色偏｜Hue 色相｜Saturation 饱和度｜Brightness 亮度｜Value 明度｜Color Temperature 色温｜Warmth 暖度｜Coolness 冷度｜Skin Tone Variation 肤色变化｜Regional Color Variation 区域色差｜Face Color Variation 面部色差｜Body Color Variation 身体色差
-
-【3. Skin Tone Distribution 肤色分布】Forehead Tone 额头肤色｜Cheek Tone 面颊肤色｜Nose Tone 鼻部肤色｜Chin Tone 下巴肤色｜Ear Tone 耳朵肤色｜Neck Tone 颈部肤色｜Lip Surround Tone 唇周肤色｜Eye Surround Tone 眼周肤色｜Temple Tone 太阳穴肤色｜Jaw Tone 下颌肤色｜Hand Tone 手部肤色｜Palm Tone 掌心肤色｜Joint Tone 关节肤色｜Elbow Tone 肘部肤色｜Knee Tone 膝部肤色
-
-【4. Melanin 黑色素】Melanin 黑色素｜Melanin Amount 黑色素含量｜Melanin Concentration 黑色素浓度｜Melanin Tint 黑色素色偏｜Melanin Variation 黑色素变化｜Eumelanin 真黑色素｜Pheomelanin 褐黑色素｜Pigment Density 色素密度｜Pigment Variation 色素变化｜Pigment Mask 色素遮罩｜Skin Darkness 皮肤深浅｜Tanning 晒黑程度｜Tan Line 晒痕｜Sun Exposure 日晒程度
-
-【5. Hemoglobin / Blood 血色参数】Hemoglobin 血红蛋白｜Blood Color 血液颜色｜Blood Concentration 血液浓度｜Blood Perfusion 血液灌注｜Redness 泛红度｜Skin Redness 皮肤红润度｜Cheek Redness 面颊红润｜Nose Redness 鼻部红润｜Ear Redness 耳部红润｜Lip Surround Redness 唇周红润｜Capillary Color 毛细血管颜色｜Blood Flow Variation 血流变化｜Flush Amount 潮红程度
-
-【6. Subsurface Scattering 次表面散射】Subsurface Scattering 次表面散射｜SSS Strength 次表面散射强度｜SSS Weight 次表面权重｜Subsurface Color 次表面颜色｜Subsurface Radius 次表面半径｜Scatter Radius 散射半径｜Scatter Distance 散射距离｜Scatter Color 散射颜色｜SSS Scale SSS比例｜SSS Profile SSS配置｜Mean Free Path 平均自由程｜Diffusion Profile 扩散配置｜Transmission Scatter 透射散射｜Back Scatter 背向散射
-
-【7. RGB Scatter Radius RGB散射半径】Red Scatter Radius 红色散射半径｜Green Scatter Radius 绿色散射半径｜Blue Scatter Radius 蓝色散射半径｜RGB Scatter Scale RGB散射比例｜Deep Scatter 深层散射｜Shallow Scatter 浅层散射｜Dermal Scatter 真皮散射｜Epidermal Scatter 表皮散射｜Scatter Falloff 散射衰减｜Scatter Anisotropy 散射各向异性
-
-【8. Epidermis 表皮层】Epidermis 表皮层｜Epidermis Thickness 表皮厚度｜Epidermis Color 表皮颜色｜Epidermis Roughness 表皮粗糙度｜Epidermis Scatter 表皮散射｜Epidermis Absorption 表皮吸收｜Epidermis Transmission 表皮透射｜Epidermis Detail 表皮细节｜Epidermal Melanin 表皮黑色素｜Epidermal Variation 表皮变化
-
-【9. Dermis 真皮层】Dermis 真皮层｜Dermis Thickness 真皮厚度｜Dermis Color 真皮颜色｜Dermis Scatter 真皮散射｜Dermis Absorption 真皮吸收｜Dermis Blood Density 真皮血液密度｜Dermal Redness 真皮红润度｜Dermal Scatter Radius 真皮散射半径｜Dermal Roughness 真皮粗糙度｜Dermal Variation 真皮变化
-
-【10. Hypodermis 皮下组织】Hypodermis 皮下组织｜Subcutaneous Layer 皮下层｜Subcutaneous Fat 皮下脂肪｜Fat Color 脂肪颜色｜Fat Thickness 脂肪厚度｜Deep Scatter 深层散射｜Deep Color 深层颜色｜Deep Absorption 深层吸收｜Deep Transmission 深层透射｜Subdermal Color 皮下颜色
-
-【11. Specular 皮肤镜面反射】Skin Specular 皮肤镜面反射｜Specular Level 镜面强度｜Specular Intensity 镜面亮度｜Specular Color 镜面颜色｜Specular Tint 镜面色偏｜Specular Roughness 镜面粗糙度｜Specular Scale 镜面比例｜Primary Specular 主高光｜Secondary Specular 次高光｜Specular Lobe 镜面波瓣｜Specular Width 高光宽度｜Specular Sharpness 高光锐度
-
-【12. Dual Specular 双层高光】Primary Specular Roughness 主高光粗糙度｜Primary Specular Weight 主高光权重｜Secondary Specular Roughness 次高光粗糙度｜Secondary Specular Weight 次高光权重｜Specular Lobe Mix 高光波瓣混合｜Oil Specular 油脂高光｜Skin Layer Specular 皮层高光｜Micro Specular 微高光｜Macro Specular 宏观高光
-
-【13. Roughness 皮肤粗糙度】Skin Roughness 皮肤粗糙度｜Roughness Min 最小粗糙度｜Roughness Max 最大粗糙度｜Roughness Variation 粗糙度变化｜Micro Roughness 微粗糙度｜Macro Roughness 宏观粗糙度｜Regional Roughness 区域粗糙度｜Roughness Mask 粗糙度遮罩｜Roughness Contrast 粗糙度对比｜Roughness Bias 粗糙度偏移｜Glossiness 光泽度｜Smoothness 光滑度
-
-【14. Regional Roughness 区域粗糙度】Forehead Roughness 额头粗糙度｜Nose Roughness 鼻部粗糙度｜Cheek Roughness 面颊粗糙度｜Chin Roughness 下巴粗糙度｜Lip Surround Roughness 唇周粗糙度｜Eye Area Roughness 眼周粗糙度｜Ear Roughness 耳部粗糙度｜Neck Roughness 颈部粗糙度｜T-Zone Roughness T区粗糙度｜Body Roughness 身体粗糙度
-
-【15. Oiliness 皮肤油脂】Skin Oiliness 皮肤油脂度｜Oil Amount 油脂量｜Oil Layer 油脂层｜Oil Roughness 油脂粗糙度｜Oil Specular 油脂高光｜Oil Mask 油脂遮罩｜Sebum 皮脂｜Sebum Amount 皮脂量｜T-Zone Oiliness T区油脂度｜Forehead Oiliness 额头油脂度｜Nose Oiliness 鼻部油脂度｜Cheek Oiliness 面颊油脂度｜Chin Oiliness 下巴油脂度
-
-【16. Moisture / Wetness 湿润度】Skin Moisture 皮肤湿润度｜Moisture Amount 湿润量｜Wetness 湿润度｜Wet Layer 湿润层｜Wet Roughness 湿润粗糙度｜Wet Specular 湿润高光｜Wet Mask 湿润遮罩｜Sweat Amount 汗液量｜Sweat Layer 汗液层｜Sweat Droplet 汗珠｜Sweat Streak 汗液流痕｜Water Film 水膜｜Tear Wetness 泪液湿润
-
-【17. Fresnel 皮肤菲涅尔】Fresnel 菲涅尔｜Skin Fresnel 皮肤菲涅尔｜Fresnel IOR 菲涅尔折射率｜Fresnel Strength 菲涅尔强度｜Fresnel Bias 菲涅尔偏移｜Fresnel Power 菲涅尔指数｜Edge Reflection 边缘反射｜Grazing Reflection 掠射角反射｜Facing Ratio 朝向比｜Fresnel Tint 菲涅尔色偏
-
-【18. IOR 皮肤折射率】IOR 折射率｜Skin IOR 皮肤折射率｜Specular IOR 镜面折射率｜Corneum IOR 角质层折射率｜Oil IOR 油脂层折射率｜Water IOR 水分层折射率｜IOR Variation 折射率变化｜F0 Reflectance 正视角反射率
-
-【19. Normal Map 皮肤法线】Normal Map 法线贴图｜Skin Normal 皮肤法线｜Normal Strength 法线强度｜Normal Scale 法线比例｜Tangent Space Normal 切线空间法线｜Detail Normal 细节法线｜Micro Normal 微法线｜Macro Normal 宏观法线｜Secondary Normal 第二法线｜Normal Blend 法线混合｜Normal Mask 法线遮罩
-
-【20. Pores 毛孔】Pore Detail 毛孔细节｜Pore Normal 毛孔法线｜Pore Size 毛孔大小｜Pore Depth 毛孔深度｜Pore Density 毛孔密度｜Pore Contrast 毛孔对比｜Pore Roughness 毛孔粗糙度｜Pore Distribution 毛孔分布｜Pore Variation 毛孔变化｜Forehead Pores 额头毛孔｜Nose Pores 鼻部毛孔｜Cheek Pores 面颊毛孔｜Chin Pores 下巴毛孔
-
-【21. Micro Detail 微观细节】Micro Detail 微细节｜Micro Normal 微法线｜Micro Roughness 微粗糙度｜Micro Bump 微凹凸｜Micro Displacement 微位移｜Micro Wrinkle 微皱纹｜Micro Pores 微毛孔｜Micro Noise 微噪波｜Micro Scale 微细节比例｜Micro Intensity 微细节强度｜Micro Contrast 微细节对比
-
-【22. Bump 凹凸】Bump Map 凹凸贴图｜Bump Strength 凹凸强度｜Bump Distance 凹凸距离｜Skin Bump 皮肤凹凸｜Pore Bump 毛孔凹凸｜Wrinkle Bump 皱纹凹凸｜Scar Bump 疤痕凹凸｜Bump Scale 凹凸比例｜Bump Detail 凹凸细节｜Bump Contrast 凹凸对比
-
-【23. Displacement 位移】Skin Displacement 皮肤位移｜Displacement Map 位移贴图｜Displacement Scale 位移比例｜Displacement Height 位移高度｜Displacement Midlevel 位移中间值｜Micro Displacement 微位移｜Pore Displacement 毛孔位移｜Wrinkle Displacement 皱纹位移｜Scar Displacement 疤痕位移｜Adaptive Subdivision 自适应细分｜Tessellation 曲面细分
-
-【24. Wrinkles 皱纹】Wrinkle Amount 皱纹量｜Wrinkle Depth 皱纹深度｜Wrinkle Width 皱纹宽度｜Wrinkle Length 皱纹长度｜Wrinkle Density 皱纹密度｜Wrinkle Roughness 皱纹粗糙度｜Wrinkle Normal 皱纹法线｜Wrinkle Displacement 皱纹位移｜Fine Wrinkles 细纹｜Deep Wrinkles 深皱纹｜Forehead Wrinkles 抬头纹｜Eye Wrinkles 眼角纹｜Nasolabial Fold 法令纹｜Neck Wrinkles 颈纹
-
-【25. Dynamic Wrinkles 动态皱纹】Dynamic Wrinkle 动态皱纹｜Expression Wrinkle 表情皱纹｜Wrinkle Mask 皱纹遮罩｜Wrinkle Blend 皱纹混合｜Wrinkle Intensity 皱纹强度｜Wrinkle Compression 压缩皱纹｜Wrinkle Stretch 拉伸皱纹｜Pose Driver 姿态驱动｜Morph Driven Wrinkle 形变驱动皱纹｜Bone Driven Wrinkle 骨骼驱动皱纹｜Expression Map 表情贴图｜Normal Blend 表情法线混合
-
-【26. Fine Lines 细纹】Fine Line 细纹｜Fine Line Amount 细纹数量｜Fine Line Depth 细纹深度｜Fine Line Width 细纹宽度｜Fine Line Direction 细纹方向｜Fine Line Density 细纹密度｜Fine Line Roughness 细纹粗糙度｜Fine Line Mask 细纹遮罩｜Eye Fine Lines 眼周细纹｜Lip Fine Lines 唇周细纹
-
-【27. Scars 疤痕】Scar 疤痕｜Scar Amount 疤痕数量｜Scar Color 疤痕颜色｜Scar Redness 疤痕红度｜Scar Roughness 疤痕粗糙度｜Scar Height 疤痕高度｜Scar Depth 疤痕深度｜Scar Normal 疤痕法线｜Scar Displacement 疤痕位移｜Scar Gloss 疤痕光泽｜Old Scar 陈旧疤痕｜Fresh Scar 新鲜疤痕｜Keloid Scar 增生疤痕
-
-【28. Acne / Blemishes 痘痘与皮肤瑕疵】Acne 痘痘｜Pimple 痘痘颗粒｜Acne Amount 痘痘数量｜Acne Redness 痘痘红度｜Acne Height 痘痘高度｜Acne Roughness 痘痘粗糙度｜Blemish 瑕疵｜Blemish Amount 瑕疵数量｜Blemish Color 瑕疵颜色｜Blackhead 黑头｜Whitehead 白头｜Pore Congestion 毛孔堵塞｜Inflammation 炎症红肿
-
-【29. Freckles 雀斑】Freckle 雀斑｜Freckle Amount 雀斑数量｜Freckle Size 雀斑大小｜Freckle Density 雀斑密度｜Freckle Color 雀斑颜色｜Freckle Opacity 雀斑不透明度｜Freckle Contrast 雀斑对比｜Freckle Variation 雀斑变化｜Freckle Distribution 雀斑分布｜Sun Freckles 日晒雀斑
-
-【30. Moles 痣】Mole 痣｜Mole Amount 痣数量｜Mole Size 痣大小｜Mole Color 痣颜色｜Mole Height 痣高度｜Mole Roughness 痣粗糙度｜Mole Normal 痣法线｜Mole Distribution 痣分布｜Raised Mole 凸痣｜Flat Mole 平痣
-
-【31. Pigmentation 色素沉着】Pigmentation 色素沉着｜Hyperpigmentation 色素过度沉着｜Hypopigmentation 色素减退｜Age Spot 老年斑｜Sun Spot 晒斑｜Dark Spot 黑斑｜Melasma 黄褐斑｜Pigment Color 色素颜色｜Pigment Density 色素密度｜Pigment Variation 色素变化｜Pigment Mask 色素遮罩
-
-【32. Veins / Capillaries 血管毛细血管】Vein 血管｜Vein Color 血管颜色｜Vein Depth 血管深度｜Vein Thickness 血管粗细｜Vein Visibility 血管可见度｜Vein Density 血管密度｜Capillary 毛细血管｜Capillary Color 毛细血管颜色｜Capillary Density 毛细血管密度｜Capillary Redness 毛细血管红度｜Subdermal Veins 皮下血管
-
-【33. Dark Circles 黑眼圈】Dark Circle 黑眼圈｜Dark Circle Color 黑眼圈颜色｜Dark Circle Intensity 黑眼圈强度｜Dark Circle Radius 黑眼圈范围｜Under Eye Darkness 眼下暗沉｜Under Eye Redness 眼下红润｜Under Eye Blue Tone 眼下蓝调｜Under Eye Purple Tone 眼下紫调｜Under Eye Roughness 眼下粗糙度｜Under Eye Thickness 眼下皮肤厚度
-
-【34. Eye Area Skin 眼周皮肤】Eye Skin Thickness 眼周皮肤厚度｜Eye Skin Roughness 眼周粗糙度｜Eye Skin SSS 眼周散射｜Eye Corner Redness 眼角红润｜Eyelid Color 眼皮颜色｜Eyelid Roughness 眼皮粗糙度｜Upper Eyelid 上眼皮｜Lower Eyelid 下眼皮｜Tear Duct Color 泪阜颜色｜Tear Duct Wetness 泪阜湿润度
-
-【35. Lip Skin 嘴唇皮肤】Lip Color 唇色｜Lip Saturation 唇色饱和度｜Lip Roughness 嘴唇粗糙度｜Lip Specular 嘴唇高光｜Lip Moisture 唇部湿润度｜Lip SSS 嘴唇次表面散射｜Lip Normal 嘴唇法线｜Lip Wrinkle 唇纹｜Lip Crack 唇部裂纹｜Lip Thickness 唇部厚度｜Lip Blood Color 唇部血色｜Lip Edge Blend 唇缘混合
-
-【36. Peach Fuzz 面部绒毛】Peach Fuzz 面部绒毛｜Fuzz Density 绒毛密度｜Fuzz Length 绒毛长度｜Fuzz Thickness 绒毛粗细｜Fuzz Color 绒毛颜色｜Fuzz Roughness 绒毛粗糙度｜Fuzz Specular 绒毛高光｜Fuzz Direction 绒毛方向｜Fuzz Randomness 绒毛随机度｜Fuzz Mask 绒毛遮罩｜Fuzz Shadow 绒毛阴影
-
-【37. Facial Hair 面部毛发】Facial Hair 面部毛发｜Beard Density 胡须密度｜Beard Thickness 胡须粗细｜Beard Length 胡须长度｜Beard Color 胡须颜色｜Stubble 胡茬｜Stubble Density 胡茬密度｜Stubble Roughness 胡茬粗糙度｜Hair Root 发根｜Hair Scatter 毛发散射｜Hair Specular 毛发高光｜Hair Shadow 毛发阴影
-
-【38. Skin Thickness 皮肤厚度】Skin Thickness 皮肤厚度｜Thickness Map 厚度贴图｜Ear Thickness 耳朵厚度｜Nose Thickness 鼻部厚度｜Cheek Thickness 面颊厚度｜Lip Thickness 嘴唇厚度｜Eyelid Thickness 眼皮厚度｜Finger Thickness 手指厚度｜Transmission Thickness 透射厚度｜SSS Thickness SSS厚度
-
-【39. Transmission 皮肤透射】Skin Transmission 皮肤透射｜Transmission Weight 透射权重｜Transmission Color 透射颜色｜Transmission Depth 透射深度｜Transmission Roughness 透射粗糙度｜Backlighting 逆光透射｜Ear Transmission 耳朵透光｜Nose Transmission 鼻翼透光｜Finger Transmission 手指透光｜Thin Skin Transmission 薄皮肤透射
-
-【40. Backlight / Rim Response 逆光与轮廓响应】Backlight Scatter 逆光散射｜Rim Scatter 轮廓散射｜Transmission Rim 透射轮廓｜Ear Glow 耳朵透光红晕｜Skin Edge Glow 皮肤边缘透光｜Back Scatter Strength 背向散射强度｜Back Scatter Color 背向散射颜色｜Backlight Thickness 逆光厚度控制｜Rim Specular 轮廓高光
-
-【41. Ambient Occlusion 皮肤环境遮蔽】Skin AO 皮肤环境遮蔽｜AO Strength AO强度｜AO Radius AO半径｜AO Distance AO距离｜AO Contrast AO对比｜Cavity AO 凹槽遮蔽｜Nostril AO 鼻孔遮蔽｜Ear AO 耳部遮蔽｜Eye Socket AO 眼窝遮蔽｜Lip Corner AO 嘴角遮蔽｜Neck Fold AO 颈部褶皱遮蔽
-
-【42. Cavity 皮肤凹槽】Cavity Map 凹槽贴图｜Cavity Strength 凹槽强度｜Micro Cavity 微凹槽｜Pore Cavity 毛孔凹槽｜Wrinkle Cavity 皱纹凹槽｜Nostril Cavity 鼻孔凹槽｜Ear Cavity 耳部凹槽｜Lip Cavity 唇纹凹槽｜Cavity Color 凹槽颜色｜Cavity Roughness 凹槽粗糙度
-
-【43. Color Variation 皮肤综合色差】Color Variation 色彩变化｜Micro Color Variation 微综合色差｜Macro Color Variation 宏观综合色差｜Red Variation 红色变化｜Yellow Variation 黄色变化｜Blue Variation 蓝色变化｜Brown Variation 棕色变化｜Mottling 斑驳｜Skin Mottle 皮肤综合色斑驳｜Regional Color Mask 区域颜色遮罩
-
-【44. Skin Aging 皮肤老化】Skin Age 皮肤年龄｜Aging Amount 老化程度｜Wrinkle Amount 皱纹量｜Fine Line Amount 细纹量｜Pore Size 毛孔大小｜Skin Sagging 皮肤松弛｜Age Spot 老年斑｜Dryness 干燥度｜Roughness Increase 粗糙度增加｜Elasticity Loss 弹性下降｜Collagen Loss 胶原流失｜Skin Thinness 皮肤变薄｜Sun Damage 光老化
-
-【45. Young Skin 年轻皮肤】Smoothness 光滑度｜Fine Pores 细毛孔｜High Elasticity 高弹性｜Soft SSS 柔和次表面散射｜Low Wrinkle 低皱纹｜Balanced Oil 油脂平衡｜Soft Roughness 柔和粗糙度｜Even Tone 均匀肤色｜High Moisture 高湿润度｜Subtle Peach Fuzz 轻微面部绒毛
-
-【46. Mature Skin 成熟皮肤】Deep Wrinkles 深皱纹｜Fine Wrinkles 细皱纹｜Large Pores 较大毛孔｜Age Spots 老年斑｜Uneven Tone 肤色不均｜Dryness 干燥｜Reduced SSS 减弱散射｜Roughness Variation 粗糙变化｜Skin Sagging 皮肤松弛｜Capillary Visibility 毛细血管可见度｜Sun Damage 日晒损伤
-
-【47. Dry Skin 干性皮肤】Dryness 干燥度｜Dry Roughness 干燥粗糙度｜Flaking 脱屑｜Cracking 开裂｜Low Oiliness 低油脂｜Low Specular 低高光｜Micro Flakes 微皮屑｜Dry Patch 干燥斑块｜Dry Normal 干燥法线｜Moisture Loss 水分流失
-
-【48. Oily Skin 油性皮肤】Oiliness 油脂度｜Sebum 皮脂｜High Specular 高镜面高光｜Low T-Zone Roughness T区低粗糙度｜Pore Visibility 毛孔可见度｜Pore Size 毛孔大小｜Oil Film 油膜｜Forehead Shine 额头油光｜Nose Shine 鼻部油光｜Chin Shine 下巴油光
-
-【49. Sweaty Skin 出汗皮肤】Sweat Amount 汗液量｜Sweat Mask 汗液遮罩｜Sweat Roughness 汗液粗糙度｜Sweat Specular 汗液高光｜Sweat Droplet 汗珠｜Droplet Size 汗珠大小｜Droplet Density 汗珠密度｜Sweat Streak 汗液流痕｜Water Film 水膜｜Skin Darkening 湿润变暗｜Sweat Normal 汗液法线
-
-【50. Dirty Skin 脏污皮肤】Dirt Amount 污垢量｜Dirt Color 污垢颜色｜Dirt Roughness 污垢粗糙度｜Dust 灰尘｜Dust Amount 灰尘量｜Mud 泥浆｜Mud Amount 泥浆量｜Grime 污垢积层｜Smudge 污迹｜Sweat Dirt 汗污｜Cavity Dirt 凹槽积污｜Edge Dirt 边缘污迹
-
-【51. Wet Skin 湿皮肤】Wetness 湿润度｜Wet Roughness 湿润粗糙度｜Wet Specular 湿润高光｜Water Film 水膜｜Water Droplet 水滴｜Water Streak 水痕｜Wet Darkening 湿润变暗｜Wet Normal 湿润法线｜Wet Mask 湿润遮罩｜Reflection Boost 反射增强｜Clear Coat Wet Layer 湿润清漆层
-
-【52. Makeup Base 化妆基础】Makeup Mask 妆容遮罩｜Foundation 粉底｜Foundation Color 粉底颜色｜Foundation Coverage 粉底覆盖度｜Foundation Roughness 粉底粗糙度｜Concealer 遮瑕｜Blush 腮红｜Contour 修容｜Highlight Makeup 高光妆｜Powder 粉质｜Makeup Blend 妆容混合｜Makeup Opacity 妆容透明度
-
-【53. Eye Makeup 眼妆】Eyeshadow 眼影｜Eyeshadow Color 眼影颜色｜Eyeshadow Roughness 眼影粗糙度｜Eyeliner 眼线｜Mascara 睫毛膏｜Eye Glitter 眼部亮片｜Eye Makeup Mask 眼妆遮罩｜Eye Makeup Opacity 眼妆透明度｜Metallic Eyeshadow 金属眼影｜Glossy Eyeshadow 光泽眼影
-
-【54. Lip Makeup 唇妆】Lipstick 口红｜Lipstick Color 口红颜色｜Lipstick Roughness 口红粗糙度｜Lip Gloss 唇彩｜Lip Gloss Intensity 唇彩强度｜Lip Metallic 金属唇妆｜Lip Glitter 唇部亮片｜Lip Makeup Mask 唇妆遮罩｜Lip Makeup Opacity 唇妆透明度｜Lip Edge 唇妆边缘
-
-【55. Skin Texture Maps 皮肤贴图】Base Color Map 基础颜色贴图｜Albedo Map 反照率贴图｜Roughness Map 粗糙度贴图｜Specular Map 镜面贴图｜Normal Map 法线贴图｜Micro Normal Map 微法线贴图｜Displacement Map 位移贴图｜AO Map 环境遮蔽贴图｜Cavity Map 凹槽贴图｜Thickness Map 厚度贴图｜SSS Map 次表面散射贴图｜Transmission Map 透射贴图｜Blood Map 血色贴图｜Melanin Map 黑色素贴图｜Oil Map 油脂贴图
-
-【56. Scan Data 扫描数据】Photogrammetry 摄影测量｜Face Scan 面部扫描｜Body Scan 身体扫描｜Cross Polarized Scan 交叉偏振扫描｜Parallel Polarized Scan 平行偏振扫描｜Displacement Scan 位移扫描｜Pore Scan 毛孔扫描｜Specular Scan 镜面扫描｜Roughness Scan 粗糙度扫描｜Skin Color Calibration 肤色校准｜Color Checker 色卡校准
-
-【57. Texture Resolution 纹理分辨率】1K Texture 1K贴图｜2K Texture 2K贴图｜4K Texture 4K贴图｜8K Texture 8K贴图｜16K Texture 16K贴图｜Face Texture Resolution 面部纹理分辨率｜Body Texture Resolution 身体纹理分辨率｜Micro Detail Resolution 微细节分辨率｜Texel Density 纹素密度｜UDIM UDIM贴片
-
-【58. UDIM Skin Workflow 皮肤UDIM流程】UDIM Tiles UDIM贴片｜Face UDIM 面部UDIM｜Head UDIM 头部UDIM｜Torso UDIM 躯干UDIM｜Arm UDIM 手臂UDIM｜Hand UDIM 手部UDIM｜Leg UDIM 腿部UDIM｜Texture Set 纹理集合｜UDIM Resolution UDIM分辨率｜UV Padding UV边距｜Seam Blend 接缝混合
-
-【59. UV Parameters 皮肤UV参数】UV Scale UV缩放｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜UV Seam UV接缝｜UV Distortion UV变形｜UV Stretch UV拉伸｜UV Density UV密度｜Mirror UV UV镜像｜Head UV 头部UV｜Body UV 身体UV｜Detail UV 细节UV
-
-【60. Skin Lighting Response 皮肤受光响应】Diffuse Response 漫反射响应｜Specular Response 镜面响应｜SSS Response 次表面响应｜Backlight Response 逆光响应｜Rim Light Response 轮廓光响应｜Soft Light Response 柔光响应｜Hard Light Response 硬光响应｜HDR Response HDR响应｜Highlight Roll-Off 高光滚降｜Shadow Response 阴影响应｜Color Bleeding 色彩反弹响应
-
-【61. Key Light Skin Response 主光皮肤响应】Key Light Specular 主光高光｜Key Light Diffuse 主光漫反射｜Key Light SSS 主光散射｜Face Highlight 面部高光｜Forehead Highlight 额头高光｜Nose Highlight 鼻梁高光｜Cheek Highlight 面颊高光｜Chin Highlight 下巴高光｜Skin Exposure 皮肤曝光｜Highlight Clipping 高光裁切
-
-【62. Fill Light Skin Response 辅光皮肤响应】Fill Light Diffuse 辅光漫反射｜Fill Light SSS 辅光散射｜Shadow Lift 暗部提升｜Skin Contrast 皮肤反差｜Shadow Saturation 阴影饱和度｜Shadow Skin Tone 阴影肤色｜Fill Ratio 辅光比例｜Dark Side Detail 暗侧细节
-
-【63. Rim / Backlight Skin Response 轮廓逆光响应】Rim Specular 轮廓高光｜Back Scatter 背向散射｜Ear Glow 耳朵红透｜Nose Rim 鼻部轮廓光｜Cheek Rim 面颊轮廓光｜Shoulder Skin Rim 肩部皮肤轮廓｜Transmission Strength 透射强度｜Rim SSS 轮廓SSS
-
-【64. Cinematic Exposure 影视曝光】Skin Exposure 皮肤曝光｜Exposure Compensation 曝光补偿｜Middle Gray 中灰｜Highlight Roll-Off 高光滚降｜Black Level 黑位｜White Level 白位｜Shadow Detail 阴影细节｜False Color 假色曝光｜Waveform 波形图｜Zebra 斑马纹｜HDR Skin Range HDR肤色范围｜Skin IRE 肤色IRE
-
-【65. Color Management 色彩管理】ACES ACES色彩管理｜ACEScg ACEScg工作空间｜Linear Workflow 线性流程｜sRGB sRGB色彩空间｜Rec.709 Rec.709色彩空间｜Display P3 Display P3色域｜Rec.2020 Rec.2020色域｜HDR10 HDR10｜OCIO OpenColorIO｜White Balance 白平衡｜Skin Tone Calibration 肤色校准｜Look Development 外观开发
-
-【66. Film Skin Look 影视皮肤质感】Natural Skin 自然皮肤｜Soft Skin 柔和皮肤｜Beauty Skin 美容皮肤｜Gritty Skin 粗粝皮肤｜High Contrast Skin 高反差皮肤｜Low Contrast Skin 低反差皮肤｜Warm Skin 暖肤色｜Cool Skin 冷肤色｜Desaturated Skin 低饱和肤色｜Film Grain Skin 胶片颗粒皮肤｜Halation Skin 光晕肤质｜Highlight Bloom 高光柔化
-
-【67. Beauty Retouch 美容修饰】Skin Smoothing 皮肤平滑｜Pore Preservation 毛孔保留｜Blemish Removal 瑕疵去除｜Wrinkle Reduction 皱纹减弱｜Under Eye Correction 黑眼圈修正｜Skin Tone Evenness 肤色均匀｜Redness Reduction 泛红减弱｜Oil Highlight Control 油光控制｜Specular Softening 高光柔化｜Texture Frequency Separation 频率分离｜Beauty Blur 美容模糊｜Detail Recovery 细节恢复
-
-【68. Game Skin Shader 游戏皮肤着色器】Real-Time Skin Shader 实时皮肤着色器｜Subsurface Profile 次表面配置｜Screen Space SSS 屏幕空间SSS｜Burley SSS Burley次表面散射｜Preintegrated Skin 预积分皮肤｜Dual Specular 双层高光｜Skin Cache 皮肤缓存｜Skin Material Instance 皮肤材质实例｜Dynamic Skin Parameter 动态皮肤参数｜Character Skin LOD 角色皮肤LOD
-
-【69. Unreal Engine Skin UE皮肤参数】Subsurface Profile 次表面配置｜Base Color 基础颜色｜Metallic 金属度｜Specular 镜面反射｜Roughness 粗糙度｜Normal 法线｜Subsurface Color 次表面颜色｜Opacity 不透明度｜Ambient Occlusion 环境遮蔽｜Clear Coat 清漆层｜Clear Coat Roughness 清漆粗糙度｜Anisotropy 各向异性｜Pixel Depth Offset 像素深度偏移｜World Position Offset 世界位置偏移
-
-【70. Unity HDRP Skin Unity HDRP皮肤参数】Diffusion Profile 扩散配置｜Base Color 基础颜色｜Smoothness 光滑度｜Normal Map 法线贴图｜Mask Map 遮罩贴图｜Subsurface Scattering 次表面散射｜Transmission 透射｜Thickness Map 厚度贴图｜Specular Color 镜面颜色｜Coat Mask 清漆遮罩｜Detail Map 细节贴图｜Diffusion Profile Hash 扩散配置标识
-
-【71. Real-Time SSS 实时次表面散射】Screen Space SSS 屏幕空间SSS｜SSS Quality SSS质量｜SSS Sample Count SSS采样数｜SSS Radius SSS半径｜SSS Resolution SSS分辨率｜SSS Blur SSS模糊｜SSS Temporal SSS时间累积｜SSS Dither SSS抖动｜SSS Falloff SSS衰减｜SSS Performance Cost SSS性能消耗
-
-【72. Ray Traced Skin 光追皮肤】Ray Traced SSS 光追SSS｜Ray Traced Reflection 光追反射｜Ray Traced Shadow 光追阴影｜Ray Traced Transmission 光追透射｜Samples Per Pixel 每像素采样数｜Bounce Count 反弹次数｜Denoiser 降噪器｜Specular Bounce 镜面反弹｜Diffuse Bounce 漫反射反弹｜Transmission Bounce 透射反弹
-
-【73. Path Traced Skin 路径追踪皮肤】Path Traced SSS 路径追踪SSS｜Random Walk SSS 随机游走SSS｜Random Walk Radius 随机游走半径｜Mean Free Path 平均自由程｜Multi Scatter 多重散射｜Samples Per Pixel 每像素采样｜Max Bounces 最大反弹次数｜Transmission Depth 透射深度｜Spectral Skin 光谱皮肤｜Denoise 降噪
-
-【74. Performance Optimization 性能优化】Skin Shader Complexity 皮肤着色器复杂度｜Texture Sample Count 纹理采样数量｜Sampler Count 采样器数量｜SSS Quality 次表面散射质量｜Skin LOD 皮肤LOD｜Texture LOD 纹理LOD｜Mip Bias Mip偏移｜Virtual Texture 虚拟纹理｜Skin Cache 皮肤缓存｜Shader Instruction Count 着色器指令数｜Material Instance 材质实例｜Dynamic Parameter 动态参数
-
-【75. Character Distance LOD 角色距离LOD】Cinematic LOD 电影级LOD｜Close-Up LOD 特写LOD｜Gameplay LOD 游戏LOD｜Medium Distance LOD 中距离LOD｜Far Distance LOD 远距离LOD｜Pore Detail Fade 毛孔细节淡出｜Micro Normal Fade 微法线淡出｜SSS Quality Fade SSS质量淡出｜Wrinkle Detail Fade 皱纹细节淡出｜Texture Resolution LOD 纹理分辨率LOD
-
-【76. Close-Up Skin 特写皮肤】Texture Resolution 纹理分辨率：8K–16K｜Pore Detail 毛孔细节：High 高｜Micro Normal 微法线：High 高｜Displacement 位移：Enabled 开启｜Dynamic Wrinkle 动态皱纹：Enabled 开启｜Peach Fuzz 面部绒毛：Enabled 开启｜Dual Specular 双层高光：Enabled 开启｜SSS 次表面散射：High/Cinematic 高/电影级｜Ray Tracing 光追：Enabled 开启｜Hair/Fuzz Shadow 绒毛阴影：Enabled 开启
-
-【77. Gameplay Skin 游戏实时皮肤】Texture Resolution 纹理分辨率：2K–4K｜Normal Detail 法线细节：Medium/High 中/高｜SSS 次表面散射：Medium/High 中/高｜Dynamic Wrinkle 动态皱纹：Selective 选择性开启｜Peach Fuzz 面部绒毛：LOD控制｜Displacement 位移：Off / Parallax关闭或视差替代｜Specular 双高光：简化｜Texture Streaming 纹理流送：Enabled 开启｜Character LOD 角色LOD：Enabled 开启
-
-【78. Realistic Skin Recommended Range 写实皮肤推荐范围】Skin Roughness 皮肤粗糙度：0.35–0.65｜T-Zone Roughness T区粗糙度：0.25–0.45｜Cheek Roughness 面颊粗糙度：0.4–0.6｜Specular 镜面强度：0.3–0.55｜Skin IOR 皮肤折射率：约1.4｜SSS Strength 次表面散射强度：0.5–0.9｜Oiliness 油脂度：0.1–0.35｜Moisture 湿润度：0.05–0.25｜Micro Normal 微法线：0.2–0.6｜Pore Detail 毛孔细节：0.3–0.7｜Peach Fuzz 面部绒毛：0.1–0.35｜AO Strength AO强度：0.2–0.5
-
-【79. Forehead 额头参数示例】Base Color 基础颜色：自然肤色略暖｜Roughness 粗糙度：0.32–0.48｜Oiliness 油脂度：0.2–0.4｜Specular 镜面强度：0.4–0.55｜Pore Size 毛孔大小：中等｜Pore Detail 毛孔细节：0.4–0.65｜Micro Normal 微法线：0.35–0.55｜Redness 泛红度：0.05–0.15｜Wrinkle Amount 皱纹量：按年龄调整｜SSS Strength 次表面散射：0.6–0.8
-
-【80. Nose 鼻部参数示例】Base Color 基础颜色：略红于面颊｜Roughness 粗糙度：0.25–0.42｜Oiliness 油脂度：0.25–0.5｜Specular 镜面强度：0.45–0.6｜Pore Size 毛孔大小：中高｜Pore Detail 毛孔细节：0.5–0.75｜Redness 泛红度：0.08–0.25｜Micro Normal 微法线：0.4–0.6｜SSS Strength 次表面散射：0.55–0.75
-
-【81. Cheek 面颊参数示例】Base Color 基础颜色：自然肤色+轻微红润｜Roughness 粗糙度：0.4–0.58｜Oiliness 油脂度：0.1–0.25｜Specular 镜面强度：0.3–0.45｜Redness 泛红度：0.08–0.25｜Pore Detail 毛孔细节：0.25–0.5｜Micro Normal 微法线：0.25–0.45｜SSS Strength 次表面散射：0.65–0.9｜Peach Fuzz 面部绒毛：0.15–0.35
-
-【82. Chin / Jaw 下巴下颌参数示例】Chin Roughness 下巴粗糙度：0.35–0.55｜Jaw Roughness 下颌粗糙度：0.4–0.6｜Oiliness 油脂度：0.15–0.3｜Specular 镜面强度：0.3–0.5｜Pore Detail 毛孔细节：0.35–0.55｜Facial Hair 胡须毛发：按角色调整｜Redness 泛红度：0.05–0.18｜Micro Normal 微法线：0.3–0.5
-
-【83. Ear 耳朵参数示例】Ear Base Color 耳部基础色：偏红｜Ear Roughness 耳部粗糙度：0.4–0.6｜Ear SSS 耳部SSS：0.75–1.0｜Ear Transmission 耳朵透射：0.6–1.0｜Ear Thickness 耳朵厚度：Thickness Map控制｜Back Scatter 背向散射：High 高｜Ear Redness 耳部红润：0.2–0.5｜Ear Specular 耳部镜面：0.25–0.45
-
-【84. Eye Area 眼周参数示例】Eye Area Roughness 眼周粗糙度：0.4–0.65｜Under Eye Roughness 眼下粗糙度：0.45–0.65｜Specular 镜面强度：0.25–0.4｜SSS 次表面散射：0.5–0.75｜Skin Thickness 皮肤厚度：较薄｜Dark Circle 黑眼圈：0–0.5｜Capillary Visibility 毛细血管可见度：0.05–0.3｜Fine Wrinkle 细纹：按年龄0–0.8
-
-【85. Lip 唇部参数示例】Lip Roughness 唇部粗糙度：0.2–0.45｜Lip Specular 唇部高光：0.4–0.7｜Lip Moisture 唇部湿润度：0.2–0.6｜Lip SSS 唇部SSS：0.7–1.0｜Lip Blood Color 唇部血色：中高｜Lip Normal 唇部法线：0.3–0.6｜Lip Wrinkle 唇纹：0.4–0.8｜Lip Edge Blend 唇缘混合：Soft 柔和
-
-【86. Skin Under Different Weather 不同天气皮肤】Sunny 晴天：Specular中等、Roughness正常、Warm Skin偏暖｜Cloudy 阴天：Specular柔和、SSS明显、整体低反差｜Rain 雨天：Wetness升高、Roughness降低、Specular增强｜Cold Weather 寒冷：Redness增加、Lips偏干、Nose/Ear红润增强｜Hot Weather 炎热：Sweat增加、Oiliness增加、Wet Specular增强｜Dry Weather 干燥：Roughness增加、Flaking增加、Moisture降低
-
-【87. Skin Under Different Lighting 不同光线下皮肤】Soft Light 柔光：强调均匀肤色与SSS｜Hard Light 硬光：强调毛孔、皱纹、凹凸、高光｜Backlight 逆光：增强Ear Transmission耳透光与Back Scatter背向散射｜Top Light 顶光：强调额头鼻梁高光与眼窝阴影｜Side Light 侧光：强化毛孔、皱纹与面部结构｜Warm Light 暖光：增强血色与暖肤色｜Cool Light 冷光：强调综合色差与表面高光
-
-【88. Film Close-Up Skin 影视特写建议】Base Color 基础色：高精度扫描｜Texture Resolution 纹理分辨率：8K–16K｜Pore Detail 毛孔细节：0.5–0.8｜Micro Normal 微法线：0.35–0.6｜Displacement 位移：真实微位移｜SSS Strength SSS强度：0.65–0.9｜Specular 镜面：双层高光｜Roughness 粗糙度：区域化0.25–0.65｜Peach Fuzz 面部绒毛：真实毛发｜Dynamic Wrinkles 动态皱纹：开启｜Color Variation 色差：轻微但可见｜Ray/Path Tracing 光追/路径追踪：高质量
-
-【89. AAA Game Skin AAA游戏皮肤建议】Base Color 基础色：4K–8K｜Roughness 粗糙度：区域化｜Specular 镜面：Dual Specular双高光｜SSS 次表面散射：Profile/Screen Space｜Normal 法线：4K｜Micro Normal 微法线：Detail Tile｜Wrinkles 皱纹：动态遮罩｜Peach Fuzz 面部绒毛：近距离开启｜Transmission 透射：耳朵鼻翼重点｜Skin LOD 皮肤LOD：分级｜Texture Streaming 纹理流送：开启｜Shader Complexity 着色复杂度：受控
-
-【90. Stylized Game Skin 风格化游戏皮肤】Base Color 基础色：综合色块简化｜Roughness 粗糙度：0.35–0.65｜Specular 镜面：简化高光｜SSS 次表面散射：0.2–0.6｜Pore Detail 毛孔细节：弱或关闭｜Micro Normal 微法线：弱｜Color Variation 色彩变化：增强设计性｜Blush 腮红：风格化｜Rim Response 轮廓响应：增强｜Skin Gradient 肤色渐变：可使用｜Performance 性能：优先
-
-【91. Skin Damage 皮肤损伤】Bruise 淤青｜Bruise Color 淤青颜色｜Bruise Age 淤青阶段｜Scratch 划伤｜Scratch Depth 划伤深度｜Cut 伤口｜Cut Depth 伤口深度｜Burn 烧伤｜Burn Roughness 烧伤粗糙度｜Burn Color 烧伤颜色｜Wound 伤口｜Wound Wetness 伤口湿润度｜Blood 血液｜Dried Blood 干血｜Scab 结痂｜Scar 疤痕
-
-【92. Dynamic Skin Effects 动态皮肤效果】Dynamic Redness 动态泛红｜Dynamic Sweat 动态出汗｜Dynamic Dirt 动态污垢｜Dynamic Blood 动态血迹｜Dynamic Bruise 动态淤青｜Dynamic Wetness 动态湿润｜Dynamic Temperature 动态温度反应｜Dynamic Makeup Wear 动态脱妆｜Dynamic Damage 动态损伤｜Gameplay Parameter 游戏参数驱动｜Material Parameter Collection 材质参数集合
-
-【93. Expression Skin 表情皮肤】Smile Wrinkles 微笑皱纹｜Frown Wrinkles 皱眉纹｜Forehead Compression 额头压缩｜Nasolabial Fold 法令纹变化｜Eye Crow's Feet 鱼尾纹｜Lip Compression 唇部压缩｜Cheek Compression 面颊压缩｜Skin Stretch 皮肤拉伸｜Skin Compression 皮肤压缩｜Dynamic Normal 动态法线｜Dynamic Roughness 动态粗糙度
-
-【94. Skin Shader Quality 皮肤着色质量】Low Quality 低质量：单层Specular+简化SSS｜Medium Quality 中等质量：SSS+Normal+Roughness｜High Quality 高质量：Dual Specular+SSS+Micro Normal｜Ultra Quality 超高质量：动态皱纹+毛孔+透射｜Cinematic Quality 电影级：高分辨率位移+多层SSS+Peach Fuzz+Ray/Path Tracing
-
-【95. Skin Parameter Recommended Template 皮肤参数推荐模板】Skin Type 皮肤类型：Normal / Dry / Oily / Wet / Aged｜Base Color 基础颜色：RGB / Texture｜Melanin 黑色素：0–1｜Hemoglobin 血红蛋白：0–1｜Redness 泛红度：0–1｜Skin Roughness 皮肤粗糙度：0–1｜Specular 镜面强度：0–1｜Skin IOR 皮肤折射率：约1.4｜SSS Strength 次表面散射：0–1｜Scatter Radius 散射半径：RGB分别控制｜Oiliness 油脂度：0–1｜Moisture 湿润度：0–1｜Pore Detail 毛孔细节：0–1｜Micro Normal 微法线：0–1｜Wrinkle Amount 皱纹量：0–1｜Peach Fuzz 面部绒毛：0–1｜Transmission 透射：0–1｜Thickness 厚度：Thickness Map｜AO Strength AO强度：0–1｜Color Variation 色差：0–1｜Texture Resolution 纹理分辨率：2K / 4K / 8K / 16K｜Skin Quality 皮肤质量：Low / Medium / High / Ultra / Cinematic
-
-【96. Skin Parameter Final Logic 皮肤参数最终逻辑顺序】Skin Material 皮肤材质 → Base Color 基础颜色 → Melanin 黑色素 → Hemoglobin 血色 → Regional Color Variation 区域色差 → Epidermis 表皮层 → Dermis 真皮层 → Hypodermis 皮下组织 → SSS 次表面散射 → Scatter Radius 散射半径 → Specular 镜面反射 → Dual Specular 双层高光 → Roughness 粗糙度 → Oiliness 油脂度 → Moisture 湿润度 → Fresnel 菲涅尔 → IOR 折射率 → Normal 法线 → Pores 毛孔 → Micro Detail 微细节 → Bump 凹凸 → Displacement 位移 → Wrinkles 皱纹 → Dynamic Wrinkles 动态皱纹 → Freckles 雀斑 → Moles 痣 → Pigmentation 色素沉着 → Veins 血管 → Dark Circles 黑眼圈 → Lips 嘴唇 → Eye Area 眼周 → Peach Fuzz 面部绒毛 → Facial Hair 面部毛发 → Thickness 厚度 → Transmission 透射 → Back Scatter 背向散射 → AO 环境遮蔽 → Makeup 妆容 → Dirt/Wetness 污垢湿润 → Dynamic Skin 动态皮肤 → Lighting Response 受光响应 → Film Exposure 影视曝光 → Color Management 色彩管理 → Real-Time SSS 实时SSS → Ray Tracing 光追 → Path Tracing 路径追踪 → Skin LOD 皮肤LOD → Performance Optimization 性能优化
+【§1 Skin Material Base 皮肤材质基础】
+效果：定义皮肤整体材质框架与着色模型，是所有皮肤参数的载体｜取值：->｜写法：物理皮肤材质，次表面着色模型｜联动：-
+Skin Material 皮肤材质｜Skin Shader 皮肤着色器｜Shading Model 着色模型｜Subsurface Profile 次表面配置｜Surface Type 表面类型｜Two Sided 双面材质｜Material Quality 材质质量｜Skin Quality 皮肤质量｜Physical Material 物理材质｜Skin Material Instance 皮肤材质实例｜Skin Layer Count 皮肤层数｜Skin Thickness 皮肤厚度｜Skin Scale 皮肤比例
+
+【§2 Base Color / Albedo 皮肤基础颜色】
+效果：决定皮肤基础反射色与冷暖倾向，是肤色观感的底色｜取值：RGB色值或肤色色板，暖/冷/中性｜写法：暖调象牙白肤色，面色均匀｜联动：R4
+Base Color 基础颜色｜Albedo 反照率｜Diffuse Color 漫反射颜色｜Skin Tone 肤色｜Skin Tint 肤色色偏｜Hue 色相｜Saturation 饱和度｜Brightness 亮度｜Value 明度｜Color Temperature 色温｜Warmth 暖度｜Coolness 冷度｜Skin Tone Variation 肤色变化｜Regional Color Variation 区域色差｜Face Color Variation 面部色差｜Body Color Variation 身体色差
+
+【§3 Skin Tone Distribution 肤色分布】
+效果：控制额头面颊关节等分区肤色差异，制造真实生理色变｜取值：分区色差弱/中/强｜写法：面颊鼻部略红，关节肤色偏深｜联动：R4
+Forehead Tone 额头肤色｜Cheek Tone 面颊肤色｜Nose Tone 鼻部肤色｜Chin Tone 下巴肤色｜Ear Tone 耳朵肤色｜Neck Tone 颈部肤色｜Lip Surround Tone 唇周肤色｜Eye Surround Tone 眼周肤色｜Temple Tone 太阳穴肤色｜Jaw Tone 下颌肤色｜Hand Tone 手部肤色｜Palm Tone 掌心肤色｜Joint Tone 关节肤色｜Elbow Tone 肘部肤色｜Knee Tone 膝部肤色
+
+【§4 Melanin 黑色素】
+效果：控制肤色深浅与晒黑基调，决定人种外观与日晒痕迹｜取值：低/中/高三档，可配 Tan Line 晒痕｜写法：小麦色肌肤，锁骨处有清晰晒痕分界｜联动：-
+Melanin 黑色素｜Melanin Amount 黑色素含量｜Melanin Concentration 黑色素浓度｜Melanin Tint 黑色素色偏｜Melanin Variation 黑色素变化｜Eumelanin 真黑色素｜Pheomelanin 褐黑色素｜Pigment Density 色素密度｜Pigment Variation 色素变化｜Pigment Mask 色素遮罩｜Skin Darkness 皮肤深浅｜Tanning 晒黑程度｜Tan Line 晒痕｜Sun Exposure 日晒程度
+
+【§5 Hemoglobin / Blood 血色参数】
+效果：控制血液透皮的红润度，决定气色与运动紧张等状态｜取值：0–1，脸颊唇周耳部偏高｜写法：面颊与鼻头微微泛红，气色健康｜联动：R4
+Hemoglobin 血红蛋白｜Blood Color 血液颜色｜Blood Concentration 血液浓度｜Blood Perfusion 血液灌注｜Redness 泛红度｜Skin Redness 皮肤红润度｜Cheek Redness 面颊红润｜Nose Redness 鼻部红润｜Ear Redness 耳部红润｜Lip Surround Redness 唇周红润｜Capillary Color 毛细血管颜色｜Blood Flow Variation 血流变化｜Flush Amount 潮红程度
+
+【§6 Subsurface Scattering 次表面散射】
+效果：模拟光在皮肤内散射，使明暗过渡柔和并产生透光感｜取值：0–1，写实皮肤约0.5–0.9｜写法：耳缘在逆光下透出红光｜联动：R1
+Subsurface Scattering 次表面散射｜SSS Strength 次表面散射强度｜SSS Weight 次表面权重｜Subsurface Color 次表面颜色｜Subsurface Radius 次表面半径｜Scatter Radius 散射半径｜Scatter Distance 散射距离｜Scatter Color 散射颜色｜SSS Scale SSS比例｜SSS Profile SSS配置｜Mean Free Path 平均自由程｜Diffusion Profile 扩散配置｜Transmission Scatter 透射散射｜Back Scatter 背向散射
+
+【§7 RGB Scatter Radius RGB散射半径】
+效果：分通道控制散射范围，红散射最远形成暗部暖红过渡｜取值：红>绿>蓝三通道半径比例｜写法：下颌暗部边缘泛出暖红｜联动：-
+Red Scatter Radius 红色散射半径｜Green Scatter Radius 绿色散射半径｜Blue Scatter Radius 蓝色散射半径｜RGB Scatter Scale RGB散射比例｜Deep Scatter 深层散射｜Shallow Scatter 浅层散射｜Dermal Scatter 真皮散射｜Epidermal Scatter 表皮散射｜Scatter Falloff 散射衰减｜Scatter Anisotropy 散射各向异性
+
+【§8 Epidermis 表皮层】
+效果：控制最外层皮肤的吸收与细节，影响表层肤色与质感｜取值：->｜写法：表皮细节清晰，微粗糙质感｜联动：-
+Epidermis 表皮层｜Epidermis Thickness 表皮厚度｜Epidermis Color 表皮颜色｜Epidermis Roughness 表皮粗糙度｜Epidermis Scatter 表皮散射｜Epidermis Absorption 表皮吸收｜Epidermis Transmission 表皮透射｜Epidermis Detail 表皮细节｜Epidermal Melanin 表皮黑色素｜Epidermal Variation 表皮变化
+
+【§9 Dermis 真皮层】
+效果：控制真皮层血色与散射，决定皮肤中层的红润通透感｜取值：->｜写法：真皮血色充足，肤色透出红润｜联动：R4
+Dermis 真皮层｜Dermis Thickness 真皮厚度｜Dermis Color 真皮颜色｜Dermis Scatter 真皮散射｜Dermis Absorption 真皮吸收｜Dermis Blood Density 真皮血液密度｜Dermal Redness 真皮红润度｜Dermal Scatter Radius 真皮散射半径｜Dermal Roughness 真皮粗糙度｜Dermal Variation 真皮变化
+
+【§10 Hypodermis 皮下组织】
+效果：控制皮下脂肪层的深层散射与吸收，决定最底层暖色｜取值：->｜写法：深层带暖黄散射，肤色温润｜联动：-
+Hypodermis 皮下组织｜Subcutaneous Layer 皮下层｜Subcutaneous Fat 皮下脂肪｜Fat Color 脂肪颜色｜Fat Thickness 脂肪厚度｜Deep Scatter 深层散射｜Deep Color 深层颜色｜Deep Absorption 深层吸收｜Deep Transmission 深层透射｜Subdermal Color 皮下颜色
+
+【§11 Specular 皮肤镜面反射】
+效果：控制皮肤高光强度与形态，决定油亮或干燥的质感倾向｜取值：0–1，写实约0.3–0.55｜写法：额头鼻梁有柔和高光｜联动：R1
+Skin Specular 皮肤镜面反射｜Specular Level 镜面强度｜Specular Intensity 镜面亮度｜Specular Color 镜面颜色｜Specular Tint 镜面色偏｜Specular Roughness 镜面粗糙度｜Specular Scale 镜面比例｜Primary Specular 主高光｜Secondary Specular 次高光｜Specular Lobe 镜面波瓣｜Specular Width 高光宽度｜Specular Sharpness 高光锐度
+
+【§12 Dual Specular 双层高光】
+效果：主次两层高光分工，主层定大形光泽，次层补微锐度｜取值：两层权重与粗糙度各0–1｜写法：主高光柔宽，微高光细腻｜联动：-
+Primary Specular Roughness 主高光粗糙度｜Primary Specular Weight 主高光权重｜Secondary Specular Roughness 次高光粗糙度｜Secondary Specular Weight 次高光权重｜Specular Lobe Mix 高光波瓣混合｜Oil Specular 油脂高光｜Skin Layer Specular 皮层高光｜Micro Specular 微高光｜Macro Specular 宏观高光
+
+【§13 Roughness 皮肤粗糙度】
+效果：控制表面光泽的扩散程度，决定哑光或油亮整体质感｜取值：0–1，写实约0.35–0.65｜写法：哑光偏干的皮肤质感｜联动：R1
+Skin Roughness 皮肤粗糙度｜Roughness Min 最小粗糙度｜Roughness Max 最大粗糙度｜Roughness Variation 粗糙度变化｜Micro Roughness 微粗糙度｜Macro Roughness 宏观粗糙度｜Regional Roughness 区域粗糙度｜Roughness Mask 粗糙度遮罩｜Roughness Contrast 粗糙度对比｜Roughness Bias 粗糙度偏移｜Glossiness 光泽度｜Smoothness 光滑度
+
+【§14 Regional Roughness 区域粗糙度】
+效果：分区控制油脂光泽差异，还原T区亮脸颊哑的分布｜取值：各区独立0–1｜写法：T区微油亮，脸颊哑光｜联动：R1
+Forehead Roughness 额头粗糙度｜Nose Roughness 鼻部粗糙度｜Cheek Roughness 面颊粗糙度｜Chin Roughness 下巴粗糙度｜Lip Surround Roughness 唇周粗糙度｜Eye Area Roughness 眼周粗糙度｜Ear Roughness 耳部粗糙度｜Neck Roughness 颈部粗糙度｜T-Zone Roughness T区粗糙度｜Body Roughness 身体粗糙度
+
+【§15 Oiliness 皮肤油脂】
+效果：控制皮脂带来的局部油光，集中于T区的生理性光泽｜取值：0–1，写实约0.1–0.35｜写法：鼻头额头微微油光｜联动：R1
+Skin Oiliness 皮肤油脂度｜Oil Amount 油脂量｜Oil Layer 油脂层｜Oil Roughness 油脂粗糙度｜Oil Specular 油脂高光｜Oil Mask 油脂遮罩｜Sebum 皮脂｜Sebum Amount 皮脂量｜T-Zone Oiliness T区油脂度｜Forehead Oiliness 额头油脂度｜Nose Oiliness 鼻部油脂度｜Cheek Oiliness 面颊油脂度｜Chin Oiliness 下巴油脂度
+
+【§16 Moisture / Wetness 湿润度】
+效果：控制汗液水膜的湿润反光与变暗，强化运动紧张状态｜取值：0–1，含汗珠与流痕｜写法：额角挂汗珠，皮肤微湿反光｜联动：R1
+Skin Moisture 皮肤湿润度｜Moisture Amount 湿润量｜Wetness 湿润度｜Wet Layer 湿润层｜Wet Roughness 湿润粗糙度｜Wet Specular 湿润高光｜Wet Mask 湿润遮罩｜Sweat Amount 汗液量｜Sweat Layer 汗液层｜Sweat Droplet 汗珠｜Sweat Streak 汗液流痕｜Water Film 水膜｜Tear Wetness 泪液湿润
+
+【§17 Fresnel 皮肤菲涅尔】
+效果：控制掠射角反射增强，皮肤边缘出现自然反光过渡｜取值：0–1，配合IOR约1.4｜写法：侧脸轮廓有细微边缘反光｜联动：R1
+Fresnel 菲涅尔｜Skin Fresnel 皮肤菲涅尔｜Fresnel IOR 菲涅尔折射率｜Fresnel Strength 菲涅尔强度｜Fresnel Bias 菲涅尔偏移｜Fresnel Power 菲涅尔指数｜Edge Reflection 边缘反射｜Grazing Reflection 掠射角反射｜Facing Ratio 朝向比｜Fresnel Tint 菲涅尔色偏
+
+【§18 IOR 皮肤折射率】
+效果：决定表面反射率基准，影响高光强度与菲涅尔过渡｜取值：约1.4，F0约0.028｜写法：皮肤折射率1.4，高光真实｜联动：-
+IOR 折射率｜Skin IOR 皮肤折射率｜Specular IOR 镜面折射率｜Corneum IOR 角质层折射率｜Oil IOR 油脂层折射率｜Water IOR 水分层折射率｜IOR Variation 折射率变化｜F0 Reflectance 正视角反射率
+
+【§19 Normal Map 皮肤法线】
+效果：以法线贴图模拟表面起伏，低成本呈现毛孔纹路细节｜取值：强度0–1，贴图2K–8K｜写法：细腻法线，毛孔隐约可见｜联动：-
+Normal Map 法线贴图｜Skin Normal 皮肤法线｜Normal Strength 法线强度｜Normal Scale 法线比例｜Tangent Space Normal 切线空间法线｜Detail Normal 细节法线｜Micro Normal 微法线｜Macro Normal 宏观法线｜Secondary Normal 第二法线｜Normal Blend 法线混合｜Normal Mask 法线遮罩
+
+【§20 Pores 毛孔】
+效果：控制毛孔大小密度与深浅，决定近景皮肤真实感｜取值：0–1，写实约0.3–0.7｜写法：鼻翼毛孔清晰可见｜联动：R1
+Pore Detail 毛孔细节｜Pore Normal 毛孔法线｜Pore Size 毛孔大小｜Pore Depth 毛孔深度｜Pore Density 毛孔密度｜Pore Contrast 毛孔对比｜Pore Roughness 毛孔粗糙度｜Pore Distribution 毛孔分布｜Pore Variation 毛孔变化｜Forehead Pores 额头毛孔｜Nose Pores 鼻部毛孔｜Cheek Pores 面颊毛孔｜Chin Pores 下巴毛孔
+
+【§21 Micro Detail 微观细节】
+效果：叠加微米级凹凸噪波，近景下皮肤不显塑料蜡感｜取值：0–1，强度对比独立控制｜写法：微细节丰富，皮肤无蜡感｜联动：-
+Micro Detail 微细节｜Micro Normal 微法线｜Micro Roughness 微粗糙度｜Micro Bump 微凹凸｜Micro Displacement 微位移｜Micro Wrinkle 微皱纹｜Micro Pores 微毛孔｜Micro Noise 微噪波｜Micro Scale 微细节比例｜Micro Intensity 微细节强度｜Micro Contrast 微细节对比
+
+【§22 Bump 凹凸】
+效果：以凹凸贴图快速模拟毛孔疤痕起伏，无几何开销｜取值：强度与距离0–1｜写法：毛孔细纹的凹凸起伏｜联动：-
+Bump Map 凹凸贴图｜Bump Strength 凹凸强度｜Bump Distance 凹凸距离｜Skin Bump 皮肤凹凸｜Pore Bump 毛孔凹凸｜Wrinkle Bump 皱纹凹凸｜Scar Bump 疤痕凹凸｜Bump Scale 凹凸比例｜Bump Detail 凹凸细节｜Bump Contrast 凹凸对比
+
+【§23 Displacement 位移】
+效果：真实位移表面几何呈现毛孔皱纹，近景立体感最强｜取值：0–1，配合细分与位移贴图｜写法：真实微位移的皮肤起伏｜联动：-
+Skin Displacement 皮肤位移｜Displacement Map 位移贴图｜Displacement Scale 位移比例｜Displacement Height 位移高度｜Displacement Midlevel 位移中间值｜Micro Displacement 微位移｜Pore Displacement 毛孔位移｜Wrinkle Displacement 皱纹位移｜Scar Displacement 疤痕位移｜Adaptive Subdivision 自适应细分｜Tessellation 曲面细分
+
+【§24 Wrinkles 皱纹】
+效果：控制静态皱纹深浅数量与分布，表达年龄与肤质｜取值：0–1，按年龄设定分布｜写法：眼角法令纹清晰，抬头纹浅｜联动：-
+Wrinkle Amount 皱纹量｜Wrinkle Depth 皱纹深度｜Wrinkle Width 皱纹宽度｜Wrinkle Length 皱纹长度｜Wrinkle Density 皱纹密度｜Wrinkle Roughness 皱纹粗糙度｜Wrinkle Normal 皱纹法线｜Wrinkle Displacement 皱纹位移｜Fine Wrinkles 细纹｜Deep Wrinkles 深皱纹｜Forehead Wrinkles 抬头纹｜Eye Wrinkles 眼角纹｜Nasolabial Fold 法令纹｜Neck Wrinkles 颈纹
+
+【§25 Dynamic Wrinkles 动态皱纹】
+效果：随表情实时出现压缩拉伸皱纹，增强面部表演可信度｜取值：0–1，由表情姿态驱动｜写法：皱眉时眉间浮现褶皱｜联动：-
+Dynamic Wrinkle 动态皱纹｜Expression Wrinkle 表情皱纹｜Wrinkle Mask 皱纹遮罩｜Wrinkle Blend 皱纹混合｜Wrinkle Intensity 皱纹强度｜Wrinkle Compression 压缩皱纹｜Wrinkle Stretch 拉伸皱纹｜Pose Driver 姿态驱动｜Morph Driven Wrinkle 形变驱动皱纹｜Bone Driven Wrinkle 骨骼驱动皱纹｜Expression Map 表情贴图｜Normal Blend 表情法线混合
+
+【§26 Fine Lines 细纹】
+效果：控制眼周唇周细小纹路，表现轻熟龄与干燥质感｜取值：0–1，集中于眼周唇周｜写法：眼角有轻微细纹｜联动：-
+Fine Line 细纹｜Fine Line Amount 细纹数量｜Fine Line Depth 细纹深度｜Fine Line Width 细纹宽度｜Fine Line Direction 细纹方向｜Fine Line Density 细纹密度｜Fine Line Roughness 细纹粗糙度｜Fine Line Mask 细纹遮罩｜Eye Fine Lines 眼周细纹｜Lip Fine Lines 唇周细纹
+
+【§27 Scars 疤痕】
+效果：控制疤痕形态颜色与光泽，新疤偏红亮旧疤偏白平｜取值：0–1，新旧与增生类型可选｜写法：眉骨一道发白的陈旧疤痕｜联动：-
+Scar 疤痕｜Scar Amount 疤痕数量｜Scar Color 疤痕颜色｜Scar Redness 疤痕红度｜Scar Roughness 疤痕粗糙度｜Scar Height 疤痕高度｜Scar Depth 疤痕深度｜Scar Normal 疤痕法线｜Scar Displacement 疤痕位移｜Scar Gloss 疤痕光泽｜Old Scar 陈旧疤痕｜Fresh Scar 新鲜疤痕｜Keloid Scar 增生疤痕
+
+【§28 Acne / Blemishes 痘痘与皮肤瑕疵】
+效果：控制痘痘黑头等瑕疵数量与红肿，塑造真实皮肤｜取值：0–1，红肿度独立控制｜写法：下巴几颗泛红小痘痘｜联动：R1
+Acne 痘痘｜Pimple 痘痘颗粒｜Acne Amount 痘痘数量｜Acne Redness 痘痘红度｜Acne Height 痘痘高度｜Acne Roughness 痘痘粗糙度｜Blemish 瑕疵｜Blemish Amount 瑕疵数量｜Blemish Color 瑕疵颜色｜Blackhead 黑头｜Whitehead 白头｜Pore Congestion 毛孔堵塞｜Inflammation 炎症红肿
+
+【§29 Freckles 雀斑】
+效果：控制雀斑数量密度与分布，塑造日晒点状色素特征｜取值：0–1，鼻梁颧骨密集｜写法：鼻梁散布细小雀斑｜联动：-
+Freckle 雀斑｜Freckle Amount 雀斑数量｜Freckle Size 雀斑大小｜Freckle Density 雀斑密度｜Freckle Color 雀斑颜色｜Freckle Opacity 雀斑不透明度｜Freckle Contrast 雀斑对比｜Freckle Variation 雀斑变化｜Freckle Distribution 雀斑分布｜Sun Freckles 日晒雀斑
+
+【§30 Moles 痣】
+效果：控制痣的数量大小与凸起，作为高识别度个体标记｜取值：0–1，平痣/凸痣两型｜写法：左脸颊一颗小凸痣｜联动：-
+Mole 痣｜Mole Amount 痣数量｜Mole Size 痣大小｜Mole Color 痣颜色｜Mole Height 痣高度｜Mole Roughness 痣粗糙度｜Mole Normal 痣法线｜Mole Distribution 痣分布｜Raised Mole 凸痣｜Flat Mole 平痣
+
+【§31 Pigmentation 色素沉着】
+效果：控制晒斑老年斑等片状色素不均，表现光老化年龄｜取值：0–1，颧骨前额常见｜写法：颧骨有淡褐色晒斑｜联动：-
+Pigmentation 色素沉着｜Hyperpigmentation 色素过度沉着｜Hypopigmentation 色素减退｜Age Spot 老年斑｜Sun Spot 晒斑｜Dark Spot 黑斑｜Melasma 黄褐斑｜Pigment Color 色素颜色｜Pigment Density 色素密度｜Pigment Variation 色素变化｜Pigment Mask 色素遮罩
+
+【§32 Veins / Capillaries 血管毛细血管】
+效果：控制皮下血管可见度，薄皮肤区域透出青红血丝｜取值：0–1，太阳穴眼下鼻翼明显｜写法：太阳穴透出淡青血管｜联动：-
+Vein 血管｜Vein Color 血管颜色｜Vein Depth 血管深度｜Vein Thickness 血管粗细｜Vein Visibility 血管可见度｜Vein Density 血管密度｜Capillary 毛细血管｜Capillary Color 毛细血管颜色｜Capillary Density 毛细血管密度｜Capillary Redness 毛细血管红度｜Subdermal Veins 皮下血管
+
+【§33 Dark Circles 黑眼圈】
+效果：控制眼下周暗沉与青紫色调，表达疲劳熬夜状态｜取值：0–1，蓝紫/红棕色调可选｜写法：眼下淡青黑眼圈，显疲惫｜联动：-
+Dark Circle 黑眼圈｜Dark Circle Color 黑眼圈颜色｜Dark Circle Intensity 黑眼圈强度｜Dark Circle Radius 黑眼圈范围｜Under Eye Darkness 眼下暗沉｜Under Eye Redness 眼下红润｜Under Eye Blue Tone 眼下蓝调｜Under Eye Purple Tone 眼下紫调｜Under Eye Roughness 眼下粗糙度｜Under Eye Thickness 眼下皮肤厚度
+
+【§34 Eye Area Skin 眼周皮肤】
+效果：控制眼周薄皮肤的厚度红润与湿润，泪阜湿润增真实｜取值：0–1，皮肤厚度较薄｜写法：眼角微微湿润泛红｜联动：-
+Eye Skin Thickness 眼周皮肤厚度｜Eye Skin Roughness 眼周粗糙度｜Eye Skin SSS 眼周散射｜Eye Corner Redness 眼角红润｜Eyelid Color 眼皮颜色｜Eyelid Roughness 眼皮粗糙度｜Upper Eyelid 上眼皮｜Lower Eyelid 下眼皮｜Tear Duct Color 泪阜颜色｜Tear Duct Wetness 泪阜湿润度
+
+【§35 Lip Skin 嘴唇皮肤】
+效果：控制唇色血色湿润与唇纹，决定唇部质感状态｜取值：0–1，SSS与湿润度偏高｜写法：嘴唇水润带自然唇纹｜联动：R4
+Lip Color 唇色｜Lip Saturation 唇色饱和度｜Lip Roughness 嘴唇粗糙度｜Lip Specular 嘴唇高光｜Lip Moisture 唇部湿润度｜Lip SSS 嘴唇次表面散射｜Lip Normal 嘴唇法线｜Lip Wrinkle 唇纹｜Lip Crack 唇部裂纹｜Lip Thickness 唇部厚度｜Lip Blood Color 唇部血色｜Lip Edge Blend 唇缘混合
+
+【§36 Peach Fuzz 面部绒毛】
+效果：脸颊轮廓生成细绒毛，逆光下形成柔软光晕边缘｜取值：0–1，密度长度方向可调｜写法：侧逆光下脸颊绒毛发亮｜联动：R1
+Peach Fuzz 面部绒毛｜Fuzz Density 绒毛密度｜Fuzz Length 绒毛长度｜Fuzz Thickness 绒毛粗细｜Fuzz Color 绒毛颜色｜Fuzz Roughness 绒毛粗糙度｜Fuzz Specular 绒毛高光｜Fuzz Direction 绒毛方向｜Fuzz Randomness 绒毛随机度｜Fuzz Mask 绒毛遮罩｜Fuzz Shadow 绒毛阴影
+
+【§37 Facial Hair 面部毛发】
+效果：控制胡须胡茬密度粗细颜色，决定男性化与整洁度｜取值：0–1，胡茬/短须/长须档位｜写法：下颌一层青色胡茬｜联动：-
+Facial Hair 面部毛发｜Beard Density 胡须密度｜Beard Thickness 胡须粗细｜Beard Length 胡须长度｜Beard Color 胡须颜色｜Stubble 胡茬｜Stubble Density 胡茬密度｜Stubble Roughness 胡茬粗糙度｜Hair Root 发根｜Hair Scatter 毛发散射｜Hair Specular 毛发高光｜Hair Shadow 毛发阴影
+
+【§38 Skin Thickness 皮肤厚度】
+效果：控制各区域皮肤厚度，决定透光强度，薄处更透光｜取值：厚度贴图或分区数值｜写法：耳朵在逆光下透出红光｜联动：R1
+Skin Thickness 皮肤厚度｜Thickness Map 厚度贴图｜Ear Thickness 耳朵厚度｜Nose Thickness 鼻部厚度｜Cheek Thickness 面颊厚度｜Lip Thickness 嘴唇厚度｜Eyelid Thickness 眼皮厚度｜Finger Thickness 手指厚度｜Transmission Thickness 透射厚度｜SSS Thickness SSS厚度
+
+【§39 Transmission 皮肤透射】
+效果：控制光线穿透皮肤程度，耳缘鼻翼逆光透出红光｜取值：0–1，薄皮肤区域更高｜写法：逆光下耳廓透出红光｜联动：R1
+Skin Transmission 皮肤透射｜Transmission Weight 透射权重｜Transmission Color 透射颜色｜Transmission Depth 透射深度｜Transmission Roughness 透射粗糙度｜Backlighting 逆光透射｜Ear Transmission 耳朵透光｜Nose Transmission 鼻翼透光｜Finger Transmission 手指透光｜Thin Skin Transmission 薄皮肤透射
+
+【§40 Backlight / Rim Response 逆光与轮廓响应】
+效果：定义逆光下边缘散射与红晕，塑造轮廓透光美感｜取值：0–1，背向散射颜色可调｜写法：逆光下耳廓泛红光晕｜联动：R1
+Backlight Scatter 逆光散射｜Rim Scatter 轮廓散射｜Transmission Rim 透射轮廓｜Ear Glow 耳朵透光红晕｜Skin Edge Glow 皮肤边缘透光｜Back Scatter Strength 背向散射强度｜Back Scatter Color 背向散射颜色｜Backlight Thickness 逆光厚度控制｜Rim Specular 轮廓高光
+
+【§41 Ambient Occlusion 皮肤环境遮蔽】
+效果：加深鼻孔眼窝等凹陷接触阴影，增强面部立体感｜取值：0–1，写实约0.2–0.5｜写法：眼窝鼻翼阴影自然加深｜联动：R1
+Skin AO 皮肤环境遮蔽｜AO Strength AO强度｜AO Radius AO半径｜AO Distance AO距离｜AO Contrast AO对比｜Cavity AO 凹槽遮蔽｜Nostril AO 鼻孔遮蔽｜Ear AO 耳部遮蔽｜Eye Socket AO 眼窝遮蔽｜Lip Corner AO 嘴角遮蔽｜Neck Fold AO 颈部褶皱遮蔽
+
+【§42 Cavity 皮肤凹槽】
+效果：加深毛孔皱纹缝隙暗部，强化皮肤细节清晰度｜取值：0–1，凹槽颜色可染｜写法：法令纹缝隙自然积暗｜联动：-
+Cavity Map 凹槽贴图｜Cavity Strength 凹槽强度｜Micro Cavity 微凹槽｜Pore Cavity 毛孔凹槽｜Wrinkle Cavity 皱纹凹槽｜Nostril Cavity 鼻孔凹槽｜Ear Cavity 耳部凹槽｜Lip Cavity 唇纹凹槽｜Cavity Color 凹槽颜色｜Cavity Roughness 凹槽粗糙度
+
+【§43 Color Variation 皮肤综合色差】
+效果：叠加红黄蓝棕色变斑驳，打破均匀肤色的人工感｜取值：0–1，微/宏观两层｜写法：脸颊有轻微自然色斑驳｜联动：R4
+Color Variation 色彩变化｜Micro Color Variation 微综合色差｜Macro Color Variation 宏观综合色差｜Red Variation 红色变化｜Yellow Variation 黄色变化｜Blue Variation 蓝色变化｜Brown Variation 棕色变化｜Mottling 斑驳｜Skin Mottle 皮肤综合色斑驳｜Regional Color Mask 区域颜色遮罩
+
+【§44 Skin Aging 皮肤老化】
+效果：综合皱纹松弛斑点干燥，整体表现皮肤年龄增长｜取值：按年龄档位组合0–1｜写法：六十岁皮肤松弛有老年斑｜联动：-
+Skin Age 皮肤年龄｜Aging Amount 老化程度｜Wrinkle Amount 皱纹量｜Fine Line Amount 细纹量｜Pore Size 毛孔大小｜Skin Sagging 皮肤松弛｜Age Spot 老年斑｜Dryness 干燥度｜Roughness Increase 粗糙度增加｜Elasticity Loss 弹性下降｜Collagen Loss 胶原流失｜Skin Thinness 皮肤变薄｜Sun Damage 光老化
+
+【§45 Young Skin 年轻皮肤】
+效果：定义年轻皮肤的细毛孔高弹性与均匀光泽基调｜取值：档位组合，毛孔细油水平衡｜写法：二十岁肌肤紧致透亮｜联动：-
+Smoothness 光滑度｜Fine Pores 细毛孔｜High Elasticity 高弹性｜Soft SSS 柔和次表面散射｜Low Wrinkle 低皱纹｜Balanced Oil 油脂平衡｜Soft Roughness 柔和粗糙度｜Even Tone 均匀肤色｜High Moisture 高湿润度｜Subtle Peach Fuzz 轻微面部绒毛
+
+【§46 Mature Skin 成熟皮肤】
+效果：定义熟龄皮肤的深皱纹松弛暗沉与毛孔粗大基调｜取值：档位组合，肤色不均干燥｜写法：中年皮肤眼角深纹暗沉｜联动：-
+Deep Wrinkles 深皱纹｜Fine Wrinkles 细皱纹｜Large Pores 较大毛孔｜Age Spots 老年斑｜Uneven Tone 肤色不均｜Dryness 干燥｜Reduced SSS 减弱散射｜Roughness Variation 粗糙变化｜Skin Sagging 皮肤松弛｜Capillary Visibility 毛细血管可见度｜Sun Damage 日晒损伤
+
+【§47 Dry Skin 干性皮肤】
+效果：表现缺水皮肤的粗糙脱屑与低油光，哑光发涩｜取值：0–1，脱屑开裂分档｜写法：起皮干裂的哑光皮肤｜联动：-
+Dryness 干燥度｜Dry Roughness 干燥粗糙度｜Flaking 脱屑｜Cracking 开裂｜Low Oiliness 低油脂｜Low Specular 低高光｜Micro Flakes 微皮屑｜Dry Patch 干燥斑块｜Dry Normal 干燥法线｜Moisture Loss 水分流失
+
+【§48 Oily Skin 油性皮肤】
+效果：表现皮脂旺盛的高光油亮与毛孔粗大，油光限T区｜取值：0–1，额头鼻部下巴最亮｜写法：T区油光明显毛孔粗｜联动：R1
+Oiliness 油脂度｜Sebum 皮脂｜High Specular 高镜面高光｜Low T-Zone Roughness T区低粗糙度｜Pore Visibility 毛孔可见度｜Pore Size 毛孔大小｜Oil Film 油膜｜Forehead Shine 额头油光｜Nose Shine 鼻部油光｜Chin Shine 下巴油光
+
+【§49 Sweaty Skin 出汗皮肤】
+效果：表现汗珠汗痕与湿膜反光，传达运动或高温状态｜取值：0–1，汗珠大小密度可调｜写法：满脸细汗珠顺额角滑落｜联动：R1
+Sweat Amount 汗液量｜Sweat Mask 汗液遮罩｜Sweat Roughness 汗液粗糙度｜Sweat Specular 汗液高光｜Sweat Droplet 汗珠｜Droplet Size 汗珠大小｜Droplet Density 汗珠密度｜Sweat Streak 汗液流痕｜Water Film 水膜｜Skin Darkening 湿润变暗｜Sweat Normal 汗液法线
+
+【§50 Dirty Skin 脏污皮肤】
+效果：叠加灰尘泥浆积污，塑造野外劳作或落难状态｜取值：0–1，边缘凹槽易积污｜写法：脸颊沾灰，脖颈有汗污痕｜联动：-
+Dirt Amount 污垢量｜Dirt Color 污垢颜色｜Dirt Roughness 污垢粗糙度｜Dust 灰尘｜Dust Amount 灰尘量｜Mud 泥浆｜Mud Amount 泥浆量｜Grime 污垢积层｜Smudge 污迹｜Sweat Dirt 汗污｜Cavity Dirt 凹槽积污｜Edge Dirt 边缘污迹
+
+【§51 Wet Skin 湿皮肤】
+效果：表现水膜包裹下的镜面反射与颜色变暗的湿肤状态｜取值：0–1，反射增强与变暗联动｜写法：雨淋后皮肤湿润发亮变暗｜联动：R1
+Wetness 湿润度｜Wet Roughness 湿润粗糙度｜Wet Specular 湿润高光｜Water Film 水膜｜Water Droplet 水滴｜Water Streak 水痕｜Wet Darkening 湿润变暗｜Wet Normal 湿润法线｜Wet Mask 湿润遮罩｜Reflection Boost 反射增强｜Clear Coat Wet Layer 湿润清漆层
+
+【§52 Makeup Base 化妆基础】
+效果：控制粉底遮瑕腮红等底妆覆盖与质感，修饰肤色｜取值：0–1，覆盖度与妆感厚度｜写法：妆感轻薄服帖的哑光底妆｜联动：-
+Makeup Mask 妆容遮罩｜Foundation 粉底｜Foundation Color 粉底颜色｜Foundation Coverage 粉底覆盖度｜Foundation Roughness 粉底粗糙度｜Concealer 遮瑕｜Blush 腮红｜Contour 修容｜Highlight Makeup 高光妆｜Powder 粉质｜Makeup Blend 妆容混合｜Makeup Opacity 妆容透明度
+
+【§53 Eye Makeup 眼妆】
+效果：控制眼影眼线睫毛的颜色光泽，定义眼妆风格浓度｜取值：0–1，哑光/珠光/亮片档位｜写法：大地色哑光眼影配细眼线｜联动：-
+Eyeshadow 眼影｜Eyeshadow Color 眼影颜色｜Eyeshadow Roughness 眼影粗糙度｜Eyeliner 眼线｜Mascara 睫毛膏｜Eye Glitter 眼部亮片｜Eye Makeup Mask 眼妆遮罩｜Eye Makeup Opacity 眼妆透明度｜Metallic Eyeshadow 金属眼影｜Glossy Eyeshadow 光泽眼影
+
+【§54 Lip Makeup 唇妆】
+效果：控制口红颜色质地与光泽，从雾面哑光到镜面唇彩｜取值：0–1，哑光/缎光/镜面档位｜写法：正红色雾面口红｜联动：-
+Lipstick 口红｜Lipstick Color 口红颜色｜Lipstick Roughness 口红粗糙度｜Lip Gloss 唇彩｜Lip Gloss Intensity 唇彩强度｜Lip Metallic 金属唇妆｜Lip Glitter 唇部亮片｜Lip Makeup Mask 唇妆遮罩｜Lip Makeup Opacity 唇妆透明度｜Lip Edge 唇妆边缘
+
+【§55 Skin Texture Maps 皮肤贴图】
+效果：定义皮肤各通道贴图资产，决定参数可细化的程度｜取值：2K–16K，UDIM可选｜写法：8K贴图组含毛孔血色通道｜联动：-
+Base Color Map 基础颜色贴图｜Albedo Map 反照率贴图｜Roughness Map 粗糙度贴图｜Specular Map 镜面贴图｜Normal Map 法线贴图｜Micro Normal Map 微法线贴图｜Displacement Map 位移贴图｜AO Map 环境遮蔽贴图｜Cavity Map 凹槽贴图｜Thickness Map 厚度贴图｜SSS Map 次表面散射贴图｜Transmission Map 透射贴图｜Blood Map 血色贴图｜Melanin Map 黑色素贴图｜Oil Map 油脂贴图
+
+【§56 Scan Data 扫描数据】
+效果：以真实扫描数据为基底，获得照片级毛孔肤色还原｜取值：偏振/位移扫描等类型｜写法：基于交叉偏振扫描的肤色｜联动：-
+Photogrammetry 摄影测量｜Face Scan 面部扫描｜Body Scan 身体扫描｜Cross Polarized Scan 交叉偏振扫描｜Parallel Polarized Scan 平行偏振扫描｜Displacement Scan 位移扫描｜Pore Scan 毛孔扫描｜Specular Scan 镜面扫描｜Roughness Scan 粗糙度扫描｜Skin Color Calibration 肤色校准｜Color Checker 色卡校准
+
+【§57 Texture Resolution 纹理分辨率】
+效果：决定毛孔细纹等微细节能呈现的精度上限｜取值：1K–16K，特写需8K以上｜写法：面部8K贴图，毛孔锐利｜联动：-
+1K Texture 1K贴图｜2K Texture 2K贴图｜4K Texture 4K贴图｜8K Texture 8K贴图｜16K Texture 16K贴图｜Face Texture Resolution 面部纹理分辨率｜Body Texture Resolution 身体纹理分辨率｜Micro Detail Resolution 微细节分辨率｜Texel Density 纹素密度｜UDIM UDIM贴片
+
+【§58 UDIM Skin Workflow 皮肤UDIM流程】
+效果：按头身肢分区贴图，突破单张贴图的分辨率限制｜取值：UDIM贴片数量与分区方案｜写法：面部独占高分辨率UDIM片｜联动：-
+UDIM Tiles UDIM贴片｜Face UDIM 面部UDIM｜Head UDIM 头部UDIM｜Torso UDIM 躯干UDIM｜Arm UDIM 手臂UDIM｜Hand UDIM 手部UDIM｜Leg UDIM 腿部UDIM｜Texture Set 纹理集合｜UDIM Resolution UDIM分辨率｜UV Padding UV边距｜Seam Blend 接缝混合
+
+【§59 UV Parameters 皮肤UV参数】
+效果：控制UV缩放接缝与密度，影响贴图利用与接缝可见度｜取值：缩放/偏移/旋转/通道｜写法：头部UV密度最大，接缝藏耳后｜联动：-
+UV Scale UV缩放｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜UV Seam UV接缝｜UV Distortion UV变形｜UV Stretch UV拉伸｜UV Density UV密度｜Mirror UV UV镜像｜Head UV 头部UV｜Body UV 身体UV｜Detail UV 细节UV
+
+【§60 Skin Lighting Response 皮肤受光响应】
+效果：定义皮肤对硬光软光逆光等光线的整体响应特性｜取值：各响应权重0–1｜写法：柔光肤色均匀，硬光细节分明｜联动：R1
+Diffuse Response 漫反射响应｜Specular Response 镜面响应｜SSS Response 次表面响应｜Backlight Response 逆光响应｜Rim Light Response 轮廓光响应｜Soft Light Response 柔光响应｜Hard Light Response 硬光响应｜HDR Response HDR响应｜Highlight Roll-Off 高光滚降｜Shadow Response 阴影响应｜Color Bleeding 色彩反弹响应
+
+【§61 Key Light Skin Response 主光皮肤响应】
+效果：控制主光在额头鼻梁形成的高光与曝光表现｜取值：0–1，注意高光裁切控制｜写法：鼻梁一道柔和主光高光｜联动：R1
+Key Light Specular 主光高光｜Key Light Diffuse 主光漫反射｜Key Light SSS 主光散射｜Face Highlight 面部高光｜Forehead Highlight 额头高光｜Nose Highlight 鼻梁高光｜Cheek Highlight 面颊高光｜Chin Highlight 下巴高光｜Skin Exposure 皮肤曝光｜Highlight Clipping 高光裁切
+
+【§62 Fill Light Skin Response 辅光皮肤响应】
+效果：控制辅光对暗部的提升与阴影肤色，保住暗部层次｜取值：辅光比例0–1｜写法：暗部细节保留，肤色不死黑｜联动：R4
+Fill Light Diffuse 辅光漫反射｜Fill Light SSS 辅光散射｜Shadow Lift 暗部提升｜Skin Contrast 皮肤反差｜Shadow Saturation 阴影饱和度｜Shadow Skin Tone 阴影肤色｜Fill Ratio 辅光比例｜Dark Side Detail 暗侧细节
+
+【§63 Rim / Backlight Skin Response 轮廓逆光响应】
+效果：控制轮廓光下耳鼻肩的边缘高光与背向散射红晕｜取值：0–1，与透射强度联动｜写法：侧逆光勾勒轮廓泛红｜联动：R1
+Rim Specular 轮廓高光｜Back Scatter 背向散射｜Ear Glow 耳朵红透｜Nose Rim 鼻部轮廓光｜Cheek Rim 面颊轮廓光｜Shoulder Skin Rim 肩部皮肤轮廓｜Transmission Strength 透射强度｜Rim SSS 轮廓SSS
+
+【§64 Cinematic Exposure 影视曝光】
+效果：控制肤色在曝光体系中的落位，保高光滚降与暗部｜取值：肤色IRE约55–70｜写法：肤色居中灰偏上，高光不过曝｜联动：-
+Skin Exposure 皮肤曝光｜Exposure Compensation 曝光补偿｜Middle Gray 中灰｜Highlight Roll-Off 高光滚降｜Black Level 黑位｜White Level 白位｜Shadow Detail 阴影细节｜False Color 假色曝光｜Waveform 波形图｜Zebra 斑马纹｜HDR Skin Range HDR肤色范围｜Skin IRE 肤色IRE
+
+【§65 Color Management 色彩管理】
+效果：统一色彩空间与白平衡，锁定肤色还原基准一致｜取值：ACES/sRGB/Rec.709等流程｜写法：ACES流程下校准肤色白平衡｜联动：R4
+ACES ACES色彩管理｜ACEScg ACEScg工作空间｜Linear Workflow 线性流程｜sRGB sRGB色彩空间｜Rec.709 Rec.709色彩空间｜Display P3 Display P3色域｜Rec.2020 Rec.2020色域｜HDR10 HDR10｜OCIO OpenColorIO｜White Balance 白平衡｜Skin Tone Calibration 肤色校准｜Look Development 外观开发
+
+【§66 Film Skin Look 影视皮肤质感】
+效果：定义皮肤整体风格倾向，自然柔美粗粝或胶片感｜取值：风格档位与饱和冷暖倾向｜写法：低饱和胶片颗粒肤质｜联动：R4
+Natural Skin 自然皮肤｜Soft Skin 柔和皮肤｜Beauty Skin 美容皮肤｜Gritty Skin 粗粝皮肤｜High Contrast Skin 高反差皮肤｜Low Contrast Skin 低反差皮肤｜Warm Skin 暖肤色｜Cool Skin 冷肤色｜Desaturated Skin 低饱和肤色｜Film Grain Skin 胶片颗粒皮肤｜Halation Skin 光晕肤质｜Highlight Bloom 高光柔化
+
+【§67 Beauty Retouch 美容修饰】
+效果：平滑皮肤同时保留毛孔质感，避免修饰过度的塑料感｜取值：平滑度0–1，保留度可调｜写法：磨皮但毛孔隐约可见｜联动：-
+Skin Smoothing 皮肤平滑｜Pore Preservation 毛孔保留｜Blemish Removal 瑕疵去除｜Wrinkle Reduction 皱纹减弱｜Under Eye Correction 黑眼圈修正｜Skin Tone Evenness 肤色均匀｜Redness Reduction 泛红减弱｜Oil Highlight Control 油光控制｜Specular Softening 高光柔化｜Texture Frequency Separation 频率分离｜Beauty Blur 美容模糊｜Detail Recovery 细节恢复
+
+【§68 Game Skin Shader 游戏皮肤着色器】
+效果：提供实时渲染皮肤着色方案，平衡质感与性能开销｜取值：预积分/屏幕空间SSS等方案｜写法：实时皮肤着色器双层高光｜联动：-
+Real-Time Skin Shader 实时皮肤着色器｜Subsurface Profile 次表面配置｜Screen Space SSS 屏幕空间SSS｜Burley SSS Burley次表面散射｜Preintegrated Skin 预积分皮肤｜Dual Specular 双层高光｜Skin Cache 皮肤缓存｜Skin Material Instance 皮肤材质实例｜Dynamic Skin Parameter 动态皮肤参数｜Character Skin LOD 角色皮肤LOD
+
+【§69 Unreal Engine Skin UE皮肤参数】
+效果：列出UE皮肤材质核心参数槽位与次表面配置关系｜取值：参数0–1，Profile配置驱动｜写法：Subsurface Profile着色模型｜联动：-
+Subsurface Profile 次表面配置｜Base Color 基础颜色｜Metallic 金属度｜Specular 镜面反射｜Roughness 粗糙度｜Normal 法线｜Subsurface Color 次表面颜色｜Opacity 不透明度｜Ambient Occlusion 环境遮蔽｜Clear Coat 清漆层｜Clear Coat Roughness 清漆粗糙度｜Anisotropy 各向异性｜Pixel Depth Offset 像素深度偏移｜World Position Offset 世界位置偏移
+
+【§70 Unity HDRP Skin Unity HDRP皮肤参数】
+效果：列出HDRP皮肤着色参数槽位，以扩散配置驱动SSS｜取值：参数0–1，Mask Map打包｜写法：HDRP扩散配置皮肤材质｜联动：-
+Diffusion Profile 扩散配置｜Base Color 基础颜色｜Smoothness 光滑度｜Normal Map 法线贴图｜Mask Map 遮罩贴图｜Subsurface Scattering 次表面散射｜Transmission 透射｜Thickness Map 厚度贴图｜Specular Color 镜面颜色｜Coat Mask 清漆遮罩｜Detail Map 细节贴图｜Diffusion Profile Hash 扩散配置标识
+
+【§71 Real-Time SSS 实时次表面散射】
+效果：以屏幕空间模糊近似散射，实时渲染需控采样开销｜取值：质量/采样数/半径档位｜写法：屏幕空间SSS中等质量档｜联动：-
+Screen Space SSS 屏幕空间SSS｜SSS Quality SSS质量｜SSS Sample Count SSS采样数｜SSS Radius SSS半径｜SSS Resolution SSS分辨率｜SSS Blur SSS模糊｜SSS Temporal SSS时间累积｜SSS Dither SSS抖动｜SSS Falloff SSS衰减｜SSS Performance Cost SSS性能消耗
+
+【§72 Ray Traced Skin 光追皮肤】
+效果：以光追计算真实散射反射透射，近景质感最佳｜取值：采样数与反弹次数设置｜写法：光追SSS配合光追反射｜联动：-
+Ray Traced SSS 光追SSS｜Ray Traced Reflection 光追反射｜Ray Traced Shadow 光追阴影｜Ray Traced Transmission 光追透射｜Samples Per Pixel 每像素采样数｜Bounce Count 反弹次数｜Denoiser 降噪器｜Specular Bounce 镜面反弹｜Diffuse Bounce 漫反射反弹｜Transmission Bounce 透射反弹
+
+【§73 Path Traced Skin 路径追踪皮肤】
+效果：路径追踪无偏求解多重散射，是影视级皮肤基准｜取值：采样与反弹上限设置｜写法：随机游走SSS高质量采样｜联动：-
+Path Traced SSS 路径追踪SSS｜Random Walk SSS 随机游走SSS｜Random Walk Radius 随机游走半径｜Mean Free Path 平均自由程｜Multi Scatter 多重散射｜Samples Per Pixel 每像素采样｜Max Bounces 最大反弹次数｜Transmission Depth 透射深度｜Spectral Skin 光谱皮肤｜Denoise 降噪
+
+【§74 Performance Optimization 性能优化】
+效果：以LOD缓存与采样控制压低开销，同时保住质感｜取值：LOD分级与质量档位｜写法：中距离启用皮肤缓存降级SSS｜联动：-
+Skin Shader Complexity 皮肤着色器复杂度｜Texture Sample Count 纹理采样数量｜Sampler Count 采样器数量｜SSS Quality 次表面散射质量｜Skin LOD 皮肤LOD｜Texture LOD 纹理LOD｜Mip Bias Mip偏移｜Virtual Texture 虚拟纹理｜Skin Cache 皮肤缓存｜Shader Instruction Count 着色器指令数｜Material Instance 材质实例｜Dynamic Parameter 动态参数
+
+【§75 Character Distance LOD 角色距离LOD】
+效果：按镜头距离分级淡出毛孔微法线等细节控制开销｜取值：电影/特写/游戏/远距档位｜写法：远景淡出毛孔与微法线｜联动：-
+Cinematic LOD 电影级LOD｜Close-Up LOD 特写LOD｜Gameplay LOD 游戏LOD｜Medium Distance LOD 中距离LOD｜Far Distance LOD 远距离LOD｜Pore Detail Fade 毛孔细节淡出｜Micro Normal Fade 微法线淡出｜SSS Quality Fade SSS质量淡出｜Wrinkle Detail Fade 皱纹细节淡出｜Texture Resolution LOD 纹理分辨率LOD
+
+【§76 Close-Up Skin 特写皮肤】
+效果：汇总特写镜头皮肤参数档位，保证大屏近景可信｜取值：8K–16K贴图，SSS电影级｜写法：特写开位移动态皱纹绒毛｜联动：-
+Texture Resolution 纹理分辨率：8K–16K｜Pore Detail 毛孔细节：High 高｜Micro Normal 微法线：High 高｜Displacement 位移：Enabled 开启｜Dynamic Wrinkle 动态皱纹：Enabled 开启｜Peach Fuzz 面部绒毛：Enabled 开启｜Dual Specular 双层高光：Enabled 开启｜SSS 次表面散射：High/Cinematic 高/电影级｜Ray Tracing 光追：Enabled 开启｜Hair/Fuzz Shadow 绒毛阴影：Enabled 开启
+
+【§77 Gameplay Skin 游戏实时皮肤】
+效果：汇总实时游戏皮肤参数档位，帧率与质感平衡｜取值：2K–4K贴图，SSS中高档｜写法：关闭位移改用视差替代｜联动：-
+Texture Resolution 纹理分辨率：2K–4K｜Normal Detail 法线细节：Medium/High 中/高｜SSS 次表面散射：Medium/High 中/高｜Dynamic Wrinkle 动态皱纹：Selective 选择性开启｜Peach Fuzz 面部绒毛：LOD控制｜Displacement 位移：Off / Parallax关闭或视差替代｜Specular 双高光：简化｜Texture Streaming 纹理流送：Enabled 开启｜Character LOD 角色LOD：Enabled 开启
+
+【§78 Realistic Skin Recommended Range 写实皮肤推荐范围】
+效果：给出写实皮肤各参数推荐区间，防止参数失真塑料感｜取值：粗糙0.35–0.65，SSS0.5–0.9等｜写法：按推荐区间设定再微调区域｜联动：-
+Skin Roughness 皮肤粗糙度：0.35–0.65｜T-Zone Roughness T区粗糙度：0.25–0.45｜Cheek Roughness 面颊粗糙度：0.4–0.6｜Specular 镜面强度：0.3–0.55｜Skin IOR 皮肤折射率：约1.4｜SSS Strength 次表面散射强度：0.5–0.9｜Oiliness 油脂度：0.1–0.35｜Moisture 湿润度：0.05–0.25｜Micro Normal 微法线：0.2–0.6｜Pore Detail 毛孔细节：0.3–0.7｜Peach Fuzz 面部绒毛：0.1–0.35｜AO Strength AO强度：0.2–0.5
+
+【§79 Forehead 额头参数示例】
+效果：给出额头参数示例——略暖偏油毛孔中等多｜取值：粗糙0.32–0.48，油脂0.2–0.4｜写法：额头微微油亮毛孔可见｜联动：-
+Base Color 基础颜色：自然肤色略暖｜Roughness 粗糙度：0.32–0.48｜Oiliness 油脂度：0.2–0.4｜Specular 镜面强度：0.4–0.55｜Pore Size 毛孔大小：中等｜Pore Detail 毛孔细节：0.4–0.65｜Micro Normal 微法线：0.35–0.55｜Redness 泛红度：0.05–0.15｜Wrinkle Amount 皱纹量：按年龄调整｜SSS Strength 次表面散射：0.6–0.8
+
+【§80 Nose 鼻部参数示例】
+效果：给出鼻部参数示例——偏红偏油毛孔更明显｜取值：粗糙0.25–0.42，红润0.08–0.25｜写法：鼻头略红油光明显｜联动：-
+Base Color 基础颜色：略红于面颊｜Roughness 粗糙度：0.25–0.42｜Oiliness 油脂度：0.25–0.5｜Specular 镜面强度：0.45–0.6｜Pore Size 毛孔大小：中高｜Pore Detail 毛孔细节：0.5–0.75｜Redness 泛红度：0.08–0.25｜Micro Normal 微法线：0.4–0.6｜SSS Strength 次表面散射：0.55–0.75
+
+【§81 Cheek 面颊参数示例】
+效果：给出面颊参数示例——红润适中油脂低绒毛可见｜取值：粗糙0.4–0.58，SSS0.65–0.9｜写法：面颊透红带细绒毛｜联动：-
+Base Color 基础颜色：自然肤色+轻微红润｜Roughness 粗糙度：0.4–0.58｜Oiliness 油脂度：0.1–0.25｜Specular 镜面强度：0.3–0.45｜Redness 泛红度：0.08–0.25｜Pore Detail 毛孔细节：0.25–0.5｜Micro Normal 微法线：0.25–0.45｜SSS Strength 次表面散射：0.65–0.9｜Peach Fuzz 面部绒毛：0.15–0.35
+
+【§82 Chin / Jaw 下巴下颌参数示例】
+效果：给出下巴下颌参数示例——粗糙中等可接胡须毛发｜取值：粗糙0.35–0.6，油脂0.15–0.3｜写法：下颌哑光带青色胡茬｜联动：-
+Chin Roughness 下巴粗糙度：0.35–0.55｜Jaw Roughness 下颌粗糙度：0.4–0.6｜Oiliness 油脂度：0.15–0.3｜Specular 镜面强度：0.3–0.5｜Pore Detail 毛孔细节：0.35–0.55｜Facial Hair 胡须毛发：按角色调整｜Redness 泛红度：0.05–0.18｜Micro Normal 微法线：0.3–0.5
+
+【§83 Ear 耳朵参数示例】
+效果：给出耳朵参数示例——偏红高散射高透射薄皮肤｜取值：SSS0.75–1.0，透射0.6–1.0｜写法：逆光下耳朵透出红光｜联动：R1
+Ear Base Color 耳部基础色：偏红｜Ear Roughness 耳部粗糙度：0.4–0.6｜Ear SSS 耳部SSS：0.75–1.0｜Ear Transmission 耳朵透射：0.6–1.0｜Ear Thickness 耳朵厚度：Thickness Map控制｜Back Scatter 背向散射：High 高｜Ear Redness 耳部红润：0.2–0.5｜Ear Specular 耳部镜面：0.25–0.45
+
+【§84 Eye Area 眼周参数示例】
+效果：给出眼周参数示例——薄皮肤低高光可带黑眼圈｜取值：粗糙0.4–0.65，黑眼圈0–0.5｜写法：眼下微暗，皮肤细腻｜联动：-
+Eye Area Roughness 眼周粗糙度：0.4–0.65｜Under Eye Roughness 眼下粗糙度：0.45–0.65｜Specular 镜面强度：0.25–0.4｜SSS 次表面散射：0.5–0.75｜Skin Thickness 皮肤厚度：较薄｜Dark Circle 黑眼圈：0–0.5｜Capillary Visibility 毛细血管可见度：0.05–0.3｜Fine Wrinkle 细纹：按年龄0–0.8
+
+【§85 Lip 唇部参数示例】
+效果：给出唇部参数示例——高湿润高散射血色中高｜取值：SSS0.7–1.0，湿润0.2–0.6｜写法：嘴唇水润泛血色｜联动：R4
+Lip Roughness 唇部粗糙度：0.2–0.45｜Lip Specular 唇部高光：0.4–0.7｜Lip Moisture 唇部湿润度：0.2–0.6｜Lip SSS 唇部SSS：0.7–1.0｜Lip Blood Color 唇部血色：中高｜Lip Normal 唇部法线：0.3–0.6｜Lip Wrinkle 唇纹：0.4–0.8｜Lip Edge Blend 唇缘混合：Soft 柔和
+
+【§86 Skin Under Different Weather 不同天气皮肤】
+效果：定义晴阴雨热寒等天气下皮肤质感的变化规则｜取值：按天气切换参数组合｜写法：雨天皮肤湿润反光增强｜联动：-
+Sunny 晴天：Specular中等、Roughness正常、Warm Skin偏暖｜Cloudy 阴天：Specular柔和、SSS明显、整体低反差｜Rain 雨天：Wetness升高、Roughness降低、Specular增强｜Cold Weather 寒冷：Redness增加、Lips偏干、Nose/Ear红润增强｜Hot Weather 炎热：Sweat增加、Oiliness增加、Wet Specular增强｜Dry Weather 干燥：Roughness增加、Flaking增加、Moisture降低
+
+【§87 Skin Under Different Lighting 不同光线下皮肤】
+效果：汇总柔光硬光逆光顶光等光线下的皮肤表现规则｜取值：按光线类型切换响应｜写法：硬光显毛孔，柔光显细腻｜联动：R1
+Soft Light 柔光：强调均匀肤色与SSS｜Hard Light 硬光：强调毛孔、皱纹、凹凸、高光｜Backlight 逆光：增强Ear Transmission耳透光与Back Scatter背向散射｜Top Light 顶光：强调额头鼻梁高光与眼窝阴影｜Side Light 侧光：强化毛孔、皱纹与面部结构｜Warm Light 暖光：增强血色与暖肤色｜Cool Light 冷光：强调综合色差与表面高光
+
+【§88 Film Close-Up Skin 影视特写建议】
+效果：汇总影视特写皮肤参数组合，兼顾真实感与修饰度｜取值：8K–16K，SSS0.65–0.9｜写法：双层高光配区域化粗糙｜联动：-
+Base Color 基础色：高精度扫描｜Texture Resolution 纹理分辨率：8K–16K｜Pore Detail 毛孔细节：0.5–0.8｜Micro Normal 微法线：0.35–0.6｜Displacement 位移：真实微位移｜SSS Strength SSS强度：0.65–0.9｜Specular 镜面：双层高光｜Roughness 粗糙度：区域化0.25–0.65｜Peach Fuzz 面部绒毛：真实毛发｜Dynamic Wrinkles 动态皱纹：开启｜Color Variation 色差：轻微但可见｜Ray/Path Tracing 光追/路径追踪：高质量
+
+【§89 AAA Game Skin AAA游戏皮肤建议】
+效果：汇总AAA实时渲染皮肤方案，质感与性能兼顾｜取值：4K–8K，Profile/屏幕空间SSS｜写法：双高光加动态皱纹遮罩｜联动：-
+Base Color 基础色：4K–8K｜Roughness 粗糙度：区域化｜Specular 镜面：Dual Specular双高光｜SSS 次表面散射：Profile/Screen Space｜Normal 法线：4K｜Micro Normal 微法线：Detail Tile｜Wrinkles 皱纹：动态遮罩｜Peach Fuzz 面部绒毛：近距离开启｜Transmission 透射：耳朵鼻翼重点｜Skin LOD 皮肤LOD：分级｜Texture Streaming 纹理流送：开启｜Shader Complexity 着色复杂度：受控
+
+【§90 Stylized Game Skin 风格化游戏皮肤】
+效果：定义风格化皮肤的简化与设计性增强，弱写实细节｜取值：毛孔弱化，SSS0.2–0.6｜写法：色块化肤色增强腮红轮廓｜联动：-
+Base Color 基础色：综合色块简化｜Roughness 粗糙度：0.35–0.65｜Specular 镜面：简化高光｜SSS 次表面散射：0.2–0.6｜Pore Detail 毛孔细节：弱或关闭｜Micro Normal 微法线：弱｜Color Variation 色彩变化：增强设计性｜Blush 腮红：风格化｜Rim Response 轮廓响应：增强｜Skin Gradient 肤色渐变：可使用｜Performance 性能：优先
+
+【§91 Skin Damage 皮肤损伤】
+效果：控制淤青划伤烧伤血迹等损伤，塑造战斗事故痕迹｜取值：0–1，按类型与阶段组合｜写法：脸颊淤青伴新鲜划伤｜联动：-
+Bruise 淤青｜Bruise Color 淤青颜色｜Bruise Age 淤青阶段｜Scratch 划伤｜Scratch Depth 划伤深度｜Cut 伤口｜Cut Depth 伤口深度｜Burn 烧伤｜Burn Roughness 烧伤粗糙度｜Burn Color 烧伤颜色｜Wound 伤口｜Wound Wetness 伤口湿润度｜Blood 血液｜Dried Blood 干血｜Scab 结痂｜Scar 疤痕
+
+【§92 Dynamic Skin Effects 动态皮肤效果】
+效果：让泛红出汗污垢损伤随游戏状态实时变化｜取值：游戏参数驱动的0–1动态值｜写法：奔跑后面颊泛红出汗｜联动：-
+Dynamic Redness 动态泛红｜Dynamic Sweat 动态出汗｜Dynamic Dirt 动态污垢｜Dynamic Blood 动态血迹｜Dynamic Bruise 动态淤青｜Dynamic Wetness 动态湿润｜Dynamic Temperature 动态温度反应｜Dynamic Makeup Wear 动态脱妆｜Dynamic Damage 动态损伤｜Gameplay Parameter 游戏参数驱动｜Material Parameter Collection 材质参数集合
+
+【§93 Expression Skin 表情皮肤】
+效果：控制表情引起的挤压拉伸与纹路变化，表演自然｜取值：0–1，由表情驱动｜写法：微笑时眼角浮现鱼尾纹｜联动：-
+Smile Wrinkles 微笑皱纹｜Frown Wrinkles 皱眉纹｜Forehead Compression 额头压缩｜Nasolabial Fold 法令纹变化｜Eye Crow's Feet 鱼尾纹｜Lip Compression 唇部压缩｜Cheek Compression 面颊压缩｜Skin Stretch 皮肤拉伸｜Skin Compression 皮肤压缩｜Dynamic Normal 动态法线｜Dynamic Roughness 动态粗糙度
+
+【§94 Skin Shader Quality 皮肤着色质量】
+效果：定义低配到电影级的质量档位及其包含特性｜取值：Low/Medium/High/Ultra/Cinematic｜写法：高质量档双高光加微法线｜联动：-
+Low Quality 低质量：单层Specular+简化SSS｜Medium Quality 中等质量：SSS+Normal+Roughness｜High Quality 高质量：Dual Specular+SSS+Micro Normal｜Ultra Quality 超高质量：动态皱纹+毛孔+透射｜Cinematic Quality 电影级：高分辨率位移+多层SSS+Peach Fuzz+Ray/Path Tracing
+
+【§95 Skin Parameter Recommended Template 皮肤参数推荐模板】
+效果：提供肤质到各通道的全参数默认模板，作调参起点｜取值：各参数0–1默认档位组合｜写法：以模板为基础按角色微调｜联动：-
+Skin Type 皮肤类型：Normal / Dry / Oily / Wet / Aged｜Base Color 基础颜色：RGB / Texture｜Melanin 黑色素：0–1｜Hemoglobin 血红蛋白：0–1｜Redness 泛红度：0–1｜Skin Roughness 皮肤粗糙度：0–1｜Specular 镜面强度：0–1｜Skin IOR 皮肤折射率：约1.4｜SSS Strength 次表面散射：0–1｜Scatter Radius 散射半径：RGB分别控制｜Oiliness 油脂度：0–1｜Moisture 湿润度：0–1｜Pore Detail 毛孔细节：0–1｜Micro Normal 微法线：0–1｜Wrinkle Amount 皱纹量：0–1｜Peach Fuzz 面部绒毛：0–1｜Transmission 透射：0–1｜Thickness 厚度：Thickness Map｜AO Strength AO强度：0–1｜Color Variation 色差：0–1｜Texture Resolution 纹理分辨率：2K / 4K / 8K / 16K｜Skin Quality 皮肤质量：Low / Medium / High / Ultra / Cinematic
+
+【§96 Skin Parameter Final Logic 皮肤参数最终逻辑顺序】
+效果：规定皮肤参数搭建顺序，从材质底层到光线呈现逐层定｜取值：->｜写法：先定材质与三层结构再调光照响应｜联动：-
+Skin Material 皮肤材质 → Base Color 基础颜色 → Melanin 黑色素 → Hemoglobin 血色 → Regional Color Variation 区域色差 → Epidermis 表皮层 → Dermis 真皮层 → Hypodermis 皮下组织 → SSS 次表面散射 → Scatter Radius 散射半径 → Specular 镜面反射 → Dual Specular 双层高光 → Roughness 粗糙度 → Oiliness 油脂度 → Moisture 湿润度 → Fresnel 菲涅尔 → IOR 折射率 → Normal 法线 → Pores 毛孔 → Micro Detail 微细节 → Bump 凹凸 → Displacement 位移 → Wrinkles 皱纹 → Dynamic Wrinkles 动态皱纹 → Freckles 雀斑 → Moles 痣 → Pigmentation 色素沉着 → Veins 血管 → Dark Circles 黑眼圈 → Lips 嘴唇 → Eye Area 眼周 → Peach Fuzz 面部绒毛 → Facial Hair 面部毛发 → Thickness 厚度 → Transmission 透射 → Back Scatter 背向散射 → AO 环境遮蔽 → Makeup 妆容 → Dirt/Wetness 污垢湿润 → Dynamic Skin 动态皮肤 → Lighting Response 受光响应 → Film Exposure 影视曝光 → Color Management 色彩管理 → Real-Time SSS 实时SSS → Ray Tracing 光追 → Path Tracing 路径追踪 → Skin LOD 皮肤LOD → Performance Optimization 性能优化

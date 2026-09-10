@@ -1,151 +1,303 @@
-【1. Material Base 材质基础】Material Type 材质类型｜Shader Model 着色模型｜Surface Type 表面类型｜Blend Mode 混合模式｜Shading Model 光照模型｜Two Sided 双面材质｜Opacity Mode 不透明模式｜Material Domain 材质域｜Render Queue 渲染队列｜Material ID 材质编号｜Layer Count 材质层数｜Material Quality 材质质量｜Physical Material 物理材质｜Material Instance 材质实例
-
-【2. Base Color / Albedo 基础颜色】Base Color 基础颜色｜Albedo 反照率｜Diffuse Color 漫反射颜色｜RGB Color RGB颜色｜HSV Color HSV颜色｜Color Tint 色彩偏移｜Color Variation 颜色变化｜Brightness 亮度｜Hue 色相｜Saturation 饱和度｜Value 明度｜Color Temperature 色温｜Color Mask 颜色遮罩｜Vertex Color 顶点颜色｜Color Multiply 颜色乘算｜Color Blend 颜色混合｜Color Randomization 颜色随机
-
-【3. Metallic 金属度】Metallic 金属度｜Metalness 金属性｜Metallic Amount 金属量｜Metallic Mask 金属遮罩｜Metal Type 金属类型｜Metal Tint 金属综合色｜Conductor 导体属性｜Dielectric 非金属属性｜Metal Edge Variation 金属边缘变化｜Metal Oxidation 金属氧化｜Metal Tarnish 金属变色｜Metal Wear 金属磨损｜Metal Exposure 金属裸露程度
-
-【4. Roughness 粗糙度】Roughness 粗糙度｜Surface Roughness 表面粗糙度｜Micro Roughness 微表面粗糙度｜Roughness Min 最小粗糙度｜Roughness Max 最大粗糙度｜Roughness Variation 粗糙变化｜Roughness Mask 粗糙遮罩｜Glossiness 光泽度｜Gloss 光泽｜Smoothness 光滑度｜Surface Smoothness 表面光滑度｜Highlight Width 高光宽度｜Highlight Sharpness 高光锐度
-
-【5. Specular 镜面反射】Specular 镜面反射｜Specular Level 镜面强度｜Specular Color 镜面颜色｜Specular Tint 镜面色偏｜Specular Intensity 高光强度｜Specular Scale 镜面比例｜Specular Roughness 镜面粗糙度｜Specular IOR 镜面折射率｜F0 Reflectance 正视角反射率｜Fresnel Reflectance 菲涅尔反射｜Highlight Intensity 高光强度｜Highlight Size 高光尺寸
-
-【6. Normal 法线】Normal Map 法线贴图｜Normal Strength 法线强度｜Normal Scale 法线缩放｜Normal Intensity 法线强度｜Tangent Space Normal 切线空间法线｜World Space Normal 世界空间法线｜Object Space Normal 物体空间法线｜Detail Normal 细节法线｜Micro Normal 微法线｜Secondary Normal 第二法线｜Normal Blend 法线混合｜Normal Flip Green 翻转绿色通道｜Normal Direction 法线方向
-
-【7. Bump 凹凸】Bump Map 凹凸贴图｜Bump Strength 凹凸强度｜Bump Distance 凹凸距离｜Bump Scale 凹凸比例｜Micro Bump 微凹凸｜Detail Bump 细节凹凸｜Bump Depth 凹凸深度｜Bump Contrast 凹凸对比｜Bump Invert 凹凸反转｜Bump Frequency 凹凸频率｜Bump Noise 凹凸噪波
-
-【8. Height 高度】Height Map 高度贴图｜Height Scale 高度比例｜Height Strength 高度强度｜Height Offset 高度偏移｜Height Min 最低高度｜Height Max 最高高度｜Height Blend 高度混合｜Height Detail 高度细节｜Height Contrast 高度对比｜Height Mask 高度遮罩｜Height Range 高度范围
-
-【9. Displacement 位移】Displacement 位移｜Displacement Map 位移贴图｜Displacement Scale 位移强度｜Displacement Height 位移高度｜Displacement Midlevel 位移中间值｜Subdivision 细分｜Tessellation 曲面细分｜Adaptive Tessellation 自适应细分｜Micro Displacement 微位移｜Vector Displacement 向量位移｜Displacement Bounds 位移边界｜Displacement Quality 位移质量
-
-【10. Ambient Occlusion 环境遮蔽】Ambient Occlusion 环境遮蔽｜AO Strength AO强度｜AO Intensity AO亮度｜AO Distance AO距离｜AO Radius AO半径｜AO Contrast AO对比｜AO Bias AO偏移｜AO Mask AO遮罩｜Cavity 凹槽遮蔽｜Crevice 阴缝遮蔽｜Contact AO 接触遮蔽｜Micro AO 微遮蔽｜Bent Normal 弯曲法线
-
-【11. Opacity 透明度】Opacity 不透明度｜Transparency 透明度｜Opacity Mask 不透明遮罩｜Alpha Alpha透明｜Alpha Clip Alpha裁切｜Opacity Threshold 透明阈值｜Cutout 镂空｜Cutoff 裁切值｜Dithered Opacity 抖动透明｜Translucency 半透明｜Transmission 透射｜Transparent Shadow 透明阴影｜Refraction Transparency 折射透明
-
-【12. Refraction 折射】Refraction 折射｜Index of Refraction 折射率｜IOR 折射率｜Refraction Depth 折射深度｜Refraction Amount 折射量｜Refraction Roughness 折射粗糙度｜Refraction Color 折射颜色｜Refraction Tint 折射色偏｜Refraction Distortion 折射扭曲｜Refraction Dispersion 色散｜Chromatic Dispersion 色彩色散｜Thin Refraction 薄表面折射
-
-【13. Transmission 透射】Transmission 透射｜Transmission Weight 透射权重｜Transmission Color 透射颜色｜Transmission Depth 透射深度｜Transmission Roughness 透射粗糙度｜Thin Wall 薄壁｜Thin Surface 薄表面｜Transmittance 透光率｜Absorption 吸收｜Absorption Color 吸收颜色｜Absorption Distance 吸收距离｜Beer-Lambert Absorption 比尔朗伯吸收
-
-【14. Subsurface Scattering 次表面散射】Subsurface Scattering 次表面散射｜SSS 次表面散射｜Subsurface Weight 次表面权重｜Subsurface Color 次表面颜色｜Subsurface Radius 次表面半径｜Scatter Distance 散射距离｜Scatter Color 散射颜色｜SSS Scale SSS比例｜SSS Profile SSS配置｜Transmission Color 透光颜色｜Skin SSS 皮肤散射｜Wax SSS 蜡材质散射｜Back Scatter 背向散射
-
-【15. Skin 皮肤材质】Skin Base Color 皮肤基础色｜Skin Roughness 皮肤粗糙度｜Skin Specular 皮肤高光｜Skin SSS 皮肤次表面散射｜Skin Scatter Radius 皮肤散射半径｜Epidermal Layer 表皮层｜Dermal Layer 真皮层｜Oil Layer 油脂层｜Skin Oiliness 皮肤油脂度｜Pore Normal 毛孔法线｜Micro Normal 微法线｜Skin Micro Roughness 皮肤微粗糙｜Blood Color 血色｜Melanin 黑色素｜Skin Moisture 皮肤湿润度｜Peach Fuzz 面部绒毛
-
-【16. Hair 头发材质】Hair Color 头发颜色｜Hair Melanin 头发黑色素｜Hair Roughness 头发粗糙度｜Hair Specular 头发高光｜Hair Anisotropy 头发各向异性｜Primary Specular 主高光｜Secondary Specular 次高光｜Hair Shift 高光偏移｜Hair Transmission 头发透射｜Hair Scatter 头发散射｜Hair Random Color 头发综合色随机｜Hair Root Color 发根颜色｜Hair Tip Color 发梢颜色｜Hair Thickness 发丝厚度｜Hair Density 发丝密度
-
-【17. Anisotropy 各向异性】Anisotropy 各向异性｜Anisotropic Strength 各向异性强度｜Anisotropic Rotation 各向异性旋转｜Anisotropic Direction 各向异性方向｜Tangent Direction 切线方向｜Anisotropic Roughness 各向异性粗糙度｜Brushed Metal 拉丝金属｜Hair Anisotropy 头发各向异性｜Directional Highlight 方向性高光
-
-【18. Clear Coat 清漆层】Clear Coat 清漆层｜Coat Weight 清漆权重｜Coat Roughness 清漆粗糙度｜Coat IOR 清漆折射率｜Coat Tint 清漆色偏｜Coat Normal 清漆法线｜Clearcoat Thickness 清漆厚度｜Clearcoat Specular 清漆高光｜Clearcoat Reflection 清漆反射｜Car Paint Coat 车漆清漆层｜Varnish 清漆｜Lacquer 漆层
-
-【19. Sheen 绒面高光】Sheen 绒面高光｜Sheen Weight 绒面权重｜Sheen Color 绒面颜色｜Sheen Tint 绒面色偏｜Sheen Roughness 绒面粗糙度｜Fabric Sheen 布料绒光｜Velvet 丝绒效果｜Cloth Fuzz 布料绒毛｜Fuzz Color 绒毛颜色｜Fuzz Strength 绒毛强度
-
-【20. Emission 自发光】Emission 自发光｜Emissive Color 自发光颜色｜Emissive Intensity 自发光强度｜Emissive Strength 自发光亮度｜Luminance 亮度｜Nits 尼特｜Bloom Contribution Bloom贡献｜Glow 发光｜Glow Intensity 发光强度｜Emission Mask 自发光遮罩｜Emissive GI 自发光全局照明｜Light Contribution 光照贡献
-
-【21. Fresnel 菲涅尔】Fresnel 菲涅尔｜Fresnel IOR 菲涅尔折射率｜Fresnel Strength 菲涅尔强度｜Fresnel Bias 菲涅尔偏移｜Fresnel Power 菲涅尔指数｜Fresnel Color 菲涅尔颜色｜Edge Reflection 边缘反射｜Facing Ratio 朝向比例｜Rim Fresnel 边缘菲涅尔｜Grazing Reflection 掠射角反射
-
-【22. Coat / Layered Material 分层材质】Layered Material 分层材质｜Material Layer 材质层｜Layer Weight 层权重｜Layer Mask 层遮罩｜Layer Blend 层混合｜Height Blend 高度混合｜Paint Layer 油漆层｜Primer Layer 底漆层｜Rust Layer 锈蚀层｜Dust Layer 灰尘层｜Dirt Layer 污垢层｜Wet Layer 湿润层｜Snow Layer 积雪层｜Mud Layer 泥浆层
-
-【23. Texture Mapping 纹理映射】Texture Map 纹理贴图｜Texture Scale 纹理比例｜Texture Tiling 纹理平铺｜Texture Offset 纹理偏移｜Texture Rotation 纹理旋转｜UV Scale UV缩放｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜Triplanar Mapping 三平面映射｜World Aligned Texture 世界对齐纹理｜Object Mapping 物体映射｜Planar Mapping 平面映射｜Cylindrical Mapping 圆柱映射｜Spherical Mapping 球形映射
-
-【24. Texel Density 纹素密度】Texel Density 纹素密度｜Pixels Per Meter 每米像素｜UV Density UV密度｜Texture Resolution 纹理分辨率｜1K Texture 1K贴图｜2K Texture 2K贴图｜4K Texture 4K贴图｜8K Texture 8K贴图｜16K Texture 16K贴图｜Mip Level Mip级别｜Mip Bias Mip偏移｜Texture Streaming 纹理流送
-
-【25. Texture Channel 贴图通道】RGB Channel RGB通道｜Red Channel 红通道｜Green Channel 绿通道｜Blue Channel 蓝通道｜Alpha Channel Alpha通道｜Channel Packing 通道打包｜ORM Map ORM贴图｜RMA Map RMA贴图｜ARM Map ARM贴图｜Occlusion Channel 遮蔽通道｜Roughness Channel 粗糙通道｜Metallic Channel 金属通道
-
-【26. Detail Texture 细节贴图】Detail Map 细节贴图｜Detail Albedo 细节颜色｜Detail Normal 细节法线｜Detail Roughness 细节粗糙｜Detail Scale 细节比例｜Detail Tiling 细节平铺｜Micro Detail 微细节｜Macro Detail 宏观细节｜Detail Mask 细节遮罩｜Detail Intensity 细节强度
-
-【27. Surface Imperfection 表面瑕疵】Surface Imperfection 表面瑕疵｜Scratch 划痕｜Micro Scratch 微划痕｜Fingerprint 指纹｜Smudge 污迹｜Stain 污渍｜Dust 灰尘｜Dirt 污垢｜Grease 油污｜Water Spot 水渍｜Oil Spot 油斑｜Scuff 擦痕｜Dent 凹痕｜Chip 崩边｜Crack 裂纹｜Pitting 点蚀
-
-【28. Edge Wear 边缘磨损】Edge Wear 边缘磨损｜Wear Amount 磨损量｜Wear Width 磨损宽度｜Wear Contrast 磨损对比｜Edge Damage 边缘损伤｜Paint Chipping 掉漆｜Exposed Metal 裸露金属｜Curvature Mask 曲率遮罩｜Convex Wear 凸边磨损｜Concave Dirt 凹槽积污｜Scratch Direction 划痕方向｜Wear Randomness 磨损随机度
-
-【29. Rust 锈蚀】Rust 锈蚀｜Rust Amount 锈蚀量｜Rust Color 锈蚀颜色｜Rust Roughness 锈蚀粗糙度｜Rust Height 锈蚀高度｜Rust Spread 锈蚀扩散｜Rust Edge 锈蚀边缘｜Oxidation 氧化｜Corrosion 腐蚀｜Corrosion Depth 腐蚀深度｜Rust Mask 锈蚀遮罩｜Rust Flakes 锈片｜Rust Variation 锈蚀变化
-
-【30. Dirt / Dust 污垢灰尘】Dirt 污垢｜Dirt Amount 污垢量｜Dirt Color 污垢颜色｜Dirt Roughness 污垢粗糙度｜Dust 灰尘｜Dust Amount 灰尘量｜Dust Color 灰尘颜色｜Dust Thickness 灰尘厚度｜Dust Mask 灰尘遮罩｜Cavity Dirt 凹槽污垢｜Edge Dust 边缘积灰｜Gravity Dirt 重力积污｜Ambient Dirt 环境积污
-
-【31. Wetness 湿润】Wetness 湿润度｜Wet Surface 湿表面｜Wet Amount 湿润量｜Wet Mask 湿润遮罩｜Wet Roughness 湿润粗糙度｜Water Layer 水层｜Water Thickness 水层厚度｜Water Film 水膜｜Water Puddle 积水｜Puddle Depth 积水深度｜Puddle Mask 积水遮罩｜Wet Darkening 湿润变暗｜Wet Reflection 湿润反射｜Drip 水滴流痕
-
-【32. Water 水材质】Water Color 水体颜色｜Water Depth 水深｜Water Absorption 水体吸收｜Water Scattering 水体散射｜Water Roughness 水面粗糙度｜Water Refraction 水体折射｜Water IOR 水折射率｜Wave Height 波浪高度｜Wave Scale 波浪比例｜Wave Speed 波速｜Normal Strength 水面法线强度｜Foam 泡沫｜Foam Amount 泡沫量｜Caustics 焦散｜Underwater Fog 水下雾
-
-【33. Glass 玻璃材质】Glass Color 玻璃颜色｜Glass Roughness 玻璃粗糙度｜Glass IOR 玻璃折射率｜Glass Thickness 玻璃厚度｜Glass Transmission 玻璃透射｜Glass Reflection 玻璃反射｜Glass Absorption 玻璃吸收｜Tinted Glass 有色玻璃｜Frosted Glass 磨砂玻璃｜Dirty Glass 脏玻璃｜Glass Scratch 玻璃划痕｜Glass Smudge 玻璃污迹｜Glass Dispersion 玻璃色散
-
-【34. Metal 金属材质】Metal Type 金属类型｜Metallic 金属度｜Metal Roughness 金属粗糙度｜Metal Specular 金属反射｜Metal Tint 金属综合色｜Brushed Metal 拉丝金属｜Polished Metal 抛光金属｜Anodized Metal 阳极氧化金属｜Oxidized Metal 氧化金属｜Painted Metal 喷漆金属｜Galvanized Metal 镀锌金属｜Metal Scratch 金属划痕｜Metal Dent 金属凹痕
-
-【35. Plastic 塑料材质】Plastic Color 塑料颜色｜Plastic Roughness 塑料粗糙度｜Plastic Specular 塑料高光｜Plastic IOR 塑料折射率｜Plastic SSS 塑料次表面散射｜Glossy Plastic 光面塑料｜Matte Plastic 哑光塑料｜Transparent Plastic 透明塑料｜Plastic Scratch 塑料划痕｜Plastic Mold Detail 塑料模具细节｜Plastic Wear 塑料磨损
-
-【36. Rubber 橡胶材质】Rubber Color 橡胶颜色｜Rubber Roughness 橡胶粗糙度｜Rubber Specular 橡胶反射｜Rubber Normal 橡胶法线｜Rubber Micro Detail 橡胶微细节｜Soft Rubber 软橡胶｜Hard Rubber 硬橡胶｜Rubber Wear 橡胶磨损｜Rubber Dust 橡胶积灰｜Rubber Crack 橡胶裂纹
-
-【37. Wood 木材材质】Wood Color 木材颜色｜Wood Grain 木纹｜Wood Grain Scale 木纹比例｜Wood Roughness 木材粗糙度｜Wood Normal 木材法线｜Wood Fiber 木纤维｜Wood Pore 木孔｜Wood Ring 年轮｜Wood Direction 木纹方向｜Wood Varnish 木器漆｜Wood Wear 木材磨损｜Wood Moisture 木材湿度｜Wood Crack 木材裂纹｜Wood Stain 木材着色
-
-【38. Stone 石材材质】Stone Color 石材颜色｜Stone Roughness 石材粗糙度｜Stone Normal 石材法线｜Stone Height 石材高度｜Stone Grain 石材颗粒｜Stone Pore 石孔｜Stone Crack 石材裂纹｜Stone Edge Wear 石材边缘磨损｜Stone Dirt 石材污垢｜Stone Moss 石材苔藓｜Stone Wetness 石材湿润｜Stone Displacement 石材位移
-
-【39. Concrete 混凝土材质】Concrete Color 混凝土颜色｜Concrete Roughness 混凝土粗糙度｜Concrete Pores 混凝土孔洞｜Concrete Aggregate 混凝土骨料｜Concrete Normal 混凝土法线｜Concrete Crack 混凝土裂纹｜Concrete Stain 混凝土污渍｜Concrete Dust 混凝土积灰｜Concrete Wetness 混凝土湿润｜Concrete Edge Damage 混凝土崩边
-
-【40. Fabric 布料材质】Fabric Color 布料颜色｜Fabric Roughness 布料粗糙度｜Fabric Normal 布料法线｜Fabric Weave 布料织纹｜Weave Scale 织纹比例｜Fiber Direction 纤维方向｜Fabric Sheen 布料绒光｜Fabric Fuzz 布料绒毛｜Fabric Thickness 布料厚度｜Fabric Transmission 布料透光｜Fabric Wrinkle 布料褶皱｜Fabric Pilling 布料起球｜Fabric Wear 布料磨损｜Fabric Dirt 布料污迹
-
-【41. Leather 皮革材质】Leather Color 皮革颜色｜Leather Roughness 皮革粗糙度｜Leather Grain 皮革纹理｜Leather Pores 皮革毛孔｜Leather Normal 皮革法线｜Leather Specular 皮革高光｜Leather Oil 皮革油脂｜Leather Wrinkle 皮革皱纹｜Leather Crack 皮革裂纹｜Leather Wear 皮革磨损｜Leather Edge Wear 皮革边缘磨损｜Leather Stitching 皮革缝线
-
-【42. Ceramic / Porcelain 陶瓷瓷器】Ceramic Color 陶瓷颜色｜Ceramic Roughness 陶瓷粗糙度｜Ceramic Specular 陶瓷高光｜Ceramic Glaze 陶瓷釉面｜Glaze Roughness 釉面粗糙度｜Glaze Thickness 釉面厚度｜Porcelain SSS 瓷器次表面散射｜Ceramic Crack 陶瓷裂纹｜Craquelure 冰裂纹｜Ceramic Dirt 陶瓷污迹
-
-【43. Paint 油漆材质】Paint Color 油漆颜色｜Paint Roughness 油漆粗糙度｜Paint Thickness 油漆厚度｜Paint Gloss 油漆光泽｜Paint Normal 油漆法线｜Paint Orange Peel 橘皮纹｜Paint Chipping 掉漆｜Paint Scratch 油漆划痕｜Paint Fade 油漆褪色｜Paint Dirt 油漆污垢｜Primer 底漆｜Clear Coat 清漆层
-
-【44. Car Paint 车漆材质】Base Coat 基础漆层｜Metallic Flake 金属颗粒｜Flake Size 金属颗粒大小｜Flake Density 金属颗粒密度｜Flake Color 金属颗粒颜色｜Clear Coat 清漆层｜Clear Coat Roughness 清漆粗糙度｜Orange Peel 橘皮纹｜Car Paint Reflection 车漆反射｜Car Paint Fresnel 车漆菲涅尔｜Micro Scratch 微划痕｜Dust 灰尘｜Water Spot 水渍
-
-【45. Ice 冰材质】Ice Color 冰颜色｜Ice Roughness 冰粗糙度｜Ice IOR 冰折射率｜Ice Transmission 冰透射｜Ice Absorption 冰吸收｜Ice Scattering 冰散射｜Ice Thickness 冰厚度｜Ice Crack 冰裂纹｜Ice Bubble 冰气泡｜Ice Frost 冰霜｜Ice Surface Normal 冰面法线｜Melting Ice 融冰｜Wet Ice 湿冰
-
-【46. Snow 雪材质】Snow Color 雪颜色｜Snow Roughness 雪粗糙度｜Snow SSS 雪次表面散射｜Snow Scatter 雪散射｜Snow Sparkle 雪闪光｜Snow Thickness 积雪厚度｜Snow Coverage 积雪覆盖｜Snow Mask 积雪遮罩｜Snow Displacement 雪位移｜Snow Compression 雪压实度｜Snow Dirt 脏雪｜Wet Snow 湿雪
-
-【47. Mud 泥土材质】Mud Color 泥土颜色｜Mud Roughness 泥土粗糙度｜Mud Wetness 泥土湿润度｜Mud Height 泥浆高度｜Mud Thickness 泥浆厚度｜Mud Crack 泥裂纹｜Mud Puddle 泥水坑｜Mud Splash 泥浆飞溅｜Mud Mask 泥浆遮罩｜Dry Mud 干泥｜Wet Mud 湿泥
-
-【48. Ground / Terrain 地面材质】Terrain Layer 地形材质层｜Grass Layer 草地层｜Dirt Layer 泥土层｜Rock Layer 岩石层｜Mud Layer 泥浆层｜Snow Layer 积雪层｜Layer Blend 材质层混合｜Slope Mask 坡度遮罩｜Height Mask 高度遮罩｜Distance Blend 距离混合｜Macro Variation 宏观变化｜Micro Detail 微细节｜Landscape Tessellation 地形细分
-
-【49. Decal 贴花】Decal 贴花｜Decal Color 贴花颜色｜Decal Normal 贴花法线｜Decal Roughness 贴花粗糙度｜Decal Metallic 贴花金属度｜Decal Opacity 贴花透明度｜Decal Fade Distance 贴花淡出距离｜Decal Sort Order 贴花排序｜Blood Decal 血迹贴花｜Dirt Decal 污迹贴花｜Graffiti Decal 涂鸦贴花｜Damage Decal 损伤贴花
-
-【50. Dirt Accumulation 污垢堆积】Cavity Mask 凹槽遮罩｜Curvature Mask 曲率遮罩｜Ambient Occlusion Mask AO遮罩｜Up Vector Mask 朝上遮罩｜Down Vector Mask 朝下遮罩｜Slope Mask 坡度遮罩｜Edge Mask 边缘遮罩｜Dust Accumulation 灰尘堆积｜Water Accumulation 积水｜Snow Accumulation 积雪｜Moss Growth 苔藓生长｜Rust Accumulation 锈蚀堆积
-
-【51. Procedural Material 程序化材质】Noise 噪波｜Perlin Noise 柏林噪波｜Voronoi Noise 沃罗诺伊噪波｜Fractal Noise 分形噪波｜Cell Noise 单元噪波｜Cloud Noise 云噪波｜Noise Scale 噪波比例｜Noise Detail 噪波细节｜Noise Roughness 噪波粗糙度｜Noise Distortion 噪波扭曲｜Random Seed 随机种子｜Procedural Mask 程序遮罩
-
-【52. Material Mask 材质遮罩】Mask 遮罩｜Black Mask 黑色遮罩｜White Mask 白色遮罩｜Grayscale Mask 灰度遮罩｜ID Mask ID遮罩｜Color ID Mask 颜色ID遮罩｜Curvature Mask 曲率遮罩｜AO Mask AO遮罩｜Position Mask 位置遮罩｜Normal Mask 法线遮罩｜Height Mask 高度遮罩｜Slope Mask 坡度遮罩｜Noise Mask 噪波遮罩
-
-【53. UV Parameters UV参数】UV Scale UV缩放｜UV Tiling UV平铺｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜UV Seam UV接缝｜UV Distortion UV变形｜UV Randomization UV随机｜Mirror UV UV镜像｜UDIM Tiles UDIM贴片｜UDIM Resolution UDIM分辨率｜UV Padding UV边距
-
-【54. Triplanar 三平面投射】Triplanar Mapping 三平面映射｜Triplanar Scale 三平面比例｜Triplanar Blend 三平面混合｜Triplanar Sharpness 三平面锐度｜World Scale 世界比例｜Object Scale 物体比例｜Projection Axis 投射轴｜Projection Rotation 投射旋转｜Projection Offset 投射偏移
-
-【55. PBR Workflow PBR工作流】Metallic Roughness Workflow 金属度粗糙度流程｜Specular Glossiness Workflow 镜面光泽流程｜Base Color 基础色｜Metallic 金属度｜Roughness 粗糙度｜Normal 法线｜AO 环境遮蔽｜Height 高度｜Emissive 自发光｜Opacity 透明度｜PBR Calibration PBR校准｜Energy Conservation 能量守恒
-
-【56. Film / VFX Material 影视VFX材质】Physically Based Shader 物理着色器｜Path Traced Material 路径追踪材质｜Ray Traced Material 光追材质｜ACES Color Workflow ACES色彩流程｜Linear Workflow 线性流程｜Spectral Rendering 光谱渲染｜True IOR 真实折射率｜Measured BRDF 测量BRDF｜Measured Material 测量材质｜Multi Scatter GGX 多重散射GGX｜Energy Compensation 能量补偿
-
-【57. Game Material 游戏材质】Real-Time Material 实时材质｜PBR Shader PBR着色器｜Shader Complexity 着色器复杂度｜Instruction Count 指令数量｜Sampler Count 采样器数量｜Texture Sample 纹理采样｜Static Switch 静态开关｜Material Parameter Collection 材质参数集合｜Dynamic Material Instance 动态材质实例｜Material Instance Constant 材质实例常量｜Material LOD 材质LOD
-
-【58. Unreal Engine Material UE材质】Base Color 基础颜色｜Metallic 金属度｜Specular 镜面反射｜Roughness 粗糙度｜Emissive Color 自发光颜色｜Opacity 不透明度｜Opacity Mask 不透明遮罩｜Normal 法线｜World Position Offset 世界位置偏移｜Pixel Depth Offset 像素深度偏移｜Subsurface Color 次表面颜色｜Ambient Occlusion 环境遮蔽｜Refraction 折射｜Clear Coat 清漆｜Anisotropy 各向异性
-
-【59. Unity PBR Material Unity材质】Base Map 基础贴图｜Base Color 基础颜色｜Metallic 金属度｜Smoothness 光滑度｜Normal Map 法线贴图｜Occlusion Map 遮蔽贴图｜Emission Map 自发光贴图｜Detail Map 细节贴图｜Height Map 高度贴图｜Alpha Clipping Alpha裁切｜Surface Type 表面类型｜Render Face 渲染面｜Coat Mask 清漆遮罩
-
-【60. Render Quality 渲染质量】Material Quality 材质质量｜Texture Quality 纹理质量｜Shader Quality 着色器质量｜Reflection Quality 反射质量｜Refraction Quality 折射质量｜SSS Quality 次表面散射质量｜Displacement Quality 位移质量｜Anisotropy Quality 各向异性质量｜Filtering Quality 纹理过滤质量｜Sampling Quality 采样质量｜Denoise Quality 降噪质量
-
-【61. Texture Filtering 纹理过滤】Bilinear Filtering 双线性过滤｜Trilinear Filtering 三线性过滤｜Anisotropic Filtering 各向异性过滤｜AF 2x / 4x / 8x / 16x 各向异性过滤等级｜Mipmapping Mip映射｜Mip Bias Mip偏移｜LOD Bias LOD偏移｜Texture Sharpen 纹理锐化｜Texture Blur 纹理模糊
-
-【62. Material Optimization 材质优化】Shader Instruction Count 着色器指令数｜Texture Sample Count 纹理采样数｜Sampler Count 采样器数｜Material Complexity 材质复杂度｜Overdraw 过度绘制｜Transparent Overdraw 透明过绘制｜Shader Permutation 着色器变体｜Static Parameter 静态参数｜Dynamic Parameter 动态参数｜Texture Memory 纹理显存｜Virtual Texture 虚拟纹理｜Runtime Virtual Texture 运行时虚拟纹理
-
-【63. Virtual Texture 虚拟纹理】Virtual Texture 虚拟纹理｜Runtime Virtual Texture 运行时虚拟纹理｜Virtual Texture Size 虚拟纹理尺寸｜Tile Size 图块尺寸｜Border Size 边界尺寸｜Page Size 页面尺寸｜Streaming Pool 流送池｜Texture Residency 纹理驻留｜Virtual Texture Feedback 虚拟纹理反馈
-
-【64. Nanite / High Detail 高细节材质】Nanite Material Nanite材质｜High Poly Surface 高模表面｜Micro Detail 微细节｜High Resolution Normal 高分辨率法线｜High Resolution Displacement 高分辨率位移｜Virtual Shadow Compatibility 虚拟阴影兼容｜Pixel Depth Offset 像素深度偏移｜Masked Material 遮罩材质｜Material Complexity 材质复杂度
-
-【65. Ray Tracing Material 光追材质】Ray Traced Reflection 光追反射｜Ray Traced Refraction 光追折射｜Ray Traced Shadow 光追阴影｜Ray Traced Translucency 光追透明｜Ray Traced SSS 光追次表面散射｜Reflection Bounce 反射反弹次数｜Refraction Bounce 折射反弹次数｜Max Roughness 最大光追粗糙度｜Samples Per Pixel 每像素采样数｜Denoiser 降噪器
-
-【66. Path Tracing Material 路径追踪材质】Path Tracing 路径追踪｜Samples Per Pixel 每像素采样｜Max Bounces 最大反弹次数｜Diffuse Bounce 漫反射反弹｜Specular Bounce 镜面反弹｜Transmission Bounce 透射反弹｜Volume Bounce 体积反弹｜Russian Roulette 俄罗斯轮盘｜Firefly Clamp 火花点限制｜Path Tracing Denoise 路径追踪降噪
-
-【67. Material Aging 材质老化】Age 材质年龄｜Aging Amount 老化程度｜Fade 褪色｜Sun Bleaching 日晒褪色｜Oxidation 氧化｜Corrosion 腐蚀｜Cracking 开裂｜Peeling 剥落｜Dust 灰尘｜Dirt 污垢｜Wear 磨损｜Scratch 划痕｜Edge Damage 边缘损伤｜Moisture Damage 潮湿损伤｜Mold 霉菌
-
-【68. Environmental Response 环境响应】Wetness Response 湿润响应｜Rain Response 雨水响应｜Snow Response 积雪响应｜Dust Response 灰尘响应｜Mud Response 泥浆响应｜Heat Response 热响应｜Cold Response 冷响应｜Burn Response 燃烧响应｜Freeze Response 冻结响应｜Damage Response 损伤响应｜Dynamic Material 动态材质｜Weather Blend 天气混合
-
-【69. Damage Material 损伤材质】Damage Mask 损伤遮罩｜Scratch Damage 划痕损伤｜Bullet Hole 弹孔｜Crack 裂纹｜Burn Mark 烧焦痕迹｜Scorch 烧灼｜Blood 血迹｜Dirt 污迹｜Broken Edge 破损边缘｜Chipped Paint 掉漆｜Exposed Layer 裸露底层｜Damage Depth 损伤深度｜Damage Normal 损伤法线
-
-【70. Cinematic Material 电影级材质】Base Color 基础色｜Roughness 粗糙度｜Metallic 金属度｜Specular 镜面反射｜IOR 折射率｜Normal 法线｜Micro Normal 微法线｜Displacement 位移｜SSS 次表面散射｜Transmission 透射｜Clear Coat 清漆层｜Anisotropy 各向异性｜Surface Imperfection 表面瑕疵｜Dust 灰尘｜Scratch 划痕｜Fingerprint 指纹｜Edge Wear 边缘磨损｜Color Variation 颜色变化｜Macro Variation 宏观变化｜Micro Detail 微观细节
-
-【71. 推荐影视+游戏统一材质参数模板】Material Type 材质类型：Metal / Plastic / Wood / Glass / Fabric / Skin / Stone｜Base Color 基础颜色：RGB / Texture｜Metallic 金属度：0–1｜Roughness 粗糙度：0–1｜Specular 镜面强度：0–1｜IOR 折射率：1.0–2.5+｜Normal Strength 法线强度：0–2｜Height 高度：0–1｜Displacement 位移：0–10cm+｜AO Strength 环境遮蔽强度：0–1｜Opacity 不透明度：0–1｜Transmission 透射：0–1｜SSS 次表面散射：0–1｜Clear Coat 清漆层：0–1｜Clear Coat Roughness 清漆粗糙度：0–1｜Anisotropy 各向异性：-1–1｜Emission 自发光：0–100+｜Texture Resolution 纹理分辨率：1K / 2K / 4K / 8K｜Texel Density 纹素密度：按项目标准｜UV Tiling UV平铺：0.1–100｜Detail Normal 细节法线：0–2｜Micro Roughness 微粗糙度：0–1｜Wear 磨损：0–1｜Scratch 划痕：0–1｜Dust 灰尘：0–1｜Dirt 污垢：0–1｜Wetness 湿润：0–1｜Edge Wear 边缘磨损：0–1｜Damage 损伤：0–1｜Material Quality 材质质量：Low / Medium / High / Ultra / Cinematic
-
-【72. 写实金属示例】Material Type 材质类型：Brushed Steel 拉丝钢｜Base Color 基础色：Dark Gray 深灰｜Metallic 金属度：1.0｜Roughness 粗糙度：0.28–0.42｜Specular 镜面反射：0.5｜Anisotropy 各向异性：0.6｜Anisotropic Rotation 各向异性方向：90°｜Normal Strength 法线强度：0.35｜Micro Scratch 微划痕：0.4｜Edge Wear 边缘磨损：0.25｜Dust 灰尘：0.08｜Fingerprint 指纹：0.12｜AO Strength AO强度：0.6｜Texture Resolution 纹理分辨率：4K–8K｜Reflection 反射：Ray Tracing / Lumen / Path Tracing
-
-【73. 写实皮肤示例】Material Type 材质类型：Human Skin 人体皮肤｜Base Color 基础色：Natural Skin Tone 自然肤色｜Roughness 粗糙度：0.35–0.55｜Specular 镜面强度：0.35–0.5｜IOR 折射率：1.4｜SSS 次表面散射：0.6–0.9｜Subsurface Radius 散射半径：R 1.0 / G 0.35 / B 0.2 相对值｜Micro Normal 微法线：0.3–0.5｜Pore Detail 毛孔细节：0.4｜Oiliness 油脂度：0.15–0.35｜Peach Fuzz 面部绒毛：0.1–0.3｜Skin Moisture 皮肤湿润度：0.1–0.25｜Texture Resolution 纹理分辨率：4K–8K
-
-【74. 写实玻璃示例】Material Type 材质类型：Clear Glass 透明玻璃｜Base Color 基础色：Neutral / Slight Tint 中性轻微色偏｜Roughness 粗糙度：0.0–0.12｜IOR 折射率：1.45–1.52｜Transmission 透射：0.95–1.0｜Opacity 不透明度：0.02–0.1｜Reflection 反射：0.9–1.0｜Absorption Color 吸收颜色：根据玻璃颜色｜Thickness 厚度：实际物理厚度｜Micro Scratch 微划痕：0.05–0.15｜Dust 灰尘：0.02–0.08｜Fingerprint 指纹：0.05–0.15｜Ray Traced Refraction 光追折射：On
-
-【75. 写实湿地面示例】Material Type 材质类型：Wet Asphalt 湿沥青｜Base Color 基础色：Dark Gray 深灰｜Roughness 粗糙度：干燥区域0.6–0.85 / 湿润区域0.08–0.25｜Metallic 金属度：0｜Normal Strength 法线强度：0.5–0.8｜Height 高度：0.2–0.5｜Puddle Mask 积水遮罩：0–1｜Water Film 水膜：0.4–0.8｜Wet Darkening 湿润变暗：10–30%｜Reflection 反射：SSR / Lumen / Ray Tracing｜Micro Detail 微细节：0.4｜Crack 裂纹：0.1–0.4｜Dirt 污垢：0.2–0.5｜Texture Resolution 纹理分辨率：4K–8K
-
-【76. 材质参数最终逻辑顺序】Material Type 材质类型 → Base Color 基础颜色 → Metallic 金属度 → Roughness 粗糙度 → Specular 镜面反射 → IOR 折射率 → Normal 法线 → Bump 凹凸 → Height 高度 → Displacement 位移 → AO 环境遮蔽 → Opacity 透明度 → Transmission 透射 → Refraction 折射 → SSS 次表面散射 → Anisotropy 各向异性 → Clear Coat 清漆层 → Sheen 绒面高光 → Emission 自发光 → Fresnel 菲涅尔 → Texture Mapping 纹理映射 → UV UV参数 → Detail Texture 细节纹理 → Surface Imperfection 表面瑕疵 → Wear 磨损 → Scratch 划痕 → Dust 灰尘 → Dirt 污垢 → Wetness 湿润 → Damage 损伤 → Weather Response 天气响应 → Ray Tracing 光追 → Path Tracing 路径追踪 → Material Quality 材质质量 → Performance Optimization 性能优化
+【§1 Material Base 材质基础】
+效果：定义材质类型与整体渲染框架，决定其余参数以何种方式生效｜取值：->｜写法：材质类型为拉丝不锈钢，不透明实体｜联动：->
+Material Type 材质类型｜Shader Model 着色模型｜Surface Type 表面类型｜Blend Mode 混合模式｜Shading Model 光照模型｜Two Sided 双面材质｜Opacity Mode 不透明模式｜Material Domain 材质域｜Render Queue 渲染队列｜Material ID 材质编号｜Layer Count 材质层数｜Material Quality 材质质量｜Physical Material 物理材质｜Material Instance 材质实例
+
+【§2 Base Color / Albedo 基础颜色】
+效果：决定表面固有色，是光照下颜色感知的基础，金属时用作反射染色｜取值：RGB 0–255、HEX 或色名｜写法：哑光陶土红基础色，带轻微颜色变化｜联动：->
+Base Color 基础颜色｜Albedo 反照率｜Diffuse Color 漫反射颜色｜RGB Color RGB颜色｜HSV Color HSV颜色｜Color Tint 色彩偏移｜Color Variation 颜色变化｜Brightness 亮度｜Hue 色相｜Saturation 饱和度｜Value 明度｜Color Temperature 色温｜Color Mask 颜色遮罩｜Vertex Color 顶点颜色｜Color Multiply 颜色乘算｜Color Blend 颜色混合｜Color Randomization 颜色随机
+
+【§3 Metallic 金属度】
+效果：区分金属与非金属，控制反射强度与着色方式，金属需有环境可反射否则发黑｜取值：0 非金属 / 1 纯金属，中间值用于污损混合｜写法：拉丝不锈钢表面，反射出窗格光影｜联动：R2
+Metallic 金属度｜Metalness 金属性｜Metallic Amount 金属量｜Metallic Mask 金属遮罩｜Metal Type 金属类型｜Metal Tint 金属综合色｜Conductor 导体属性｜Dielectric 非金属属性｜Metal Edge Variation 金属边缘变化｜Metal Oxidation 金属氧化｜Metal Tarnish 金属变色｜Metal Wear 金属磨损｜Metal Exposure 金属裸露程度
+
+【§4 Roughness 粗糙度】
+效果：控制表面镜面反射的模糊程度，越低高光越锐利反射越清晰｜取值：0–1，<0.1镜面、0.1–0.3光滑、0.4–0.7哑光、>0.7粗糙｜写法：粗糙度0.3的抛光金属高光锐利｜联动：R2
+Roughness 粗糙度｜Surface Roughness 表面粗糙度｜Micro Roughness 微表面粗糙度｜Roughness Min 最小粗糙度｜Roughness Max 最大粗糙度｜Roughness Variation 粗糙变化｜Roughness Mask 粗糙遮罩｜Glossiness 光泽度｜Gloss 光泽｜Smoothness 光滑度｜Surface Smoothness 表面光滑度｜Highlight Width 高光宽度｜Highlight Sharpness 高光锐度
+
+【§5 Specular 镜面反射】
+效果：控制非金属镜面反射强度与高光亮度，与金属度互补｜取值：0–1，常规电介质约0.5｜写法：湿润石面镜面反射增强高光明显｜联动：R2
+Specular 镜面反射｜Specular Level 镜面强度｜Specular Color 镜面颜色｜Specular Tint 镜面色偏｜Specular Intensity 高光强度｜Specular Scale 镜面比例｜Specular Roughness 镜面粗糙度｜Specular IOR 镜面折射率｜F0 Reflectance 正视角反射率｜Fresnel Reflectance 菲涅尔反射｜Highlight Intensity 高光强度｜Highlight Size 高光尺寸
+
+【§6 Normal 法线】
+效果：用贴图模拟凹凸细节改变表面受光，不增加真实几何｜取值：强度0–2，常见0.5–1.5｜写法：法线强度1.0呈现皮革粒面起伏｜联动：->
+Normal Map 法线贴图｜Normal Strength 法线强度｜Normal Scale 法线缩放｜Normal Intensity 法线强度｜Tangent Space Normal 切线空间法线｜World Space Normal 世界空间法线｜Object Space Normal 物体空间法线｜Detail Normal 细节法线｜Micro Normal 微法线｜Secondary Normal 第二法线｜Normal Blend 法线混合｜Normal Flip Green 翻转绿色通道｜Normal Direction 法线方向
+
+【§7 Bump 凹凸】
+效果：以灰度快速模拟凹凸起伏改变受光，比法线更廉价直观｜取值：强度0–2，常见0.2–1｜写法：凹凸强度0.5呈现砖缝颗粒感｜联动：->
+Bump Map 凹凸贴图｜Bump Strength 凹凸强度｜Bump Distance 凹凸距离｜Bump Scale 凹凸比例｜Micro Bump 微凹凸｜Detail Bump 细节凹凸｜Bump Depth 凹凸深度｜Bump Contrast 凹凸对比｜Bump Invert 凹凸反转｜Bump Frequency 凹凸频率｜Bump Noise 凹凸噪波
+
+【§8 Height 高度】
+效果：存储表面高低信息用于视差与位移，增强层次与遮蔽细节｜取值：0–1，0.5为基准面｜写法：高度混合让泥浆沉积进凹缝｜联动：->
+Height Map 高度贴图｜Height Scale 高度比例｜Height Strength 高度强度｜Height Offset 高度偏移｜Height Min 最低高度｜Height Max 最高高度｜Height Blend 高度混合｜Height Detail 高度细节｜Height Contrast 高度对比｜Height Mask 高度遮罩｜Height Range 高度范围
+
+【§9 Displacement 位移】
+效果：真实移动几何顶点产生物理凹凸，轮廓剪影随之改变｜取值：0–10cm+，需配合细分｜写法：位移2cm呈现粗陶浮雕纹理｜联动：->
+Displacement 位移｜Displacement Map 位移贴图｜Displacement Scale 位移强度｜Displacement Height 位移高度｜Displacement Midlevel 位移中间值｜Subdivision 细分｜Tessellation 曲面细分｜Adaptive Tessellation 自适应细分｜Micro Displacement 微位移｜Vector Displacement 向量位移｜Displacement Bounds 位移边界｜Displacement Quality 位移质量
+
+【§10 Ambient Occlusion 环境遮蔽】
+效果：模拟缝隙与接触处的遮蔽变暗，增强体积感与细节密度｜取值：强度0–1，常见0.5–1｜写法：接缝与褶皱处AO加深凹陷积影｜联动：->
+Ambient Occlusion 环境遮蔽｜AO Strength AO强度｜AO Intensity AO亮度｜AO Distance AO距离｜AO Radius AO半径｜AO Contrast AO对比｜AO Bias AO偏移｜AO Mask AO遮罩｜Cavity 凹槽遮蔽｜Crevice 阴缝遮蔽｜Contact AO 接触遮蔽｜Micro AO 微遮蔽｜Bent Normal 弯曲法线
+
+【§11 Opacity 透明度】
+效果：控制表面透光程度，决定不透明、镂空或半透明渲染方式｜取值：0 全透明 / 1 不透明，镂空用阈值裁切｜写法：树叶用镂空裁切，磨砂玻璃用半透明｜联动：->
+Opacity 不透明度｜Transparency 透明度｜Opacity Mask 不透明遮罩｜Alpha Alpha透明｜Alpha Clip Alpha裁切｜Opacity Threshold 透明阈值｜Cutout 镂空｜Cutoff 裁切值｜Dithered Opacity 抖动透明｜Translucency 半透明｜Transmission 透射｜Transparent Shadow 透明阴影｜Refraction Transparency 折射透明
+
+【§12 Refraction 折射】
+效果：控制光线穿过透明体的弯折与成像扭曲，由折射率决定｜取值：IOR 1.0–2.5，水1.33、玻璃1.45–1.52、钻石2.4｜写法：玻璃球折射背景并轻微色散｜联动：R2
+Refraction 折射｜Index of Refraction 折射率｜IOR 折射率｜Refraction Depth 折射深度｜Refraction Amount 折射量｜Refraction Roughness 折射粗糙度｜Refraction Color 折射颜色｜Refraction Tint 折射色偏｜Refraction Distortion 折射扭曲｜Refraction Dispersion 色散｜Chromatic Dispersion 色彩色散｜Thin Refraction 薄表面折射
+
+【§13 Transmission 透射】
+效果：控制光线穿透材质的比例与吸收，形成透光体积感｜取值：0–1，玻璃清水接近1｜写法：透射0.95的厚玻璃边缘泛绿吸收｜联动：R2
+Transmission 透射｜Transmission Weight 透射权重｜Transmission Color 透射颜色｜Transmission Depth 透射深度｜Transmission Roughness 透射粗糙度｜Thin Wall 薄壁｜Thin Surface 薄表面｜Transmittance 透光率｜Absorption 吸收｜Absorption Color 吸收颜色｜Absorption Distance 吸收距离｜Beer-Lambert Absorption 比尔朗伯吸收
+
+【§14 Subsurface Scattering 次表面散射】
+效果：模拟光线进入表层内散射再透出的柔光，薄处逆光透亮｜取值：0–1，皮肤0.5–0.9，蜡与玉更高｜写法：逆光下耳廓透出红色次表面散射｜联动：R2+R5
+Subsurface Scattering 次表面散射｜SSS 次表面散射｜Subsurface Weight 次表面权重｜Subsurface Color 次表面颜色｜Subsurface Radius 次表面半径｜Scatter Distance 散射距离｜Scatter Color 散射颜色｜SSS Scale SSS比例｜SSS Profile SSS配置｜Transmission Color 透光颜色｜Skin SSS 皮肤散射｜Wax SSS 蜡材质散射｜Back Scatter 背向散射
+
+【§15 Skin 皮肤材质】
+效果：定义皮肤观感，毛孔、微粗糙与SSS需成组出现才真实｜取值：粗糙0.35–0.55，SSS 0.6–0.9｜写法：自然肤色带毛孔微粗糙，汗湿区高光更强｜联动：R5
+Skin Base Color 皮肤基础色｜Skin Roughness 皮肤粗糙度｜Skin Specular 皮肤高光｜Skin SSS 皮肤次表面散射｜Skin Scatter Radius 皮肤散射半径｜Epidermal Layer 表皮层｜Dermal Layer 真皮层｜Oil Layer 油脂层｜Skin Oiliness 皮肤油脂度｜Pore Normal 毛孔法线｜Micro Normal 微法线｜Skin Micro Roughness 皮肤微粗糙｜Blood Color 血色｜Melanin 黑色素｜Skin Moisture 皮肤湿润度｜Peach Fuzz 面部绒毛
+
+【§16 Hair 头发材质】
+效果：控制发色与各向异性高光，高光沿发丝方向拉成条状｜取值：粗糙0.2–0.5，各向异性0–1｜写法：黑发沿发丝方向拉出条状高光｜联动：R2
+Hair Color 头发颜色｜Hair Melanin 头发黑色素｜Hair Roughness 头发粗糙度｜Hair Specular 头发高光｜Hair Anisotropy 头发各向异性｜Primary Specular 主高光｜Secondary Specular 次高光｜Hair Shift 高光偏移｜Hair Transmission 头发透射｜Hair Scatter 头发散射｜Hair Random Color 头发综合色随机｜Hair Root Color 发根颜色｜Hair Tip Color 发梢颜色｜Hair Thickness 发丝厚度｜Hair Density 发丝密度
+
+【§17 Anisotropy 各向异性】
+效果：让高光沿拉伸方向扩成条状，表现拉丝金属与发丝质感｜取值：-1–1，0为各向同性｜写法：拉丝铝面高光顺拉丝方向拉长｜联动：R2
+Anisotropy 各向异性｜Anisotropic Strength 各向异性强度｜Anisotropic Rotation 各向异性旋转｜Anisotropic Direction 各向异性方向｜Tangent Direction 切线方向｜Anisotropic Roughness 各向异性粗糙度｜Brushed Metal 拉丝金属｜Hair Anisotropy 头发各向异性｜Directional Highlight 方向性高光
+
+【§18 Clear Coat 清漆层】
+效果：在底材质上叠加透明光泽面漆，形成双层反射与锐利高光｜取值：0–1，粗糙度0–0.3｜写法：车漆面漆锐利高光下透出底漆金属反射｜联动：R2
+Clear Coat 清漆层｜Coat Weight 清漆权重｜Coat Roughness 清漆粗糙度｜Coat IOR 清漆折射率｜Coat Tint 清漆色偏｜Coat Normal 清漆法线｜Clearcoat Thickness 清漆厚度｜Clearcoat Specular 清漆高光｜Clearcoat Reflection 清漆反射｜Car Paint Coat 车漆清漆层｜Varnish 清漆｜Lacquer 漆层
+
+【§19 Sheen 绒面高光】
+效果：在掠射角为绒面边缘镀一圈柔光，绒毛逆光侧光发亮｜取值：0–1，丝绒天鹅绒较高｜写法：逆光下天鹅绒边缘泛出绒毛光晕｜联动：R2
+Sheen 绒面高光｜Sheen Weight 绒面权重｜Sheen Color 绒面颜色｜Sheen Tint 绒面色偏｜Sheen Roughness 绒面粗糙度｜Fabric Sheen 布料绒光｜Velvet 丝绒效果｜Cloth Fuzz 布料绒毛｜Fuzz Color 绒毛颜色｜Fuzz Strength 绒毛强度
+
+【§20 Emission 自发光】
+效果：让材质自身发光不受光照影响，并贡献泛光与局部照明｜取值：0–100+，常配Bloom｜写法：屏幕面板自发光，暗室中照亮邻近桌面｜联动：->
+Emission 自发光｜Emissive Color 自发光颜色｜Emissive Intensity 自发光强度｜Emissive Strength 自发光亮度｜Luminance 亮度｜Nits 尼特｜Bloom Contribution Bloom贡献｜Glow 发光｜Glow Intensity 发光强度｜Emission Mask 自发光遮罩｜Emissive GI 自发光全局照明｜Light Contribution 光照贡献
+
+【§21 Fresnel 菲涅尔】
+效果：控制掠射角反射增强，正对弱边缘强，让物体边缘包光｜取值：强度0–1，IOR 1.0–2.0｜写法：边缘菲涅尔反射勾勒轮廓光｜联动：R2
+Fresnel 菲涅尔｜Fresnel IOR 菲涅尔折射率｜Fresnel Strength 菲涅尔强度｜Fresnel Bias 菲涅尔偏移｜Fresnel Power 菲涅尔指数｜Fresnel Color 菲涅尔颜色｜Edge Reflection 边缘反射｜Facing Ratio 朝向比例｜Rim Fresnel 边缘菲涅尔｜Grazing Reflection 掠射角反射
+
+【§22 Coat / Layered Material 分层材质】
+效果：将油漆、锈蚀、灰尘等多层材质按权重上下叠加混合｜取值：各层权重0–1｜写法：底漆上叠加锈层与灰尘层，边缘露出底漆｜联动：->
+Layered Material 分层材质｜Material Layer 材质层｜Layer Weight 层权重｜Layer Mask 层遮罩｜Layer Blend 层混合｜Height Blend 高度混合｜Paint Layer 油漆层｜Primer Layer 底漆层｜Rust Layer 锈蚀层｜Dust Layer 灰尘层｜Dirt Layer 污垢层｜Wet Layer 湿润层｜Snow Layer 积雪层｜Mud Layer 泥浆层
+
+【§23 Texture Mapping 纹理映射】
+效果：控制贴图在表面的平铺、偏移与投射方式，决定纹理走向｜取值：UV平铺0.1–100，支持三平面等投射｜写法：三平面映射让木纹无缝覆盖石雕｜联动：->
+Texture Map 纹理贴图｜Texture Scale 纹理比例｜Texture Tiling 纹理平铺｜Texture Offset 纹理偏移｜Texture Rotation 纹理旋转｜UV Scale UV缩放｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜Triplanar Mapping 三平面映射｜World Aligned Texture 世界对齐纹理｜Object Mapping 物体映射｜Planar Mapping 平面映射｜Cylindrical Mapping 圆柱映射｜Spherical Mapping 球形映射
+
+【§24 Texel Density 纹素密度】
+效果：控制单位面积的贴图像素量，决定纹理清晰或发糊｜取值：1K–16K，特写建议4K+｜写法：8K贴图保证皮肤毛孔特写清晰｜联动：->
+Texel Density 纹素密度｜Pixels Per Meter 每米像素｜UV Density UV密度｜Texture Resolution 纹理分辨率｜1K Texture 1K贴图｜2K Texture 2K贴图｜4K Texture 4K贴图｜8K Texture 8K贴图｜16K Texture 16K贴图｜Mip Level Mip级别｜Mip Bias Mip偏移｜Texture Streaming 纹理流送
+
+【§25 Texture Channel 贴图通道】
+效果：规定遮蔽、粗糙、金属等数据占用哪些贴图通道，便于打包复用｜取值：R/G/B/A四通道，常见ORM打包｜写法：ORM贴图R遮蔽G粗糙B金属｜联动：->
+RGB Channel RGB通道｜Red Channel 红通道｜Green Channel 绿通道｜Blue Channel 蓝通道｜Alpha Channel Alpha通道｜Channel Packing 通道打包｜ORM Map ORM贴图｜RMA Map RMA贴图｜ARM Map ARM贴图｜Occlusion Channel 遮蔽通道｜Roughness Channel 粗糙通道｜Metallic Channel 金属通道
+
+【§26 Detail Texture 细节贴图】
+效果：在基础贴图上叠加微观细节层，近景避免大色块发糊｜取值：强度0–2，平铺独立于基础贴图｜写法：细颗粒细节贴图叠加金属近景表面｜联动：->
+Detail Map 细节贴图｜Detail Albedo 细节颜色｜Detail Normal 细节法线｜Detail Roughness 细节粗糙｜Detail Scale 细节比例｜Detail Tiling 细节平铺｜Micro Detail 微细节｜Macro Detail 宏观细节｜Detail Mask 细节遮罩｜Detail Intensity 细节强度
+
+【§27 Surface Imperfection 表面瑕疵】
+效果：添加划痕指纹污渍等瑕疵打破完美表面，提升真实感｜取值：0–1 强度或覆盖率｜写法：屏幕表面留少量指纹与微划痕｜联动：->
+Surface Imperfection 表面瑕疵｜Scratch 划痕｜Micro Scratch 微划痕｜Fingerprint 指纹｜Smudge 污迹｜Stain 污渍｜Dust 灰尘｜Dirt 污垢｜Grease 油污｜Water Spot 水渍｜Oil Spot 油斑｜Scuff 擦痕｜Dent 凹痕｜Chip 崩边｜Crack 裂纹｜Pitting 点蚀
+
+【§28 Edge Wear 边缘磨损】
+效果：沿边缘凸起磨掉表层露出底材，交代使用痕迹｜取值：0–1 磨损量，边缘优先｜写法：箱体边角掉漆露出裸金属｜联动：->
+Edge Wear 边缘磨损｜Wear Amount 磨损量｜Wear Width 磨损宽度｜Wear Contrast 磨损对比｜Edge Damage 边缘损伤｜Paint Chipping 掉漆｜Exposed Metal 裸露金属｜Curvature Mask 曲率遮罩｜Convex Wear 凸边磨损｜Concave Dirt 凹槽积污｜Scratch Direction 划痕方向｜Wear Randomness 磨损随机度
+
+【§29 Rust 锈蚀】
+效果：在金属表面生成锈色粗糙区，锈处金属度降低反射消失｜取值：0–1 锈蚀量，锈区粗糙升高｜写法：铁链点状锈斑，锈处粗糙失反射｜联动：->
+Rust 锈蚀｜Rust Amount 锈蚀量｜Rust Color 锈蚀颜色｜Rust Roughness 锈蚀粗糙度｜Rust Height 锈蚀高度｜Rust Spread 锈蚀扩散｜Rust Edge 锈蚀边缘｜Oxidation 氧化｜Corrosion 腐蚀｜Corrosion Depth 腐蚀深度｜Rust Mask 锈蚀遮罩｜Rust Flakes 锈片｜Rust Variation 锈蚀变化
+
+【§30 Dirt / Dust 污垢灰尘】
+效果：在凹陷背风处堆积污垢灰尘，降低饱和与对比并柔化高光｜取值：0–1 堆积量，凹槽与朝下面优先｜写法：键盘缝隙积灰表面泛哑光｜联动：->
+Dirt 污垢｜Dirt Amount 污垢量｜Dirt Color 污垢颜色｜Dirt Roughness 污垢粗糙度｜Dust 灰尘｜Dust Amount 灰尘量｜Dust Color 灰尘颜色｜Dust Thickness 灰尘厚度｜Dust Mask 灰尘遮罩｜Cavity Dirt 凹槽污垢｜Edge Dust 边缘积灰｜Gravity Dirt 重力积污｜Ambient Dirt 环境积污
+
+【§31 Wetness 湿润】
+效果：让表面湿润变暗并降低粗糙，出现清晰反射与积水洼｜取值：0–1，湿区粗糙可降至0.1–0.3｜写法：雨后沥青湿区镜面倒映霓虹灯光｜联动：R2
+Wetness 湿润度｜Wet Surface 湿表面｜Wet Amount 湿润量｜Wet Mask 湿润遮罩｜Wet Roughness 湿润粗糙度｜Water Layer 水层｜Water Thickness 水层厚度｜Water Film 水膜｜Water Puddle 积水｜Puddle Depth 积水深度｜Puddle Mask 积水遮罩｜Wet Darkening 湿润变暗｜Wet Reflection 湿润反射｜Drip 水滴流痕
+
+【§32 Water 水材质】
+效果：定义水体颜色波浪与吸收散射，决定水的清浊与动态｜取值：IOR 1.33，吸收散射随深度变化｜写法：浅滩清水可见石底并带焦散光斑｜联动：R2
+Water Color 水体颜色｜Water Depth 水深｜Water Absorption 水体吸收｜Water Scattering 水体散射｜Water Roughness 水面粗糙度｜Water Refraction 水体折射｜Water IOR 水折射率｜Wave Height 波浪高度｜Wave Scale 波浪比例｜Wave Speed 波速｜Normal Strength 水面法线强度｜Foam 泡沫｜Foam Amount 泡沫量｜Caustics 焦散｜Underwater Fog 水下雾
+
+【§33 Glass 玻璃材质】
+效果：平衡玻璃的透明折射与反射，厚度与色染决定整体观感｜取值：IOR 1.45–1.52，粗糙0–0.3｜写法：厚玻璃杯边缘泛绿，折射背景变形｜联动：R2
+Glass Color 玻璃颜色｜Glass Roughness 玻璃粗糙度｜Glass IOR 玻璃折射率｜Glass Thickness 玻璃厚度｜Glass Transmission 玻璃透射｜Glass Reflection 玻璃反射｜Glass Absorption 玻璃吸收｜Tinted Glass 有色玻璃｜Frosted Glass 磨砂玻璃｜Dirty Glass 脏玻璃｜Glass Scratch 玻璃划痕｜Glass Smudge 玻璃污迹｜Glass Dispersion 玻璃色散
+
+【§34 Metal 金属材质】
+效果：选择具体金属类型并调反射质感，需有环境可反射否则发黑｜取值：金属度通常1，粗糙0.05–0.6｜写法：抛光黄铜件反射暖色环境光影｜联动：R2
+Metal Type 金属类型｜Metallic 金属度｜Metal Roughness 金属粗糙度｜Metal Specular 金属反射｜Metal Tint 金属综合色｜Brushed Metal 拉丝金属｜Polished Metal 抛光金属｜Anodized Metal 阳极氧化金属｜Oxidized Metal 氧化金属｜Painted Metal 喷漆金属｜Galvanized Metal 镀锌金属｜Metal Scratch 金属划痕｜Metal Dent 金属凹痕
+
+【§35 Plastic 塑料材质】
+效果：区分光面与哑光塑料，高光清晰但反射弱，可带微透光｜取值：粗糙0.1–0.8，金属度0｜写法：哑光黑塑料外壳高光柔和｜联动：->
+Plastic Color 塑料颜色｜Plastic Roughness 塑料粗糙度｜Plastic Specular 塑料高光｜Plastic IOR 塑料折射率｜Plastic SSS 塑料次表面散射｜Glossy Plastic 光面塑料｜Matte Plastic 哑光塑料｜Transparent Plastic 透明塑料｜Plastic Scratch 塑料划痕｜Plastic Mold Detail 塑料模具细节｜Plastic Wear 塑料磨损
+
+【§36 Rubber 橡胶材质】
+效果：定义橡胶低反射哑光与细粒表面，易积灰留痕发白｜取值：粗糙0.5–0.9，反射微弱｜写法：轮胎橡胶磨砂表面沾灰泛白｜联动：->
+Rubber Color 橡胶颜色｜Rubber Roughness 橡胶粗糙度｜Rubber Specular 橡胶反射｜Rubber Normal 橡胶法线｜Rubber Micro Detail 橡胶微细节｜Soft Rubber 软橡胶｜Hard Rubber 硬橡胶｜Rubber Wear 橡胶磨损｜Rubber Dust 橡胶积灰｜Rubber Crack 橡胶裂纹
+
+【§37 Wood 木材材质】
+效果：呈现木纹方向年轮与纤维细节，漆面决定光泽高低｜取值：粗糙0.3–0.8，上漆更低｜写法：胡桃木桌面顺木纹细丝纹理哑光蜡面｜联动：->
+Wood Color 木材颜色｜Wood Grain 木纹｜Wood Grain Scale 木纹比例｜Wood Roughness 木材粗糙度｜Wood Normal 木材法线｜Wood Fiber 木纤维｜Wood Pore 木孔｜Wood Ring 年轮｜Wood Direction 木纹方向｜Wood Varnish 木器漆｜Wood Wear 木材磨损｜Wood Moisture 木材湿度｜Wood Crack 木材裂纹｜Wood Stain 木材着色
+
+【§38 Stone 石材材质】
+效果：表现石材颗粒孔隙与裂纹，粗糙面为主受风化影响｜取值：粗糙0.5–0.9｜写法：花岗岩细颗粒面接缝处微裂纹｜联动：->
+Stone Color 石材颜色｜Stone Roughness 石材粗糙度｜Stone Normal 石材法线｜Stone Height 石材高度｜Stone Grain 石材颗粒｜Stone Pore 石孔｜Stone Crack 石材裂纹｜Stone Edge Wear 石材边缘磨损｜Stone Dirt 石材污垢｜Stone Moss 石材苔藓｜Stone Wetness 石材湿润｜Stone Displacement 石材位移
+
+【§39 Concrete 混凝土材质】
+效果：呈现混凝土孔洞骨料与污渍的粗粝水泥质感｜取值：粗糙0.6–0.9，按龄期加污渍｜写法：清水混凝土墙面带脱模孔与雨渍痕｜联动：->
+Concrete Color 混凝土颜色｜Concrete Roughness 混凝土粗糙度｜Concrete Pores 混凝土孔洞｜Concrete Aggregate 混凝土骨料｜Concrete Normal 混凝土法线｜Concrete Crack 混凝土裂纹｜Concrete Stain 混凝土污渍｜Concrete Dust 混凝土积灰｜Concrete Wetness 混凝土湿润｜Concrete Edge Damage 混凝土崩边
+
+【§40 Fabric 布料材质】
+效果：定义织物织纹绒毛与透光性，粗糙表面带绒面高光｜取值：粗糙0.6–1.0，织纹比例按布料｜写法：粗织亚麻布纹清晰逆光透出绒光｜联动：R2
+Fabric Color 布料颜色｜Fabric Roughness 布料粗糙度｜Fabric Normal 布料法线｜Fabric Weave 布料织纹｜Weave Scale 织纹比例｜Fiber Direction 纤维方向｜Fabric Sheen 布料绒光｜Fabric Fuzz 布料绒毛｜Fabric Thickness 布料厚度｜Fabric Transmission 布料透光｜Fabric Wrinkle 布料褶皱｜Fabric Pilling 布料起球｜Fabric Wear 布料磨损｜Fabric Dirt 布料污迹
+
+【§41 Leather 皮革材质】
+效果：表现皮革粒面毛孔油脂光泽与折痕磨损的质感｜取值：粗糙0.3–0.7，油脂区更低｜写法：棕色牛皮沙发坐痕处磨亮泛油光｜联动：->
+Leather Color 皮革颜色｜Leather Roughness 皮革粗糙度｜Leather Grain 皮革纹理｜Leather Pores 皮革毛孔｜Leather Normal 皮革法线｜Leather Specular 皮革高光｜Leather Oil 皮革油脂｜Leather Wrinkle 皮革皱纹｜Leather Crack 皮革裂纹｜Leather Wear 皮革磨损｜Leather Edge Wear 皮革边缘磨损｜Leather Stitching 皮革缝线
+
+【§42 Ceramic / Porcelain 陶瓷瓷器】
+效果：呈现釉面光滑高光与坯体哑光的对比，薄处微透光｜取值：釉面粗糙0.05–0.2，SSS微量｜写法：白瓷杯釉面锐利高光杯口薄处微透｜联动：->
+Ceramic Color 陶瓷颜色｜Ceramic Roughness 陶瓷粗糙度｜Ceramic Specular 陶瓷高光｜Ceramic Glaze 陶瓷釉面｜Glaze Roughness 釉面粗糙度｜Glaze Thickness 釉面厚度｜Porcelain SSS 瓷器次表面散射｜Ceramic Crack 陶瓷裂纹｜Craquelure 冰裂纹｜Ceramic Dirt 陶瓷污迹
+
+【§43 Paint 油漆材质】
+效果：控制漆面颜色光泽与老化，掉漆后露出底层材质｜取值：粗糙0.2–0.6，厚度影响橘皮纹｜写法：漆面橘皮纹明显边角掉漆露底漆｜联动：->
+Paint Color 油漆颜色｜Paint Roughness 油漆粗糙度｜Paint Thickness 油漆厚度｜Paint Gloss 油漆光泽｜Paint Normal 油漆法线｜Paint Orange Peel 橘皮纹｜Paint Chipping 掉漆｜Paint Scratch 油漆划痕｜Paint Fade 油漆褪色｜Paint Dirt 油漆污垢｜Primer 底漆｜Clear Coat 清漆层
+
+【§44 Car Paint 车漆材质】
+效果：色漆层金属颗粒与清漆层合成随角度闪色的深度反射｜取值：颗粒大小密度0–1，清漆0–1｜写法：深蓝车漆阳光下颗粒闪色清漆反光锐利｜联动：R2
+Base Coat 基础漆层｜Metallic Flake 金属颗粒｜Flake Size 金属颗粒大小｜Flake Density 金属颗粒密度｜Flake Color 金属颗粒颜色｜Clear Coat 清漆层｜Clear Coat Roughness 清漆粗糙度｜Orange Peel 橘皮纹｜Car Paint Reflection 车漆反射｜Car Paint Fresnel 车漆菲涅尔｜Micro Scratch 微划痕｜Dust 灰尘｜Water Spot 水渍
+
+【§45 Ice 冰材质】
+效果：控制冰的透明裂纹与气泡，融湿表面降粗糙增反射｜取值：透射0.7–1，粗糙0.05–0.4｜写法：冰块内裂纹气泡融湿表面镜面反光｜联动：R2
+Ice Color 冰颜色｜Ice Roughness 冰粗糙度｜Ice IOR 冰折射率｜Ice Transmission 冰透射｜Ice Absorption 冰吸收｜Ice Scattering 冰散射｜Ice Thickness 冰厚度｜Ice Crack 冰裂纹｜Ice Bubble 冰气泡｜Ice Frost 冰霜｜Ice Surface Normal 冰面法线｜Melting Ice 融冰｜Wet Ice 湿冰
+
+【§46 Snow 雪材质】
+效果：定义积雪的高散射白面与晶体闪光，压实融化后变暗｜取值：粗糙0.3–0.9，SSS较强｜写法：新雪蓬松微闪蓝影脚印处压实变灰｜联动：R2
+Snow Color 雪颜色｜Snow Roughness 雪粗糙度｜Snow SSS 雪次表面散射｜Snow Scatter 雪散射｜Snow Sparkle 雪闪光｜Snow Thickness 积雪厚度｜Snow Coverage 积雪覆盖｜Snow Mask 积雪遮罩｜Snow Displacement 雪位移｜Snow Compression 雪压实度｜Snow Dirt 脏雪｜Wet Snow 湿雪
+
+【§47 Mud 泥土材质】
+效果：湿度决定泥浆湿亮与干裂哑光的对比，厚度影响堆积轮廓｜取值：湿润0–1，湿泥粗糙低干泥高｜写法：雨后泥地湿亮带堆积边缘干裂泛白｜联动：->
+Mud Color 泥土颜色｜Mud Roughness 泥土粗糙度｜Mud Wetness 泥土湿润度｜Mud Height 泥浆高度｜Mud Thickness 泥浆厚度｜Mud Crack 泥裂纹｜Mud Puddle 泥水坑｜Mud Splash 泥浆飞溅｜Mud Mask 泥浆遮罩｜Dry Mud 干泥｜Wet Mud 湿泥
+
+【§48 Ground / Terrain 地面材质】
+效果：按坡度与高度混合草地泥土岩石等层，组织地形材质分布｜取值：各层按坡度高度遮罩0–1混合｜写法：陡坡岩石裸露缓坡覆盖草地｜联动：->
+Terrain Layer 地形材质层｜Grass Layer 草地层｜Dirt Layer 泥土层｜Rock Layer 岩石层｜Mud Layer 泥浆层｜Snow Layer 积雪层｜Layer Blend 材质层混合｜Slope Mask 坡度遮罩｜Height Mask 高度遮罩｜Distance Blend 距离混合｜Macro Variation 宏观变化｜Micro Detail 微细节｜Landscape Tessellation 地形细分
+
+【§49 Decal 贴花】
+效果：将血迹涂鸦等图案叠于表面，可同时扰动法线与粗糙度｜取值：不透明度0–1，淡出按距离｜写法：墙面涂鸦贴花边缘磨损融入漆面｜联动：->
+Decal 贴花｜Decal Color 贴花颜色｜Decal Normal 贴花法线｜Decal Roughness 贴花粗糙度｜Decal Metallic 贴花金属度｜Decal Opacity 贴花透明度｜Decal Fade Distance 贴花淡出距离｜Decal Sort Order 贴花排序｜Blood Decal 血迹贴花｜Dirt Decal 污迹贴花｜Graffiti Decal 涂鸦贴花｜Damage Decal 损伤贴花
+
+【§50 Dirt Accumulation 污垢堆积】
+效果：用朝向曲率坡度等遮罩定向堆积灰尘积雪苔藓等沉积物｜取值：遮罩0–1，按朝上凹槽坡度加权｜写法：朝上表面积灰凹缝长苔藓｜联动：->
+Cavity Mask 凹槽遮罩｜Curvature Mask 曲率遮罩｜Ambient Occlusion Mask AO遮罩｜Up Vector Mask 朝上遮罩｜Down Vector Mask 朝下遮罩｜Slope Mask 坡度遮罩｜Edge Mask 边缘遮罩｜Dust Accumulation 灰尘堆积｜Water Accumulation 积水｜Snow Accumulation 积雪｜Moss Growth 苔藓生长｜Rust Accumulation 锈蚀堆积
+
+【§51 Procedural Material 程序化材质】
+效果：用噪波程序化生成自然纹理与遮罩，可无级缩放随机变化｜取值：比例细节扭曲与种子可调｜写法：分形噪波生成大理石纹理固定随机种子｜联动：->
+Noise 噪波｜Perlin Noise 柏林噪波｜Voronoi Noise 沃罗诺伊噪波｜Fractal Noise 分形噪波｜Cell Noise 单元噪波｜Cloud Noise 云噪波｜Noise Scale 噪波比例｜Noise Detail 噪波细节｜Noise Roughness 噪波粗糙度｜Noise Distortion 噪波扭曲｜Random Seed 随机种子｜Procedural Mask 程序遮罩
+
+【§52 Material Mask 材质遮罩】
+效果：用灰度控制材质效果的空间分布，黑零白一定义范围｜取值：0–1 灰度或二值遮罩｜写法：锈蚀遮罩让锈斑只出现在边缘｜联动：->
+Mask 遮罩｜Black Mask 黑色遮罩｜White Mask 白色遮罩｜Grayscale Mask 灰度遮罩｜ID Mask ID遮罩｜Color ID Mask 颜色ID遮罩｜Curvature Mask 曲率遮罩｜AO Mask AO遮罩｜Position Mask 位置遮罩｜Normal Mask 法线遮罩｜Height Mask 高度遮罩｜Slope Mask 坡度遮罩｜Noise Mask 噪波遮罩
+
+【§53 UV Parameters UV参数】
+效果：控制贴图坐标的平铺偏移旋转，决定纹理覆盖与连续性｜取值：平铺0.1–100，偏移0–1｜写法：UV平铺4次保持砖纹密度正确｜联动：->
+UV Scale UV缩放｜UV Tiling UV平铺｜UV Offset UV偏移｜UV Rotation UV旋转｜UV Channel UV通道｜UV Seam UV接缝｜UV Distortion UV变形｜UV Randomization UV随机｜Mirror UV UV镜像｜UDIM Tiles UDIM贴片｜UDIM Resolution UDIM分辨率｜UV Padding UV边距
+
+【§54 Triplanar 三平面投射】
+效果：从三轴向自动投射贴图免UV展开，适合岩体雕塑类模型｜取值：比例按世界尺寸，锐度0–1｜写法：三平面映射让苔藓无缝爬满石像｜联动：->
+Triplanar Mapping 三平面映射｜Triplanar Scale 三平面比例｜Triplanar Blend 三平面混合｜Triplanar Sharpness 三平面锐度｜World Scale 世界比例｜Object Scale 物体比例｜Projection Axis 投射轴｜Projection Rotation 投射旋转｜Projection Offset 投射偏移
+
+【§55 PBR Workflow PBR工作流】
+效果：以基础色金属度粗糙度等物理参数统一描述材质保证光照一致｜取值：金属/粗糙流程为主，参数0–1｜写法：金属度1.0配粗糙0.3的钢材质｜联动：->
+Metallic Roughness Workflow 金属度粗糙度流程｜Specular Glossiness Workflow 镜面光泽流程｜Base Color 基础色｜Metallic 金属度｜Roughness 粗糙度｜Normal 法线｜AO 环境遮蔽｜Height 高度｜Emissive 自发光｜Opacity 透明度｜PBR Calibration PBR校准｜Energy Conservation 能量守恒
+
+【§56 Film / VFX Material 影视VFX材质】
+效果：以物理正确着色与ACES线性流程保证影视级光照色彩一致｜取值：线性色彩，真实IOR与测量BRDF｜写法：ACES流程下路径追踪渲染铬合金｜联动：->
+Physically Based Shader 物理着色器｜Path Traced Material 路径追踪材质｜Ray Traced Material 光追材质｜ACES Color Workflow ACES色彩流程｜Linear Workflow 线性流程｜Spectral Rendering 光谱渲染｜True IOR 真实折射率｜Measured BRDF 测量BRDF｜Measured Material 测量材质｜Multi Scatter GGX 多重散射GGX｜Energy Compensation 能量补偿
+
+【§57 Game Material 游戏材质】
+效果：在实时性能预算内组织材质，用实例与开关控制变体开销｜取值：按平台预算控制指令与采样数｜写法：材质实例只暴露颜色与粗糙度参数｜联动：->
+Real-Time Material 实时材质｜PBR Shader PBR着色器｜Shader Complexity 着色器复杂度｜Instruction Count 指令数量｜Sampler Count 采样器数量｜Texture Sample 纹理采样｜Static Switch 静态开关｜Material Parameter Collection 材质参数集合｜Dynamic Material Instance 动态材质实例｜Material Instance Constant 材质实例常量｜Material LOD 材质LOD
+
+【§58 Unreal Engine Material UE材质】
+效果：UE材质标准输入槽位清单，按槽填写即可实现对应效果｜取值：各输入0–1标量或接贴图｜写法：基础颜色接贴图，粗糙度设0.35｜联动：->
+Base Color 基础颜色｜Metallic 金属度｜Specular 镜面反射｜Roughness 粗糙度｜Emissive Color 自发光颜色｜Opacity 不透明度｜Opacity Mask 不透明遮罩｜Normal 法线｜World Position Offset 世界位置偏移｜Pixel Depth Offset 像素深度偏移｜Subsurface Color 次表面颜色｜Ambient Occlusion 环境遮蔽｜Refraction 折射｜Clear Coat 清漆｜Anisotropy 各向异性
+
+【§59 Unity PBR Material Unity材质】
+效果：Unity标准PBR输入清单，基础贴图与光滑度决定主观感｜取值：金属度/光滑度0–1｜写法：光滑度0.7的塑料球体高光圆润｜联动：->
+Base Map 基础贴图｜Base Color 基础颜色｜Metallic 金属度｜Smoothness 光滑度｜Normal Map 法线贴图｜Occlusion Map 遮蔽贴图｜Emission Map 自发光贴图｜Detail Map 细节贴图｜Height Map 高度贴图｜Alpha Clipping Alpha裁切｜Surface Type 表面类型｜Render Face 渲染面｜Coat Mask 清漆遮罩
+
+【§60 Render Quality 渲染质量】
+效果：按档位控制各材质效果计算精度，影响细节保留与噪点｜取值：Low/Medium/High/Ultra/Cinematic｜写法：材质质量设Cinematic保留SSS与位移细节｜联动：->
+Material Quality 材质质量｜Texture Quality 纹理质量｜Shader Quality 着色器质量｜Reflection Quality 反射质量｜Refraction Quality 折射质量｜SSS Quality 次表面散射质量｜Displacement Quality 位移质量｜Anisotropy Quality 各向异性质量｜Filtering Quality 纹理过滤质量｜Sampling Quality 采样质量｜Denoise Quality 降噪质量
+
+【§61 Texture Filtering 纹理过滤】
+效果：控制斜视角贴图采样清晰度并抑制摩尔纹与闪烁｜取值：AF 2x/4x/8x/16x，Mip偏移±｜写法：各向异性过滤16x保持地面纹理清晰｜联动：->
+Bilinear Filtering 双线性过滤｜Trilinear Filtering 三线性过滤｜Anisotropic Filtering 各向异性过滤｜AF 2x / 4x / 8x / 16x 各向异性过滤等级｜Mipmapping Mip映射｜Mip Bias Mip偏移｜LOD Bias LOD偏移｜Texture Sharpen 纹理锐化｜Texture Blur 纹理模糊
+
+【§62 Material Optimization 材质优化】
+效果：控制材质指令与采样开销，在性能与观感间取舍｜取值：按平台预算计指令采样与显存｜写法：合并静态开关减少着色器变体｜联动：->
+Shader Instruction Count 着色器指令数｜Texture Sample Count 纹理采样数｜Sampler Count 采样器数｜Material Complexity 材质复杂度｜Overdraw 过度绘制｜Transparent Overdraw 透明过绘制｜Shader Permutation 着色器变体｜Static Parameter 静态参数｜Dynamic Parameter 动态参数｜Texture Memory 纹理显存｜Virtual Texture 虚拟纹理｜Runtime Virtual Texture 运行时虚拟纹理
+
+【§63 Virtual Texture 虚拟纹理】
+效果：按需流送超大贴图只加载可见区域，节省显存支撑高分辨率｜取值：图块尺寸与流送池按项目配置｜写法：8K地貌贴图改用虚拟纹理流送｜联动：->
+Virtual Texture 虚拟纹理｜Runtime Virtual Texture 运行时虚拟纹理｜Virtual Texture Size 虚拟纹理尺寸｜Tile Size 图块尺寸｜Border Size 边界尺寸｜Page Size 页面尺寸｜Streaming Pool 流送池｜Texture Residency 纹理驻留｜Virtual Texture Feedback 虚拟纹理反馈
+
+【§64 Nanite / High Detail 高细节材质】
+效果：配合高模几何呈现微细节，材质需支持高分辨率输入｜取值：->｜写法：Nanite岩壁配高分辨率法线与位移细节｜联动：->
+Nanite Material Nanite材质｜High Poly Surface 高模表面｜Micro Detail 微细节｜High Resolution Normal 高分辨率法线｜High Resolution Displacement 高分辨率位移｜Virtual Shadow Compatibility 虚拟阴影兼容｜Pixel Depth Offset 像素深度偏移｜Masked Material 遮罩材质｜Material Complexity 材质复杂度
+
+【§65 Ray Tracing Material 光追材质】
+效果：光追让反射折射阴影更物理准确，需控反弹次数与降噪｜取值：反弹1–4次，采样与降噪可调｜写法：光追反射2次反弹呈现走廊多次镜像｜联动：R2
+Ray Traced Reflection 光追反射｜Ray Traced Refraction 光追折射｜Ray Traced Shadow 光追阴影｜Ray Traced Translucency 光追透明｜Ray Traced SSS 光追次表面散射｜Reflection Bounce 反射反弹次数｜Refraction Bounce 折射反弹次数｜Max Roughness 最大光追粗糙度｜Samples Per Pixel 每像素采样数｜Denoiser 降噪器
+
+【§66 Path Tracing Material 路径追踪材质】
+效果：路径追踪全局求解光照，能量守恒下最接近真实观感｜取值：采样与反弹按噪点时间平衡｜写法：路径追踪渲染玻璃瓶焦散与间接光｜联动：R2
+Path Tracing 路径追踪｜Samples Per Pixel 每像素采样｜Max Bounces 最大反弹次数｜Diffuse Bounce 漫反射反弹｜Specular Bounce 镜面反弹｜Transmission Bounce 透射反弹｜Volume Bounce 体积反弹｜Russian Roulette 俄罗斯轮盘｜Firefly Clamp 火花点限制｜Path Tracing Denoise 路径追踪降噪
+
+【§67 Material Aging 材质老化】
+效果：叠加褪色氧化开裂等时间痕迹，交代物体经历的环境年代｜取值：老化程度0–1，各分项独立｜写法：户外塑料椅日晒褪色带微裂纹｜联动：->
+Age 材质年龄｜Aging Amount 老化程度｜Fade 褪色｜Sun Bleaching 日晒褪色｜Oxidation 氧化｜Corrosion 腐蚀｜Cracking 开裂｜Peeling 剥落｜Dust 灰尘｜Dirt 污垢｜Wear 磨损｜Scratch 划痕｜Edge Damage 边缘损伤｜Moisture Damage 潮湿损伤｜Mold 霉菌
+
+【§68 Environmental Response 环境响应】
+效果：定义材质对雨雪热冷等天气的动态响应规则｜取值：各响应0–1或开关｜写法：雨水响应让表面逐渐湿润反光｜联动：->
+Wetness Response 湿润响应｜Rain Response 雨水响应｜Snow Response 积雪响应｜Dust Response 灰尘响应｜Mud Response 泥浆响应｜Heat Response 热响应｜Cold Response 冷响应｜Burn Response 燃烧响应｜Freeze Response 冻结响应｜Damage Response 损伤响应｜Dynamic Material 动态材质｜Weather Blend 天气混合
+
+【§69 Damage Material 损伤材质】
+效果：添加弹孔烧痕血迹等损伤并露出内层结构｜取值：损伤0–1，按遮罩分布｜写法：弹孔边缘烧灼卷边露出金属内层｜联动：->
+Damage Mask 损伤遮罩｜Scratch Damage 划痕损伤｜Bullet Hole 弹孔｜Crack 裂纹｜Burn Mark 烧焦痕迹｜Scorch 烧灼｜Blood 血迹｜Dirt 污迹｜Broken Edge 破损边缘｜Chipped Paint 掉漆｜Exposed Layer 裸露底层｜Damage Depth 损伤深度｜Damage Normal 损伤法线
+
+【§70 Cinematic Material 电影级材质】
+效果：汇总电影级材质全参数链，强调微细节瑕疵与物理完整｜取值：各参数0–1按需组合｜写法：金属配微划痕指纹与边缘磨损近景耐看｜联动：R2
+Base Color 基础色｜Roughness 粗糙度｜Metallic 金属度｜Specular 镜面反射｜IOR 折射率｜Normal 法线｜Micro Normal 微法线｜Displacement 位移｜SSS 次表面散射｜Transmission 透射｜Clear Coat 清漆层｜Anisotropy 各向异性｜Surface Imperfection 表面瑕疵｜Dust 灰尘｜Scratch 划痕｜Fingerprint 指纹｜Edge Wear 边缘磨损｜Color Variation 颜色变化｜Macro Variation 宏观变化｜Micro Detail 微观细节
+
+【§71 推荐影视+游戏统一材质参数模板】
+效果：给出统一材质参数模板与取值区间，作为写作基准｜取值：见正文各参数0–1等区间｜写法：按模板逐项填值后嵌入提示词｜联动：->
+Material Type 材质类型：Metal / Plastic / Wood / Glass / Fabric / Skin / Stone｜Base Color 基础颜色：RGB / Texture｜Metallic 金属度：0–1｜Roughness 粗糙度：0–1｜Specular 镜面强度：0–1｜IOR 折射率：1.0–2.5+｜Normal Strength 法线强度：0–2｜Height 高度：0–1｜Displacement 位移：0–10cm+｜AO Strength 环境遮蔽强度：0–1｜Opacity 不透明度：0–1｜Transmission 透射：0–1｜SSS 次表面散射：0–1｜Clear Coat 清漆层：0–1｜Clear Coat Roughness 清漆粗糙度：0–1｜Anisotropy 各向异性：-1–1｜Emission 自发光：0–100+｜Texture Resolution 纹理分辨率：1K / 2K / 4K / 8K｜Texel Density 纹素密度：按项目标准｜UV Tiling UV平铺：0.1–100｜Detail Normal 细节法线：0–2｜Micro Roughness 微粗糙度：0–1｜Wear 磨损：0–1｜Scratch 划痕：0–1｜Dust 灰尘：0–1｜Dirt 污垢：0–1｜Wetness 湿润：0–1｜Edge Wear 边缘磨损：0–1｜Damage 损伤：0–1｜Material Quality 材质质量：Low / Medium / High / Ultra / Cinematic
+
+【§72 写实金属示例】
+效果：示范拉丝钢完整参数组合，各向异性拉出方向性高光｜取值：见正文，金属1.0、粗糙0.28–0.42等｜写法：照抄参数并注明用光追或路径追踪反射｜联动：R2
+Material Type 材质类型：Brushed Steel 拉丝钢｜Base Color 基础色：Dark Gray 深灰｜Metallic 金属度：1.0｜Roughness 粗糙度：0.28–0.42｜Specular 镜面反射：0.5｜Anisotropy 各向异性：0.6｜Anisotropic Rotation 各向异性方向：90°｜Normal Strength 法线强度：0.35｜Micro Scratch 微划痕：0.4｜Edge Wear 边缘磨损：0.25｜Dust 灰尘：0.08｜Fingerprint 指纹：0.12｜AO Strength AO强度：0.6｜Texture Resolution 纹理分辨率：4K–8K｜Reflection 反射：Ray Tracing / Lumen / Path Tracing
+
+【§73 写实皮肤示例】
+效果：示范写实皮肤参数组合，毛孔微粗糙与SSS成组出现｜取值：见正文，粗糙0.35–0.55、SSS 0.6–0.9等｜写法：按示例填值湿润区另提油脂度｜联动：R5
+Material Type 材质类型：Human Skin 人体皮肤｜Base Color 基础色：Natural Skin Tone 自然肤色｜Roughness 粗糙度：0.35–0.55｜Specular 镜面强度：0.35–0.5｜IOR 折射率：1.4｜SSS 次表面散射：0.6–0.9｜Subsurface Radius 散射半径：R 1.0 / G 0.35 / B 0.2 相对值｜Micro Normal 微法线：0.3–0.5｜Pore Detail 毛孔细节：0.4｜Oiliness 油脂度：0.15–0.35｜Peach Fuzz 面部绒毛：0.1–0.3｜Skin Moisture 皮肤湿润度：0.1–0.25｜Texture Resolution 纹理分辨率：4K–8K
+
+【§74 写实玻璃示例】
+效果：示范透明玻璃参数，低粗糙高透射配真实IOR与吸收色｜取值：见正文，IOR 1.45–1.52、透射0.95–1.0等｜写法：按示例填值并开启光追折射｜联动：R2
+Material Type 材质类型：Clear Glass 透明玻璃｜Base Color 基础色：Neutral / Slight Tint 中性轻微色偏｜Roughness 粗糙度：0.0–0.12｜IOR 折射率：1.45–1.52｜Transmission 透射：0.95–1.0｜Opacity 不透明度：0.02–0.1｜Reflection 反射：0.9–1.0｜Absorption Color 吸收颜色：根据玻璃颜色｜Thickness 厚度：实际物理厚度｜Micro Scratch 微划痕：0.05–0.15｜Dust 灰尘：0.02–0.08｜Fingerprint 指纹：0.05–0.15｜Ray Traced Refraction 光追折射：On
+
+【§75 写实湿地面示例】
+效果：示范湿沥青干湿混合写法，湿区低粗糙镜面倒映灯光｜取值：见正文，湿区粗糙0.08–0.25、水膜0.4–0.8等｜写法：按积水遮罩区分干湿两套粗糙度｜联动：R2
+Material Type 材质类型：Wet Asphalt 湿沥青｜Base Color 基础色：Dark Gray 深灰｜Roughness 粗糙度：干燥区域0.6–0.85 / 湿润区域0.08–0.25｜Metallic 金属度：0｜Normal Strength 法线强度：0.5–0.8｜Height 高度：0.2–0.5｜Puddle Mask 积水遮罩：0–1｜Water Film 水膜：0.4–0.8｜Wet Darkening 湿润变暗：10–30%｜Reflection 反射：SSR / Lumen / Ray Tracing｜Micro Detail 微细节：0.4｜Crack 裂纹：0.1–0.4｜Dirt 污垢：0.2–0.5｜Texture Resolution 纹理分辨率：4K–8K
+
+【§76 材质参数最终逻辑顺序】
+效果：规定材质参数书写顺序，从类型到细节瑕疵再到质量收尾｜取值：->｜写法：先写材质类型再按此序铺开参数与瑕疵｜联动：->
+Material Type 材质类型 → Base Color 基础颜色 → Metallic 金属度 → Roughness 粗糙度 → Specular 镜面反射 → IOR 折射率 → Normal 法线 → Bump 凹凸 → Height 高度 → Displacement 位移 → AO 环境遮蔽 → Opacity 透明度 → Transmission 透射 → Refraction 折射 → SSS 次表面散射 → Anisotropy 各向异性 → Clear Coat 清漆层 → Sheen 绒面高光 → Emission 自发光 → Fresnel 菲涅尔 → Texture Mapping 纹理映射 → UV UV参数 → Detail Texture 细节纹理 → Surface Imperfection 表面瑕疵 → Wear 磨损 → Scratch 划痕 → Dust 灰尘 → Dirt 污垢 → Wetness 湿润 → Damage 损伤 → Weather Response 天气响应 → Ray Tracing 光追 → Path Tracing 路径追踪 → Material Quality 材质质量 → Performance Optimization 性能优化

@@ -1,4 +1,5 @@
-【一、基础颜色属性】
+【§1 基础颜色属性】
+效果：控制画面色彩基础属性，覆盖色相、饱和度、明度与 RGB 通道表现｜取值：色相 0–360°，饱和度/明度 0–100%，Tint 绿—洋红｜写法：色相偏移 -5，自然饱和度 75｜联动：->
 
 颜色（Color）：控制整体色彩表现；常见颜色模型包括 RGB、HSV、HSL、Lab、XYZ。
 RGB 通道：红（Red）、绿（Green）、蓝（Blue），可分别控制各通道的亮度、对比度、曲线、黑位和白位。
@@ -7,7 +8,8 @@ RGB 通道：红（Red）、绿（Green）、蓝（Blue），可分别控制各�
 明度（Value / Lightness）：控制颜色本身的明暗；亮度（Brightness）控制整体视觉亮度。
 色调（Tint）：给整体画面增加颜色倾向，也常用于绿—洋红方向的白平衡微调。
 
-【二、曝光与明暗】
+【§2 曝光与明暗】
+效果：控制整体曝光与亮暗分布，划分阴影、中间调、高光各区域｜取值：曝光 ±1–2EV，黑位/白位 0–100，阴影/中间调/高光分区微调｜写法：曝光 -0.5EV，高光 +10，黑位 -5 压实暗部｜联动：R3
 
 曝光（Exposure）：控制整体曝光，常以 EV / Stop 表示；增加 1 档约等于亮度翻倍。
 曝光补偿（Exposure Compensation）：在当前曝光基础上进行整体偏移。
@@ -17,7 +19,8 @@ RGB 通道：红（Red）、绿（Green）、蓝（Blue），可分别控制各�
 黑色色阶（Blacks）：主要影响接近纯黑区域；白色色阶（Whites）：主要影响接近纯白区域。
 动态范围（Dynamic Range）：决定画面可保留的最暗到最亮范围；高动态范围可容纳更多明暗细节。
 
-【三、Lift / Gamma / Gain / Offset】
+【§3 Lift / Gamma / Gain / Offset】
+效果：按暗部、中间调、高光三段分别控制亮度与颜色，Offset 整体平移全信号｜取值：三段小幅调整 ±0.05–0.2，Offset 用于整体曝光与色偏修正｜写法：Lift 压暗加蓝，Gain 提亮加暖｜联动：R3
 
 提升（Lift）：主要控制暗部亮度和暗部颜色。
 伽马（Gamma）：主要控制中间调亮度和颜色。
@@ -25,7 +28,8 @@ RGB 通道：红（Red）、绿（Green）、蓝（Blue），可分别控制各�
 偏移（Offset）：整体移动图像信号，同时影响暗部、中间调和高光。
 Lift / Gamma / Gain 是影视一级调色最常见的三段控制；Offset 常用于整体曝光和综合色偏修正。
 
-【四、色温与白平衡】
+【§4 色温与白平衡】
+效果：控制画面冷暖基调与白平衡基准，直接决定情绪温度｜取值：2000K 烛光/3200K 钨丝灯/5600K 日光/8000K+ 阴天阴影｜写法：3200K 暖钨丝灯基调，暗部微微偏冷｜联动：R3+R4
 
 色温（Temperature）：控制冷暖方向，通常以 Kelvin 表示；低色温偏黄橙，高色温偏蓝。
 色调偏移（Tint）：主要用于绿色与洋红色方向修正。
@@ -33,20 +37,23 @@ Lift / Gamma / Gain 是影视一级调色最常见的三段控制；Offset 常�
 白点（White Point）：决定系统认定的白色位置；常见白点包括 D65、D60。
 自动白平衡（Auto White Balance）：根据画面自动判断中性区域；手动白平衡（Manual White Balance）：人工指定色温和 Tint。
 
-【五、颜色轮】
+【§5 颜色轮】
+效果：按暗部、中间调、高光三个色轮分区调整色偏，可组合冷暖关系｜取值：三区色轮各自独立偏色，幅度以轻微为宜｜写法：冷阴影+暖高光，建立主体与环境的色彩关系｜联动：R3
 
 阴影色轮（Shadow Wheel）：控制暗部色偏；中间调色轮（Midtone Wheel）：控制中间区域颜色；高光色轮（Highlight Wheel）：控制亮部颜色。
 Lift Wheel、Gamma Wheel、Gain Wheel：分别对应暗部、中间调、高光。
 Offset Wheel：调整整幅画面的综合色相偏移。
 影视中常使用冷阴影 + 暖高光、暖阴影 + 冷高光等方式建立综合色彩关系。
 
-【六、Log 色轮】
+【§6 Log 色轮】
+效果：在 Log 素材上按窄区间精确控制阴影、中间调、高光的颜色｜取值：Low/High Range 控制暗部与高光作用范围｜写法：Log Midtones 微加暖，只作用中间调不动暗部｜联动：R3
 
 Log Shadows：控制较窄范围的暗部；Log Midtones：控制中间区域；Log Highlights：控制较窄范围高光。
 Low Range：控制阴影作用范围；High Range：控制高光作用范围。
 Log 调整相比普通 Lift / Gamma / Gain，对亮度区域的选择更精确。
 
-【七、曲线】
+【§7 曲线】
+效果：通过主曲线与 RGB 曲线控制亮暗对比与各通道颜色过渡｜取值：S 曲线增强对比、反 S 降低，黑场/Toe 管暗部，Shoulder/Roll-off 管高光｜写法：轻 S 曲线加对比，高光 Roll-off 柔化白场过渡｜联动：->
 
 主曲线（Master Curve）：整体控制亮度和对比度。
 RGB 曲线（Red / Green / Blue Curves）：分别控制红、绿、蓝通道。
@@ -54,7 +61,8 @@ S 曲线：压低暗部并提升亮部，提高对比；反 S 曲线：降低对
 黑场曲线：控制暗部层次；高光 Roll-off：控制高亮区域进入白色前的柔和过渡。
 Toe：控制暗部曲线形状；Shoulder：控制高光曲线形状。
 
-【八、Hue 曲线】
+【§8 Hue 曲线】
+效果：按原始色相、饱和度或亮度定向修改目标颜色属性｜取值：六组交叉曲线：Hue vs Hue/Sat/Lum 等｜写法：Hue vs Luminance 压暗蓝色天空｜联动：->
 
 Hue vs Hue：根据原始色相修改目标色相，例如把绿色推向黄色。
 Hue vs Saturation：根据色相改变饱和度，例如降低绿色饱和。
@@ -63,20 +71,23 @@ Luminance vs Saturation：根据亮度控制饱和度，例如降低高光饱和
 Saturation vs Saturation：根据原始饱和度重新映射饱和程度。
 Saturation vs Luminance：根据饱和度改变亮度。
 
-【九、选择性色彩】
+【§9 选择性色彩】
+效果：对红、黄、绿、青、蓝、洋红及白、中性、黑单独调色｜取值：每色域内 Cyan/Magenta/Yellow/Black 四分量｜写法：仅选红色微增饱和突出服装，肤色另行保护｜联动：R4
 
 选择性色彩（Selective Color）：单独调整红、黄、绿、青、蓝、洋红、白、中性、黑等颜色范围。
 每个颜色范围可调整：青（Cyan）、洋红（Magenta）、黄（Yellow）、黑（Black）。
 常用于肤色、天空、植物、服装、霓虹灯等局部精细控制。
 
-【十、HSL / HSV】
+【§10 HSL / HSV】
+效果：以色相、饱和度、明度定义并限定目标颜色选区范围｜取值：Hue/Sat/Lum Range 配合 Softness 控制选区边缘｜写法：HSL Key 锁定绿色范围，Softness 30 柔化边缘｜联动：->
 
 Hue：色相；Saturation：饱和度；Lightness / Value：明度。
 HSL Key：利用色相、饱和度和明度选择目标颜色。
 Hue Range：色相范围；Saturation Range：饱和范围；Luminance Range：亮度范围。
 Softness：控制选区边缘柔和程度；Denoise：减少选区噪声；Blur：平滑遮罩。
 
-【十一、颜色键与二级调色】
+【§11 颜色键与二级调色】
+效果：选出特定颜色区域做局部二级调色，服务肤色、天空等局部｜取值：HSL Key 或 RGB Key，Key Gain 控制选区强度｜写法：HSL Key 选中肤色，Key Gain 调整选区强度｜联动：R4
 
 Qualifier / Keyer：选择某种颜色区域。
 HSL Key：基于色相、饱和度、亮度选择；RGB Key：基于 RGB 范围选择。
@@ -84,14 +95,16 @@ Key Gain：控制选区强度；Key Output：控制最终遮罩输出。
 Matte Black / White：查看遮罩；Clean Black / Clean White：清理遮罩；Blur Radius：柔化边缘。
 二级调色常用于肤色、天空、服装、墙面、植物、灯光等局部区域。
 
-【十二、Power Window / Mask】
+【§12 Power Window / Mask】
+效果：用几何或跟踪遮罩圈定画面局部，把调色限制在窗口内外｜取值：圆/矩形/多边形/曲线/渐变遮罩，Feather 控制过渡｜写法：圆形窗口罩住主体，Feather 50 柔化边缘单独调色｜联动：->
 
 圆形遮罩、矩形遮罩、多边形遮罩、曲线遮罩、渐变遮罩。
 位置（Position）、尺寸（Size）、旋转（Rotation）、羽化（Feather）、柔边（Softness）、透明度（Opacity）。
 Inside / Outside：控制遮罩内部或外部；Invert：反转遮罩。
 Tracking：跟踪人物或物体；Perspective Tracking：考虑透视变化。
 
-【十三、肤色控制】
+【§13 肤色控制】
+效果：单独控制肤色色相、饱和度、亮度与层次，保持人物自然｜取值：Skin Tone Line 判断偏离，Redness/Warmth/Skin Contrast 微调｜写法：Skin Hue 保持自然偏红黄，Warmth +5 增暖感｜联动：R4
 
 肤色色相（Skin Hue）：控制肤色偏红、偏黄、偏橄榄等倾向。
 肤色饱和度（Skin Saturation）：控制肤色鲜艳程度；肤色亮度（Skin Luminance）：控制皮肤明暗。
@@ -99,7 +112,8 @@ Skin Tone Line：用于判断肤色色相是否偏离自然范围。
 Redness：控制脸部泛红；Warmth：控制肤色暖感；Skin Contrast：控制皮肤层次。
 肤色保护（Skin Tone Protection）：进行整体风格调整时减少对人物肤色的影响。
 
-【十四、色域】
+【§14 色域】
+效果：界定颜色系统能表示的范围，防止超色域颜色无法显示｜取值：sRGB/Rec.709/DCI-P3/Rec.2020/ACEScg 由小到大｜写法：交付 Rec.709 时先做 Gamut Compression 防剪切断层｜联动：->
 
 色域（Color Gamut）：颜色系统能够表示的范围。
 常见色域：sRGB、Rec.709、DCI-P3、Display P3、Rec.2020、ACES AP0、ACEScg / AP1。
@@ -107,7 +121,8 @@ Gamut Mapping：把超出目标色域的颜色映射回可显示范围。
 Gamut Compression：压缩高饱和超色域颜色，减少断层和颜色剪切。
 Out of Gamut：超出目标色域的颜色。
 
-【十五、传递函数与 Gamma】
+【§15 传递函数与 Gamma】
+效果：定义亮度编码与显示响应方式，决定画面的亮度还原基准｜取值：Gamma 2.2/2.4/2.6，sRGB、Rec.709、PQ、HLG、Log｜写法：视频交付用 Rec.709 Gamma 2.4，网页图用 sRGB｜联动：->
 
 Gamma：控制亮度编码与显示响应。
 常见 Gamma：2.2、2.4、2.6。
@@ -117,13 +132,15 @@ PQ（ST 2084）：HDR10 等 HDR 系统常用。
 HLG：广播 HDR 常用。
 Log：摄影机记录高动态范围常用的对数曲线。
 
-【十六、Log 曲线】
+【§16 Log 曲线】
+效果：以低对比低饱和对数曲线记录更大动态范围的摄影机素材｜取值：LogC、S-Log、V-Log 等各厂 Log，需后期还原｜写法：S-Log 素材先经 Color Space Transform 还原再调色｜联动：->
 
 常见摄影机 Log：ARRI LogC、Sony S-Log、Canon Log、RED Log3G10、Panasonic V-Log、Blackmagic Film。
 Log 曲线特点：低对比、低饱和、保留更大动态范围。
 需要通过 Color Space Transform、LUT 或色彩管理转换到最终显示空间。
 
-【十七、ACES 色彩管理】
+【§17 ACES 色彩管理】
+效果：以统一色彩管理体系在拍摄、CG、合成到显示间保持颜色一致｜取值：ACES2065-1 交换、ACEScg 渲染、IDT/LMT/RRT/ODT 环节｜写法：CG 渲染用 ACEScg，输出经 Output Transform 到显示空间｜联动：->
 
 ACES：影视制作中广泛使用的统一色彩管理体系。
 ACES2065-1：ACES 主交换空间；ACEScg：CG 渲染常用线性色彩空间。
@@ -133,39 +150,45 @@ RRT / Output Transform：把场景颜色转换到显示设备。
 ODT：传统 ACES 工作流中的输出设备变换概念。
 ACEScg 常用于 Maya、Arnold、Houdini、Nuke、Blender、VFX 与高端 CG 流程。
 
-【十八、OCIO 色彩管理】
+【§18 OCIO 色彩管理】
+效果：跨软件配置色彩空间与查看变换，保证多软件颜色一致｜取值：Input/Working/Display/View/Look 五类配置｜写法：Nuke 与 Unreal 共用同一 OCIO config 保持一致｜联动：->
 
 OpenColorIO（OCIO）：影视与游戏 CG 中常用的色彩管理系统。
 Input Color Space：输入色彩空间；Working Space：工作空间；Display：显示设备；View：查看变换；Look：风格变换。
 常用于 Nuke、Maya、Arnold、Houdini、Blender、Substance、Unreal 等软件之间保持颜色一致。
 
-【十九、线性工作流】
+【§19 线性工作流】
+效果：在线性空间进行光照、混合与合成计算，保证物理正确｜取值：Linear RGB 计算，颜色纹理解码、数据纹理不解码｜写法：Roughness/Normal 设为数据纹理，不做 sRGB 解码｜联动：->
 
 Linear Workflow：灯光和渲染计算通常在线性空间进行。
 Linear RGB：用于光照、混合、合成等物理计算。
 Texture Color Space：颜色纹理通常需要正确解码；数据纹理如 Roughness、Normal、Metallic 通常不能按颜色 Gamma 处理。
 错误的色彩空间设置会导致材质、灯光、合成结果偏亮、偏暗或对比异常。
 
-【二十、输入色彩空间】
+【§20 输入色彩空间】
+效果：声明素材原本所属色彩空间，是后续所有转换的前提｜取值：sRGB、Rec.709、LogC、S-Log、ACEScg、Linear、Raw｜写法：LogC 素材导入时指定 LogC，错标会全面失真｜联动：->
 
 Input Color Space：告诉软件素材原本属于哪个空间。
 常见输入：sRGB、Rec.709、LogC、S-Log、ACEScg、Linear、Raw。
 错误指定输入空间会导致色彩和曝光完全失真。
 
-【二十一、输出色彩空间】
+【§21 输出色彩空间】
+效果：决定最终成片交付的目标色彩空间与显示标准｜取值：sRGB、Rec.709 Gamma 2.4、DCI-P3、Rec.2020、HDR10 PQ、HLG｜写法：网络视频输出 Rec.709，HDR 交付用 Rec.2020 PQ｜联动：->
 
 Output Color Space：决定最终输出目标。
 常见输出：sRGB、Rec.709 Gamma 2.4、DCI-P3、Display P3、Rec.2020、HDR10 PQ、HLG。
 影视院线、流媒体、电视、网页、游戏主机、手机等可能使用不同目标空间。
 
-【二十二、色彩空间转换】
+【§22 色彩空间转换】
+效果：在输入与输出色彩空间间转换，并处理动态范围与色域差异｜取值：CST 的输入/输出色域与 Gamma，配 Tone/Gamut Mapping｜写法：Log 转 Rec.709 时开 Tone Mapping 压缩动态范围｜联动：->
 
 Color Space Transform（CST）：在不同色彩空间之间转换。
 Input Color Space：输入色域；Input Gamma：输入传递函数。
 Output Color Space：目标色域；Output Gamma：目标传递函数。
 Tone Mapping：处理动态范围差异；Gamut Mapping：处理色域差异。
 
-【二十三、LUT】
+【§23 LUT】
+效果：用查找表转换颜色或套用风格，是快速统一的调色手段｜取值：1D 管亮度、3D 管色相饱和度；Technical 与 Creative 两类｜写法：Log 先挂 Technical LUT，再以 Mix 50 叠 Creative LUT｜联动：->
 
 LUT（Look-Up Table）：通过查找表转换颜色。
 1D LUT：主要控制单通道亮度曲线；3D LUT：可以同时改变亮度、色相、饱和度。
@@ -173,14 +196,16 @@ Technical LUT：技术转换，例如 Log → Rec.709；Creative LUT：建立视
 LUT Intensity / Mix：控制 LUT 强度；Interpolation：控制 LUT 插值方式。
 LUT 不应代替完整色彩管理。
 
-【二十四、Tone Mapping】
+【§24 Tone Mapping】
+效果：把高动态范围场景压缩进显示设备可表现的亮度范围｜取值：Exposure、Toe/Shoulder、White-Black Point、Roll-off 各分量｜写法：Filmic Tone Mapping 获得电影式柔和高光响应｜联动：->
 
 色调映射（Tone Mapping）：把高动态范围场景压缩到显示设备能够表现的范围。
 Exposure：整体曝光；Toe：暗部压缩；Shoulder：高光压缩；White Point：白点；Black Point：黑点。
 Highlight Roll-off：控制高光进入白色的过渡；Shadow Roll-off：控制暗部进入黑色的过渡。
 Filmic Tone Mapping：模拟电影式柔和高光和对比响应。
 
-【二十五、Filmic 参数】
+【§25 Filmic 参数】
+效果：精细控制暗部与高光的压缩形状，塑造电影感色调响应｜取值：Toe/Shoulder 的 Strength 与 Length，Linear 区间，White Clip｜写法：Shoulder Strength 提高，高光过渡更柔更慢｜联动：->
 
 Toe Strength：控制暗部压缩；Toe Length：控制暗部影响范围。
 Shoulder Strength：控制高光压缩；Shoulder Length：控制高光影响范围。
@@ -188,7 +213,8 @@ Linear Strength：控制中间线性区域；Linear Angle：控制中间曲线�
 White Clip：控制最亮区域剪切。
 常用于游戏引擎、实时渲染和电影感画面。
 
-【二十六、HDR】
+【§26 HDR】
+效果：以更高峰值亮度与更大色域显示画面，扩展明暗表现力｜取值：Peak Brightness nits、MaxCLL/MaxFALL、Rec.2020+PQ/HLG｜写法：HDR10 交付标注 MaxCLL，Paper White 定参考白｜联动：->
 
 HDR：高动态范围显示。
 Peak Brightness：峰值亮度；常使用 nits / cd/m²。
@@ -197,14 +223,16 @@ MaxCLL：内容最大亮度；MaxFALL：平均画面最大亮度。
 HDR10：常使用 Rec.2020 容器 + PQ；HLG：广播 HDR；Dolby Vision：支持动态元数据。
 游戏 HDR 还需考虑显示器校准和 UI 亮度。
 
-【二十七、SDR】
+【§27 SDR】
+效果：按标准动态范围交付画面，基准是 Rec.709/sRGB 显示环境｜取值：Reference White、Black Level、Gamma 2.2/2.4 按环境定｜写法：影视 SDR 母版按标准观看环境校准 Gamma 2.4｜联动：->
 
 SDR：标准动态范围。
 常见目标：Rec.709 / sRGB。
 Reference White：参考白；Black Level：黑位；Gamma 2.2 / 2.4：显示环境相关。
 影视 SDR 母版通常比普通电脑显示更强调标准观看环境。
 
-【二十八、颜色压缩与剪切】
+【§28 颜色压缩与剪切】
+效果：管理超范围高光暗部与超色域颜色，避免死白死黑和异色｜取值：Highlight/Shadow/Channel Clipping，Soft Clip 缓解｜写法：用 Soft Clip 保住高光细节，避免通道溢出色偏｜联动：->
 
 Highlight Clipping：高光超出范围直接变成纯白。
 Shadow Clipping：暗部超出范围变成纯黑。
@@ -212,26 +240,30 @@ Channel Clipping：单独某个 RGB 通道溢出，会产生异常色偏。
 Soft Clip：柔和压缩极端高光或暗部。
 Gamut Clip：超出色域后直接裁切；Gamut Compression：更柔和地压缩回来。
 
-【二十九、色彩分离】
+【§29 色彩分离】
+效果：加大颜色之间的差异，让角色与背景层次更分明｜取值：Hue/Luminance/Saturation Separation 三个维度｜写法：轻微提高色相分离，使角色服装区别于背景色｜联动：->
 
 Color Separation：增加不同颜色之间的区分。
 Hue Separation：增加色相差异；Luminance Separation：增加亮度差异；Saturation Separation：增加饱和度差异。
 常用于让角色和背景产生更清晰的颜色层次。
 
-【三十、冷暖关系】
+【§30 冷暖关系】
+效果：统筹画面冷暖分布，用冷暖对比建立主体与环境关系｜取值：暖主光+冷环境、冷阴影+暖高光、暖人物+冷背景等组合｜写法：暖人物+冷背景，Color Contrast 强化视觉重点｜联动：R3+R4
 
 Warm / Cool Balance：控制综合色彩冷暖关系。
 暖色：红、橙、黄；冷色：蓝、青、部分绿色。
 常见组合：暖主光 + 冷环境、冷阴影 + 暖高光、暖人物 + 冷背景、冷人物 + 暖背景。
 Color Contrast：通过互补色或冷暖对比增强视觉重点。
 
-【三十一、互补色】
+【§31 互补色】
+效果：用相对色建立色彩张力，突出主体与环境分离｜取值：红—青、绿—洋红、蓝—黄三组经典组合｜写法：橙蓝互补分离人物与背景，强度按场景而定｜联动：->
 
 互补色常见组合：红—青、绿—洋红、蓝—黄。
 Complementary Balance：控制互补关系强度。
 影视和游戏经常使用橙蓝关系建立主体和环境分离，但应根据场景而非机械套用。
 
-【三十二、综合色彩和谐】
+【§32 综合色彩和谐】
+效果：确定整片配色方案，让主色辅色强调色形成和谐关系｜取值：单色、邻近、互补、分裂互补、三角色五种方案｜写法：全片用邻近色色盘，强调色仅留给主体｜联动：->
 
 单色（Monochromatic）：围绕一个主色变化。
 邻近色（Analogous）：使用色环上相邻颜色。
@@ -240,25 +272,29 @@ Complementary Balance：控制互补关系强度。
 三角色（Triadic）：三个等距色相。
 综合色盘（Color Palette）：控制整个项目的主色、辅色、强调色。
 
-【三十三、综合色偏】
+【§33 综合色偏】
+效果：管理画面整体偏向的单一颜色倾向，可修正也可有意营造｜取值：Warm/Cool/Green/Magenta Cast 四类典型偏色｜写法：绿 Cast 用白平衡与 Offset 修正，以光源色温为依据｜联动：R3
 
 Color Cast：画面整体偏向某种颜色。
 Warm Cast：偏黄橙；Cool Cast：偏蓝青；Green Cast：偏绿；Magenta Cast：偏洋红。
 可通过 White Balance、Offset、RGB Curves、Color Wheels 等修正或有意创造。
 
-【三十四、综合色调密度】
+【§34 综合色调密度】
+效果：控制颜色浓厚程度，比饱和度更影响色彩厚重感｜取值：增密更厚重深浓，降密更轻薄，独立于 Saturation｜写法：胶片风格靠加密度而非拉饱和获得浓郁色彩｜联动：->
 
 Color Density：颜色的浓厚程度，不完全等于饱和度。
 增加密度：颜色更厚重、更深；降低密度：颜色更轻、更薄。
 影视胶片风格中常通过密度而不是单纯提高 Saturation 获得浓郁色彩。
 
-【三十五、综合色彩纯度】
+【§35 综合色彩纯度】
+效果：控制颜色接近纯色的程度，兼顾鲜艳与自然｜取值：降纯度更自然、升纯度更鲜艳，按元素区别对待｜写法：环境服装降纯度，皮肤保持自然纯度不偏灰｜联动：R4
 
 Color Purity：颜色接近纯色的程度。
 降低纯度：加入灰或互补色，颜色更自然；提高纯度：颜色更直接鲜艳。
 环境、皮肤和服装通常需要不同程度的纯度控制。
 
-【三十六、胶片色彩】
+【§36 胶片色彩】
+效果：模拟胶片的色彩、对比与密度响应，获得电影质感｜取值：Film Contrast/Saturation/Density、高光压缩、暗部厚度｜写法：Film Print Emulation 整体套用拷贝正片色彩响应｜联动：->
 
 Film Emulation：模拟胶片的色彩响应。
 Film Contrast：胶片式对比；Film Saturation：胶片式饱和；Film Density：胶片密度。
@@ -266,60 +302,70 @@ Highlight Compression：胶片高光柔化；Shadow Density：暗部厚度。
 Color Crosstalk：模拟 RGB 层之间的综合色彩影响。
 Film Print Emulation：模拟电影拷贝正片的综合色彩和对比响应。
 
-【三十七、色彩串扰】
+【§37 色彩串扰】
+效果：让 RGB 通道间适度互相影响，高光过渡更自然更有胶片感｜取值：串扰量适度即可，完全独立通道数字感更强｜写法：轻微增加 Crosstalk，柔化极端颜色的高光过渡｜联动：->
 
 Color Crosstalk：一个 RGB 通道影响其他通道。
 适当串扰可产生更自然的高光颜色过渡和胶片感。
 完全独立的 RGB 通道在极端颜色中可能显得数字感更强。
 
-【三十八、漂白效果】
+【§38 漂白效果】
+效果：模拟银漂保留，形成低饱和高对比的硬朗质感｜取值：Bleach Strength 控制强度，伴颗粒感与黑位加深｜写法：Bleach Bypass 中等强度营造硬朗风格化画面｜联动：->
 
 Bleach Bypass：模拟银漂保留。
 典型效果：饱和度降低、对比度增强、黑位加深、颗粒感增强。
 Bleach Strength：控制效果强度。
 
-【三十九、褪色】
+【§39 褪色】
+效果：降低黑白反差与色彩密度，营造年代感与回忆氛围｜取值：Fade Amount、Lifted Blacks 抬黑位、Reduced Whites 压高光｜写法：Fade Amount 30，黑位微抬做旧电影质感｜联动：->
 
 Fade：降低黑白反差并减少综合色彩密度。
 Fade Amount：控制褪色程度；Lifted Blacks：抬高黑位；Reduced Whites：降低高光。
 可用于旧电影、回忆、年代感或风格化游戏画面。
 
-【四十、颜色分级】
+【§40 颜色分级】
+效果：划分一级与二级调色职责，组织整体到局部的分级流程｜取值：Primary 管曝光白平衡对比，Secondary 管局部与特定色｜写法：先 Primary 统一基调，再 Look Development 定风格｜联动：->
 
 Primary Grade：一级调色，负责曝光、白平衡、整体对比、综合色彩。
 Secondary Grade：二级调色，负责局部区域和特定颜色。
 Look Development：建立视觉风格。
 Shot Matching：镜头匹配；Scene Matching：场景匹配；Sequence Matching：整段统一。
 
-【四十一、镜头匹配】
+【§41 镜头匹配】
+效果：让不同机位镜头的曝光、白平衡与色彩保持一致｜取值：Exposure/WB/Contrast/Saturation/Skin Tone/Background Match｜写法：以参考镜头为准逐项匹配，肤色单独核对｜联动：R4
 
 Exposure Match：匹配曝光；White Balance Match：匹配白平衡。
 Contrast Match：匹配对比；Saturation Match：匹配饱和度。
 Skin Tone Match：匹配肤色；Background Match：匹配环境综合色彩。
 影视剪辑中不同机位、摄影机和拍摄时间都需要综合色彩一致性。
 
-【四十二、游戏后期色彩】
+【§42 游戏后期色彩】
+效果：概括游戏实时后期色彩栈，分全局与暗部/中间调/高光四套控制｜取值：Exposure、WB、对比饱和、Grading LUT、Tone Mapping、Bloom 等｜写法：全局套 Grading LUT，再按 Shadows/Highlights 分区微调｜联动：->
 
 游戏实时后期常见参数：Exposure、Auto Exposure、White Balance、Temperature、Tint、Contrast、Saturation、Gamma、Gain、Offset、Color Grading LUT、Tone Mapping、Bloom、Vignette、Film Grain、Chromatic Aberration。
 还常分为 Global、Shadows、Midtones、Highlights 四套综合色彩控制。
 
-【四十三、游戏阴影色彩】
+【§43 游戏阴影色彩】
+效果：单独控制游戏画面暗部的色调、饱和度与对比｜取值：Shadow Color/Saturation/Contrast/Tint，Threshold 定暗部范围｜写法：Shadow Color 微加蓝，与暖高光形成分区冷暖｜联动：R3
 
 Shadow Color：暗部综合色调；Shadow Saturation：暗部饱和度；Shadow Contrast：暗部对比度。
 Shadow Tint：给阴影增加综合色彩倾向；Shadow Threshold：定义暗部影响范围。
 
-【四十四、游戏中间调色彩】
+【§44 游戏中间调色彩】
+效果：单独控制中间调的色偏、饱和度、层次与亮度｜取值：Midtone Color/Saturation/Contrast/Gamma 四项｜写法：Midtone Contrast +10 增层次，色偏保持中性｜联动：R3
 
 Midtone Color：控制中间调综合色偏；Midtone Saturation：控制中间调饱和度。
 Midtone Contrast：控制中间区域层次；Midtone Gamma：控制中间亮度。
 
-【四十五、游戏高光色彩】
+【§45 游戏高光色彩】
+效果：单独控制高光色调、饱和度与范围，避免亮部颜色爆炸｜取值：Highlight Color/Saturation/Gain/Threshold/Desaturation｜写法：开启 Highlight Desaturation，极亮区不再偏色刺眼｜联动：R3
 
 Highlight Color：控制亮部综合色调；Highlight Saturation：控制亮部饱和度。
 Highlight Gain：控制亮部强度；Highlight Threshold：决定高光范围。
 Highlight Desaturation：降低极亮区域饱和度，减少数字感和颜色爆炸。
 
-【四十六、自动曝光】
+【§46 自动曝光】
+效果：按画面亮度自动调整曝光，适应室内外与明暗场景切换｜取值：Min/Max EV 界定范围，Speed Up/Down 控适应速度｜写法：Max EV 限住夜景过曝，Metering 选局部测光保主体｜联动：->
 
 Auto Exposure：根据画面亮度自动改变曝光。
 Min EV：最低曝光；Max EV：最高曝光；Exposure Compensation：整体偏移。
@@ -327,82 +373,96 @@ Speed Up：从暗到亮的适应速度；Speed Down：从亮到暗的适应速�
 Metering Mode：平均测光、直方图测光、局部测光等。
 游戏中自动曝光对室内外切换、洞穴、夜景等非常重要。
 
-【四十七、局部曝光】
+【§47 局部曝光】
+效果：按画面局部亮度分别调整曝光与局部对比，保留细节｜取值：Highlight/Shadow Contrast、Detail Strength、Blurred Luminance｜写法：Detail Strength 提高，亮暗区细节同时保住｜联动：->
 
 Local Exposure：根据画面局部亮度分别调整曝光。
 Highlight Contrast：控制亮区局部对比；Shadow Contrast：控制暗区局部对比。
 Detail Strength：保留局部细节；Blurred Luminance：控制局部亮度分析尺度。
 常用于 HDR 与游戏实时环境。
 
-【四十八、Bloom 色彩相关】
+【§48 Bloom 色彩相关】
+效果：控制辉光的强度、颜色与范围，直接影响亮部色彩感知｜取值：Bloom Intensity/Threshold/Tint/Radius 四项｜写法：Threshold 提高，仅高亮光源产生 Bloom，Tint 按需设色｜联动：R3
 
 Bloom Intensity：辉光强度；Bloom Threshold：开始产生 Bloom 的亮度阈值。
 Bloom Tint：辉光颜色；Bloom Radius：辉光范围。
 高饱和 Bloom 会显著改变综合色彩，因此属于重要的最终色彩感知参数。
 
-【四十九、色差】
+【§49 色差】
+效果：模拟镜头色散，在边缘产生分离色边的镜头感｜取值：Intensity、Start Offset、Color Fringe 边缘颜色｜写法：Intensity 低量加在边缘，过强会破坏清晰度｜联动：->
 
 Chromatic Aberration：模拟镜头不同波长光线聚焦位置差异。
 Intensity：强度；Start Offset：开始出现的位置；Color Fringe：边缘颜色。
 通常用于镜头感或风格化，过强会明显破坏综合色彩清晰度。
 
-【五十、暗角】
+【§50 暗角】
+效果：压暗画面边缘，引导视线并增加中心色彩重量｜取值：Intensity、Color、Roundness、Feather 四项｜写法：Intensity 20 加轻暗角，Feather 柔化过渡｜联动：->
 
 Vignette：降低画面边缘亮度。
 Intensity：暗角强度；Color：暗角颜色；Roundness：形状；Feather：柔边。
 除了引导视线，也会改变画面的整体综合色彩重量。
 
-【五十一、胶片颗粒】
+【§51 胶片颗粒】
+效果：添加颗粒质感，影响色彩纯净度与画面统一性｜取值：Intensity、Size、Response；彩色或单色颗粒｜写法：低强度 Monochrome Grain 细颗粒，统一质感不脏色｜联动：->
 
 Film Grain：增加颗粒。
 Intensity：强度；Size：颗粒尺寸；Response：颗粒随亮度的变化。
 Colored Grain：彩色颗粒；Monochrome Grain：单色颗粒。
 颗粒会影响综合色彩纯净度、暗部质感和画面统一性。
 
-【五十二、色彩抖动】
+【§52 色彩抖动】
+效果：以微小噪声消除有限位深下的色彩断层｜取值：Dither Strength；Temporal 时间抖动与 Spatial 空间抖动｜写法：天空渐变开 Spatial Dither，强度轻微即可｜联动：->
 
 Dithering：在有限位深下加入微小噪声，减少综合色彩断层。
 Dither Strength：强度；Temporal Dither：时间抖动；Spatial Dither：空间抖动。
 游戏天空、雾、暗部渐变中尤其重要。
 
-【五十三、综合色彩断层】
+【§53 综合色彩断层】
+效果：解释并解决平滑渐变中的色阶现象｜取值：成因：位深不足、压缩过激、暗部处理过重｜写法：暗部渐变出现 Banding 时先提位深再加 Dither｜联动：->
 
 Banding：平滑渐变出现明显色阶。
 常见原因：位深不足、压缩过强、后期曲线过激、暗部处理过重。
 解决方式：提高位深、Dithering、减少极端曲线、使用更合理色彩空间。
 
-【五十四、位深】
+【§54 位深】
+效果：决定每通道颜色精度，直接影响渐变平滑度与后期空间｜取值：8-bit 常规输出，10-bit HDR，12/16-bit 影视，32-bit Float 合成｜写法：HDR 项目按 10-bit 以上输出，防渐变断层｜联动：->
 
 Bit Depth：每个通道能够记录的颜色精度。
 8-bit：常规网页和大量游戏输出；10-bit：HDR 和高质量视频常用；12-bit / 16-bit：影视制作与高质量图像常用；16-bit Half Float / 32-bit Float：VFX 与 CG 合成常用。
 位深越高，渐变越平滑，后期调整空间越大。
 
-【五十五、浮点颜色】
+【§55 浮点颜色】
+效果：以浮点格式保存超过 0–1 的高动态范围颜色值｜取值：16-bit Half Float 与 32-bit Float，EXR 常用载体｜写法：CG 灯光合成用 EXR Half Float 保留高光信息｜联动：->
 
 Half Float：常见 16-bit 浮点图像格式；Float：32-bit 浮点。
 允许保存超过 0～1 的高动态范围值。
 EXR 是影视 CG、灯光和合成中非常常见的高动态范围格式。
 
-【五十六、显示参考】
+【§56 显示参考】
+效果：以校准监视器与标准环境保证调色判断准确｜取值：White Point、Peak Luminance、Black Level、Ambient Light｜写法：调色间固定环境光与校准白点，避免误判色彩｜联动：->
 
 Reference Monitor：标准参考监视器。
 Display Calibration：显示器校准；White Point：白点；Peak Luminance：峰值亮度；Black Level：黑位。
 Ambient Light：观看环境光也会影响综合色彩判断。
 影视调色必须尽量保持固定和标准化的观看环境。
 
-【五十七、综合色彩管理核心】
+【§57 综合色彩管理核心】
+效果：串联从输入、工作到输出显示的全链路色彩管理要素｜取值：色彩空间、Gamma、Log、Tone/Gamut Mapping、LUT、OCIO/ACES｜写法：全流程声明统一色彩管理方案，各环节不脱节｜联动：->
 
 输入色彩空间、工作色彩空间、显示色彩空间、输出色彩空间、Gamma、Log、Tone Mapping、Gamut Mapping、White Point、Transfer Function、LUT、OCIO、ACES。
 这些参数决定颜色是否能够在摄影机、CG、合成、游戏引擎和最终显示设备之间保持一致。
 
-【五十八、影视常用核心色彩参数】
+【§58 影视常用核心色彩参数】
+效果：汇总影视调色核心参数，覆盖一级二级与色彩管理全流程｜取值：Exposure、WB、Lift/Gamma/Gain、曲线、Qualifier、ACES/LUT 等｜写法：影视提示词可按此清单逐项指定参数｜联动：->
 
 Exposure、White Balance、Temperature、Tint、Lift、Gamma、Gain、Offset、Contrast、Pivot、Saturation、Vibrance、Shadows、Midtones、Highlights、RGB Curves、Hue Curves、Qualifier、Power Window、Skin Tone、Color Space、Gamma、Log、ACES、OCIO、CST、LUT、Tone Mapping、Gamut Mapping、HDR、Film Emulation、Soft Clip。
 
-【五十九、游戏常用核心色彩参数】
+【§59 游戏常用核心色彩参数】
+效果：汇总游戏引擎常用核心色彩参数清单｜取值：Exposure、Auto Exposure、WB、对比饱和、Grading LUT、Tone Mapping 等｜写法：游戏提示词按此清单指定引擎后期参数｜联动：->
 
 Exposure、Auto Exposure、Min EV、Max EV、White Balance、Temperature、Tint、Contrast、Saturation、Gamma、Gain、Offset、Shadows、Midtones、Highlights、Color Grading LUT、Tone Mapping、HDR、Bloom Tint、Vignette Color、Film Grain、Chromatic Aberration、Local Exposure、Gamut、Output Color Space。
 
-【六十、影视与游戏最核心通用色彩参数】
+【§60 影视与游戏最核心通用色彩参数】
+效果：提炼影视与游戏通用的最核心色彩参数集合｜取值：色相饱和、曝光对比、黑位白位、三段分区、色温白平衡、色域 LUT 等｜写法：提示词优先从该清单选参数，保证跨引擎通用｜联动：->
 
 颜色、RGB、色相、饱和度、自然饱和度、明度、亮度、曝光、对比度、黑位、白位、阴影、中间调、高光、Lift、Gamma、Gain、Offset、色温、Tint、白平衡、RGB 曲线、Hue 曲线、色轮、色域、Gamma、Log、色彩空间、白点、LUT、Tone Mapping、Gamut Mapping、HDR、综合色彩压缩、肤色控制、选择性色彩、遮罩、局部调色、Film Look、综合色彩匹配、输出色彩空间。
