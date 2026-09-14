@@ -300,4 +300,61 @@ Material Type 材质类型：Wet Asphalt 湿沥青｜Base Color 基础色：Dark
 
 【§76 材质参数最终逻辑顺序】
 效果：规定材质参数书写顺序，从类型到细节瑕疵再到质量收尾｜取值：->｜写法：先写材质类型再按此序铺开参数与瑕疵｜联动：->
-Material Type 材质类型 → Base Color 基础颜色 → Metallic 金属度 → Roughness 粗糙度 → Specular 镜面反射 → IOR 折射率 → Normal 法线 → Bump 凹凸 → Height 高度 → Displacement 位移 → AO 环境遮蔽 → Opacity 透明度 → Transmission 透射 → Refraction 折射 → SSS 次表面散射 → Anisotropy 各向异性 → Clear Coat 清漆层 → Sheen 绒面高光 → Emission 自发光 → Fresnel 菲涅尔 → Texture Mapping 纹理映射 → UV UV参数 → Detail Texture 细节纹理 → Surface Imperfection 表面瑕疵 → Wear 磨损 → Scratch 划痕 → Dust 灰尘 → Dirt 污垢 → Wetness 湿润 → Damage 损伤 → Weather Response 天气响应 → Ray Tracing 光追 → Path Tracing 路径追踪 → Material Quality 材质质量 → Performance Optimization 性能优化
+Material Type 材质类型 → Base Color 基础颜色 → Metallic 金属度 → Roughness 粗糙度 → Specular 镜面反射 → IOR 折射率 → Normal 法线 → Bump 凹凸 → Height 高度 → Displacement 位移 → AO 环境遮蔽 → Opacity 透明度 → Transmission 透射 → Refraction 折射 → SSS 次表面散射 → Anisotropy 各向异性 → Clear Coat 清漆层 → Sheen 绒面高光 → Emission 自发光 → Fresnel 菲涅尔 → Texture Mapping 纹理映射 → UV UV参数 → Detail Texture 细节纹理 → Surface Imperfection 表面瑕疵 → Wear 磨损 → Scratch 划痕 → Dust 灰尘 → Dirt 污垢 → Wetness 湿润 → Condensation 冷凝 → Damage 损伤 → Weather Response 天气响应 → Ray Tracing 光追 → Path Tracing 路径追踪 → Material Quality 材质质量 → Performance Optimization 性能优化
+
+【§77 Food & Beverage 食物与饮品材质】
+效果：表现食物饮品的色泽油光与气泡蒸汽等诱人质感，餐饮场景必写｜取值：SSS/油光/气泡各0–1｜写法：烤肉表面油光焦痕，切面渗出肉汁微亮｜联动：R2
+
+熟食：Browning 美拉德焦褐｜Char Marks 烤焦纹｜Juice 肉汁渗出（切面微亮）｜Oil Sheen 食物油光｜Bread Crust 面包脆壳（哑光开裂）｜Bread Crumb 面包瓤（多孔软哑）｜Steam 热气（须逆光/侧逆光才可见，联动光线§13）｜冰淇淋：Melt 融化滴水｜Frost 外壳结霜。
+水果：Fruit SSS 果肉透光（葡萄/桃逆光透亮）｜Fruit Bloom 果粉（葡萄李子表面白霜哑光薄层）｜Polished Apple 抛光果蜡（高光锐利）。
+饮品：Foam 泡沫（啤酒泡沫头/奶泡拉花）｜Crema 咖啡油脂层（金黄细泡）｜Carbonation 气泡上升链｜Wine Legs 挂壁酒泪（沿杯壁滑落透明酒脚）｜Sauce Viscosity 酱汁粘稠（挂勺厚挂）｜Syrup 糖浆透明粘亮。
+巧克力：Fat Bloom 巧克力起霜（存放后表面灰白斑）｜Snap Gloss 折断面高光。
+写法规则：食物必写新鲜度时间轴——刚出锅（蒸汽+油光+焦边）vs 放凉（油凝哑光无蒸汽）；冷饮杯必配冷凝水珠（联动§82）；热食蒸汽描写必须绑定逆光光源。
+
+【§78 Paper & Books 纸张与书本材质】
+效果：表现纸纤维透光黄变与书页旧化，文件信件道具的写实载体｜取值：黄变/脆裂/透光0–1｜写法：旧信纸边缘黄变，逆光透出纤维纹理｜联动：R2
+
+Paper Fiber 纸纤维｜Paper Translucency 纸张透光（逆光显纤维亮纹）｜Paper Roughness 纸面粗糙（书写纸哑光 vs 铜版纸光面）｜Foxing 黄褐霉斑（旧纸点状褐斑）｜Yellowing 整体黄变｜Deckle Edge 毛边｜Newsprint 新闻纸（吸墨偏灰易脏）｜Glossy Paper 铜版纸（锐利高光）｜Torn Edge 撕裂毛边｜Crease 折痕（压痕吸光变暗线）｜Fold Wear 折缝磨损发白｜Faded Ink 褪色墨迹｜Book Binding 书脊布纹｜Dust Jacket 书衣｜Wet Paper 浸湿纸（变暗半透+波浪变形+易破）｜Burnt Edge 烧焦边（碳化卷曲黑边）。
+写法规则：纸透光只在逆光/背光下描写（顺光纸是哑面）；折痕沿受力方向且吸光变暗；旧化集中于边缘与折缝（高频接触处磨损重）。
+
+【§79 Gems & Jade 宝石玉石材质】
+效果：表现宝石切面折射玉石散射与珍珠虹彩，珠宝特写必备｜取值：IOR 1.5–2.4，色散0–1｜写法：翡翠手镯次表面散射透出青绿，弧面高光锐利｜联动：R2
+
+Gem Facet 宝石切面｜Brilliance 明亮度（切面全内反射回光）｜Dispersion 色散（钻石彩虹闪）｜Scintillation 闪光（转动时闪烁）｜Inclusion 内含物（棉絮/裂纹/气泡）｜Star Effect 星光效应（红蓝宝石六射星线）｜Cat's Eye 猫眼效应（一线亮带）｜Jade SSS 玉石散射（透而不亮的油润感）｜Jadeite/Nephrite 翡翠/和田玉｜Jade Polish 弧面抛光｜Pearl Luster 珍珠珠光（层叠虹彩）｜Pearl Orient 珍珠晕彩｜Opal Play-of-Color 蛋白石变彩（游移色斑）｜Amber 琥珀（透黄内含气泡昆虫）｜Acid Etching 翡翠酸蚀网纹（B货）｜Metal Setting 镶嵌金属爪位（联动§34）。
+写法规则：宝石「闪」必须绑定光源数量与位置（单点光单闪/多点光星闪，联动光线§2主光）；玉石价值感=高SSS低反射「透而不亮」；珍珠禁写镜面反射（以层叠虹彩替代）。
+
+【§80 Foliage & Bark 植被与树皮材质】
+效果：表现叶片逆光透色花瓣柔亮与树皮苔藓的户外质感｜取值：叶SSS 0.3–0.8｜写法：逆光树叶透出黄绿，叶脉清晰可见｜联动：R1
+
+Leaf SSS 叶片透光（逆光叶脉显形）｜Leaf Waxy Coat 叶面蜡质（荷叶不沾水珠）｜Leaf Edge Burn 叶缘枯焦｜Leaf Color Variation 叶色混杂（黄绿斑驳）｜Petal SSS 花瓣散射（柔光半透）｜Petal Vein 花瓣脉络｜Bark Furrow 树皮沟壑（纵向深纹）｜Bark Flake 树皮剥落鳞片｜Lichen 地衣（灰绿共生斑）｜Moss 苔藓（阴面绒感，联动§19绒面+§50朝向堆积）｜Grass Sheen 草叶光泽｜Subsurface Foliage 灌木整体透光｜Dead Branch 枯枝（灰白木丝翘起）｜Fern Frond 蕨叶羽状。
+写法规则：叶片必写顺光/逆光两种观感（顺光哑绿 vs 逆光透亮黄绿——同一场戏光位定其一）；苔藓地衣只朝阴面与树基生长；树皮沟壑积灰（凹槽积污联动§30）。
+
+【§81 Hot Metal & Forge 热金属与锻造材质】
+效果：表现金属受热发色的温度渐变与锻造燃烧现场质感｜取值：暗红约600℃→橙约900℃→黄白1200℃+｜写法：铁坯中段橙黄向两端渐暗红，锻打火星飞溅｜联动：R1
+
+Heat Gradient 热梯度发色（温度映射色带：暗红→橙→黄白）｜Glowing Emissive 发光衰减（离火后亮橙→暗红→熄灭变黑氧化）｜Forge Glow 炉膛映照（火光跳动染亮车间，联动光线§37）｜Hammer Mark 锻打锤痕｜Scale 锻造氧化皮（蓝黑剥落层）｜Quench Steam 淬火蒸汽（水汽腾起）｜Sparks 火星飞溅（弹道拖尾光点）｜Anvil Face 铁砧锤击面（磨亮镜区）｜Charred Coal 焦炭（哑光黑多孔）｜Cigarette Ember 烟头红点（呼吸明灭/吸吮变亮）｜Ash 烟灰柱（灰白易断易落）｜Heat Haze 热扭曲（隔火空气折射扰动）。
+写法规则：热金属颜色=温度表禁随意发色（暗红600℃/橙900℃/黄白1200℃+）；离火必写冷却过程与时间感；烟头明灭须绑定吸烟动作节奏。
+
+【§82 Condensation 冷凝与结露材质】
+效果：表现冷表面水汽凝结的雾珠与擦拭痕，冷暖场景的湿感细节｜取值：雾度/珠密度0–1｜写法：冰啤酒罐挂满细密水珠，指痕划开露金属亮面｜联动：R1
+
+Condensation 冷凝水珠｜Droplet Size 珠径（细雾珠/大颗水珠）｜Droplet Density 珠密度｜Condensation Streak 滑落水痕｜Mirror Fog 浴室镜雾（擦拭区清晰与雾区朦胧分界）｜Breath Fog 哈气雾斑（呵气成圆雾再消散）｜Cold Can Sweat 冷罐出汗｜Window Condensation 窗内侧结露（冬季）｜Morning Dew 晨露（草叶蛛网挂珠）｜Finger Wipe 指擦痕迹（水痕路径）｜Re-fog 复雾速度（擦后重新凝雾）。
+写法规则：冷凝只发生在「冷面遇暖湿气」——方向必须物理正确（冬季结露在窗内侧非外侧；冷饮罐在湿热环境）；水珠必配逆光闪烁高光（联动光线§14）；擦拭痕按时间自然复雾。
+
+【§83 Mirror & Screen 镜面与屏幕材质】
+效果：表现镜子的反射质量与老化失银，及屏幕哑光/镜面差异｜取值：镜面粗糙<0.05，失银0–1｜写法：老式梳妆镜边缘失银黑斑蔓延，反射带轻微波纹｜联动：R2
+
+Mirror Silvering 镀银镜面（粗糙<0.05纯反射）｜Mirror Backing 镜背漆（崩边露灰背）｜Desilvering 失银黑斑（从边缘向中心蔓延）｜Mirror Wave 镜面波纹（旧玻璃不平，反射扭曲）｜Antique Mirror 古董镜（氧化云雾斑驳）｜Two-Way Mirror 单向透视镜｜Screen Matte 哑光屏（防眩散射低反）｜Screen Gloss 镜面屏（高反射倒影环境）｜OLED Black 纯黑像素熄灭｜Screen Smudge 屏幕指纹油污（侧光下明显）｜Anti-Glare Coating 防眩涂层（紫微光晕）｜Moire 摩尔纹（拍摄屏幕时条纹干扰，须避让或后期处理）。
+写法规则：镜面反射必须写明反射内容（反射谁/什么）；失银从边缘蔓延；屏幕在暗环境必写自发光照亮人脸（联动光线§18实景灯）；拍摄含屏幕画面时快门与刷新同步防条纹。
+
+【§84 Game Stylized & Feedback 游戏风格化与反馈材质】
+效果：卡通化道具材质与受击溶解等反馈效果，服务游戏风与互动表现｜取值：色块档位/溶解度0–1｜写法：受击瞬间材质闪白0.2秒后恢复，死亡溶解从脚向上消散｜联动：-
+
+Toon Prop 卡通道具（色块化/去渐变）｜Hand-Painted 手绘纹理（笔触可见）｜Flat Color 平涂色块｜Cel Material 赛璐璐材质｜Rim Highlight 交互描边（可拾取物泛金边）｜Hit Flash 受击闪白（短暂全白/红闪）｜Dissolve 溶解消散（噪声遮罩+边缘发光）｜Burn Edge 溶解烧灼边｜Freeze Material 冻结覆盖（冰蓝壳结霜）｜Petrify 石化过渡（灰岩覆盖）｜Ghost Material 幽灵半透（波浪扭曲）｜Damage Overlay 裂纹覆盖层（血量可视化）｜Gradient Ramp 风格化明暗带。
+写法规则：反馈材质必写触发条件与持续时间（受击0.2s闪白）；溶解方向明确（从下向上/噪声扩散）；同场景风格统一，写实与卡通风禁止混用。
+
+【§85 Creature Surface 生物表面材质】
+效果：表现毛皮羽毛鳞甲骨齿等生物表面，动物与奇幻生物写实载体｜取值：密度/长度/虹彩0–1｜写法：狼皮冬季绒毛浓密，逆光边缘镶银边，鼻镜湿润反光｜联动：R1
+
+Fur 毛皮｜Guard Hair 护毛（粗长外层）｜Underfur 绒毛（细密内层）｜Fur Density 毛密度｜Fur Length 毛长｜Fur Color Banding 毛色分段（毛尖-毛干-毛根异色渐变，如虎斑/银尖）｜Wet Fur 湿毛贴身（淋雨成绺倒伏）｜Feather 羽毛｜Barb 羽枝结构｜Iridescent Feather 结构色虹彩（蜂鸟/孔雀——随角度变色非颜料）｜Down 绒羽｜Scale 鳞片（排列走向沿体轴，边缘微翘）｜Scale Sheen 鳞光（蛇鳞哑光vs鱼鳞湿亮）｜Chitin 甲壳（昆虫高光偏塑料感）｜Bone 骨骼（象牙白/陈骨黄旧/孔隙）｜Teeth Enamel 牙釉质（湿润高光）｜Tartar 牙结石黄渍｜Tusk 獠牙（根部粗糙到尖端渐亮）｜Nose Leather 鼻镜（湿润黑皮革感）｜Claw 角质爪（半透）。
+写法规则：毛皮必写双层次（护毛+绒毛）与逆光边缘光；结构色虹彩必须写「随观察角度变色」；鳞片走向沿身体轴向排列禁随机。

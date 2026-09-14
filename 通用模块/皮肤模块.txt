@@ -380,4 +380,46 @@ Skin Type 皮肤类型：Normal / Dry / Oily / Wet / Aged｜Base Color 基础颜
 
 【§96 Skin Parameter Final Logic 皮肤参数最终逻辑顺序】
 效果：规定皮肤参数搭建顺序，从材质底层到光线呈现逐层定｜取值：->｜写法：先定材质与三层结构再调光照响应｜联动：-
-Skin Material 皮肤材质 → Base Color 基础颜色 → Melanin 黑色素 → Hemoglobin 血色 → Regional Color Variation 区域色差 → Epidermis 表皮层 → Dermis 真皮层 → Hypodermis 皮下组织 → SSS 次表面散射 → Scatter Radius 散射半径 → Specular 镜面反射 → Dual Specular 双层高光 → Roughness 粗糙度 → Oiliness 油脂度 → Moisture 湿润度 → Fresnel 菲涅尔 → IOR 折射率 → Normal 法线 → Pores 毛孔 → Micro Detail 微细节 → Bump 凹凸 → Displacement 位移 → Wrinkles 皱纹 → Dynamic Wrinkles 动态皱纹 → Freckles 雀斑 → Moles 痣 → Pigmentation 色素沉着 → Veins 血管 → Dark Circles 黑眼圈 → Lips 嘴唇 → Eye Area 眼周 → Peach Fuzz 面部绒毛 → Facial Hair 面部毛发 → Thickness 厚度 → Transmission 透射 → Back Scatter 背向散射 → AO 环境遮蔽 → Makeup 妆容 → Dirt/Wetness 污垢湿润 → Dynamic Skin 动态皮肤 → Lighting Response 受光响应 → Film Exposure 影视曝光 → Color Management 色彩管理 → Real-Time SSS 实时SSS → Ray Tracing 光追 → Path Tracing 路径追踪 → Skin LOD 皮肤LOD → Performance Optimization 性能优化
+Skin Material 皮肤材质 → Base Color 基础颜色 → Melanin 黑色素 → Hemoglobin 血色 → Regional Color Variation 区域色差 → Epidermis 表皮层 → Dermis 真皮层 → Hypodermis 皮下组织 → SSS 次表面散射 → Scatter Radius 散射半径 → Specular 镜面反射 → Dual Specular 双层高光 → Roughness 粗糙度 → Oiliness 油脂度 → Moisture 湿润度 → Fresnel 菲涅尔 → IOR 折射率 → Normal 法线 → Pores 毛孔 → Micro Detail 微细节 → Bump 凹凸 → Displacement 位移 → Wrinkles 皱纹 → Dynamic Wrinkles 动态皱纹 → Freckles 雀斑 → Moles 痣 → Pigmentation 色素沉着 → Veins 血管 → Dark Circles 黑眼圈 → Lips 嘴唇 → Eye Area 眼周 → Peach Fuzz 面部绒毛 → Facial Hair 面部毛发 → Thickness 厚度 → Transmission 透射 → Back Scatter 背向散射 → AO 环境遮蔽 → Makeup 妆容 → Dirt/Wetness 污垢湿润 → Stretch Marks 体型纹 → Environmental Damage 环境损伤 → Tattoo 纹身 → Skin Conditions 皮肤病理 → Body Hair 体毛 → Nails 指甲手部 → Fluid Residue 液体痕迹 → Dynamic Skin 动态皮肤 → Lighting Response 受光响应 → Film Exposure 影视曝光 → Color Management 色彩管理 → Real-Time SSS 实时SSS → Ray Tracing 光追 → Path Tracing 路径追踪 → Skin LOD 皮肤LOD → Performance Optimization 性能优化
+
+【§97 Stretch Marks & Cellulite 体型纹】
+效果：控制妊娠纹生长纹与橘皮组织的形态颜色，表现体重变化与体型的真实纹理｜取值：0–1，红紫新纹到银白旧纹分阶段｜写法：腹部淡银色旧妊娠纹，微凹陷反光弱｜联动：R1
+
+Stretch Mark 妊娠纹｜Growth Mark 生长纹｜Stretch Mark Stage 纹路阶段（红紫新纹→粉纹→银白旧纹）｜Stretch Mark Depth 纹路凹陷｜Stretch Mark Direction 纹路走向（沿皮肤张力线：腹部纵向／大腿横向）｜Stretch Mark Roughness 纹路粗糙度（旧纹哑光）｜Cellulite 橘皮组织｜Cellulite Amount 橘皮量｜Cellulite Dimple 凹窝密度｜Cellulite Distribution 分布区（大腿外侧／臀部／上臂后侧）｜Skin Laxity 皮肤松弛纹｜Weight Change Mark 体重变化纹｜Postpartum Mark 产后纹。
+写法规则：纹路必须写明部位+走向+阶段色；橘皮纹只在受压姿势（坐姿压腿）下显著，站立时减淡。
+
+【§98 Environmental Skin Damage 环境损伤皮肤】
+效果：表现晒伤脱皮冻伤皴裂等环境造成的皮肤损伤状态｜取值：0–1，按损伤阶段分档｜写法：鼻肩晒伤脱皮，翘起边缘泛白｜联动：R1
+
+Sunburn 晒伤｜Sunburn Redness 晒伤红度｜Sunburn Boundary 晒痕分界（V领／袖口边界线，联动§4 Tan Line）｜Peeling 脱皮｜Peeling Edge 脱皮翘边｜Peeling Patch 脱皮斑块｜Frostbite 冻伤｜Frostbite Purple 冻伤紫红｜Frostbite Numbness 冻僵苍白（发白发硬）｜Chapped Skin 皴裂｜Wind Chap 风皴（高原红式两颊皴红）｜Cold Crack 冻裂（指节／嘴角裂口）｜Snow Burn 雪地灼伤｜Desert Chap 沙漠干裂。
+写法规则：环境损伤必须与光线模块 §26 天气档位一致（晒伤配晴天戏、皴裂配严寒戏）；损伤程度沿剧情连续（一场戏内不得突然出现/消失）。
+
+【§99 Tattoos 纹身】
+效果：控制纹身图案墨色与皮肤质感的相互作用，新旧纹身观感差异大｜取值：新旧程度与遮盖状态｜写法：前臂旧纹身墨色发蓝微晕开，皮肤纹理透过墨层｜联动：R1
+
+Tattoo 纹身｜Tattoo Placement 纹身部位｜Tattoo Color 墨色｜Tattoo Saturation 墨色饱和度｜Tattoo Ink Spread 墨色晕开（旧纹身发蓝扩散）｜Tattoo Height 纹身微凸｜Tattoo Roughness 纹身区粗糙度（哑光，与皮肤一致或略高）｜Tattoo Pore Visibility 皮肤纹理透墨（毛孔/绒毛盖在墨层上）｜Tattoo SSS 纹身透光（逆光下墨层下透血色）｜Fresh Tattoo 新纹身（墨色亮黑／边缘微肿微红）｜Faded Tattoo 褪色纹身（灰蓝／断线）｜Cover-up Tattoo 遮盖旧纹的重刺｜Tattoo Aging 纹身随年龄模糊。
+写法规则：纹身是皮下墨层——皮肤细节（毛孔／绒毛／汗）必须叠加在墨色之上；禁止把纹身画成表面贴纸。
+
+【§100 Mild Skin Conditions 轻度皮肤病理】
+效果：表现酒糟鼻湿疹老年紫癜等轻度皮肤问题，增强中老年与劳作角色的生活感｜取值：0–1，写实低强度为主｜写法：鼻头微红的玫瑰痤疮倾向，颊部毛细血管隐约可见｜联动：R4
+
+Rosacea 玫瑰痤疮（面颊鼻部持续性红斑＋毛细血管扩张）｜Rhinophyma 酒糟鼻（鼻头增生粗糙）｜Eczema Patch 湿疹斑块（干燥脱屑边缘红）｜Psoriasis Scale 干癣鳞屑（银白屑斑）｜Senile Purpura 老年性紫癜（前臂手背暗紫瘀斑，不痛不痒）｜Broken Capillary 破裂毛细血管（鼻翼／颊部红丝）｜Skin Tag 皮赘（颈侧／眼睑小肉垂）｜Spider Vein 蜘蛛状静脉｜Pale Cyanotic Skin 苍白青紫肤（病态／失血／遗体：唇甲青灰肤苍白蜡黄）｜Grey Cadaveric Tone 尸斑级青灰（法医／恐怖剧情专用）。
+写法规则：病理特征写实低强度，禁止戏剧化夸张；老年紫癜必配老年皮肤（§44/§46），不与年轻皮肤同用。
+
+【§101 Body Hair 体毛汗毛】
+效果：控制手臂腿部等身体毛发密度颜色，特写时避免塑料光滑假人感｜取值：0–1，分区分色｜写法：小臂细密汗毛在逆光下发亮｜联动：R1
+
+Body Hair 体毛｜Arm Hair 小臂毛｜Leg Hair 小腿毛｜Chest Hair 胸毛｜Back Hair 背毛｜Hair Density 毛密度｜Hair Length 毛长度｜Hair Color 毛色（与发色/胡须色一致，联动§37）｜Hair Thickness 毛粗细｜Hair Direction 毛发走向（四肢向远端斜生）｜Wet Hair Clump 湿毛贴肤（雨水/淋浴后成绺倒伏，联动§51）｜Hair Specular 毛发高光｜Hair Shadow 毛影（毛在皮肤上的细投影，逆光/侧光下可见）。
+写法规则：体毛走向随部位固定，禁止随机乱生；湿状态毛色变深一档并贴肤。
+
+【§102 Nails & Hands 指甲与手部皮肤】
+效果：控制指甲状态与手部皮肤细节，手部特写是表演延伸的真实感载体｜取值：0–1，脏污咬痕茧厚可选｜写法：指缘带污的短指甲，虎口有老茧｜联动：-
+
+Nail Color 甲色（健康粉白／苍白／青紫，联动§100病态肤）｜Nail Shape 甲形｜Nail Length 甲长｜Bitten Nail 咬甲（短秃／边缘不齐）｜Nail Dirt 甲缝污垢｜Nail Ridge 甲面竖纹（年龄感，联动§44）｜Nail Half Moon 甲半月｜Cuticle 指缘死皮｜Hangnail 倒刺｜Callus 老茧（虎口／指节／掌根／脚跟——按职业：劳作/练武/枪械）｜Blister 水泡｜Hand Crease 掌纹｜Knuckle Wrinkle 指节纹（握拳加深，联动§93表情皮肤）｜Vein on Hand 手背青筋（用力/年长凸显，联动§32）｜Grasped Redness 用力握持泛红。
+写法规则：手部特征必须与职业设定一致（音乐家的手≠搬运工的手）；老茧位置对应劳动方式。
+
+【§103 Fluid Residue 液体干涸痕迹】
+效果：表现泪水汗液干后的盐渍泪痕，写实哭戏与剧烈运动的关键细节｜取值：0–1，痕迹边缘软硬可调｜写法：脸颊两道泪痕干后泛白，周边皮肤擦红｜联动：R1
+
+Tear Streak 泪痕｜Salt Residue 盐渍白痕（泪/汗干后结晶）｜Tear Streak Redness 泪痕周边擦红（抹泪摩擦所致）｜Dried Sweat Salt 干汗盐渍（额角/上唇/锁骨薄白层）｜Sweat Streak Pattern 汗液流道（沿面部轮廓冲开的干净沟）｜Nose Redness from Crying 哭红鼻头｜Eye Area Redness from Crying 哭红眼眶眼角（联动§34眼周深化）｜Nose Drip 泪鼻同流（哭戏真实感：鼻涕反光）｜Lip/Mouth Saliva 唇角口涎（昏迷/病重/熟睡）｜Streak Edge 痕迹边缘（锐利边线／晕开羽化）｜Re-wet 湿润叠层（新泪冲开旧盐渍）。
+写法规则：盐渍与湿痕可同场共存（新泪湿+旧渍白）；痕迹位置沿重力方向（泪痕垂直向下）；剧情内按哭/运动时长递增，禁止跳变。

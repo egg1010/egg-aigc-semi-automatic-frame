@@ -191,3 +191,31 @@ Lighting Quality：Low｜Medium｜High｜Epic｜Cinematic；GI：Lumen High/Cine
 效果：规定光线描述的标准字段顺序，保证每次布光不漏项｜取值：光源/亮度/颜色/方向/光质/阴影/GI 等 13 组｜写法：按模板顺序逐项填写，末尾补最终视觉词｜联动：->
 
 光源：类型｜位置 XYZ｜旋转 XYZ｜方位角｜俯仰角｜距离｜尺寸；亮度：Intensity｜EV｜Lumens/Lux/Nits｜曝光贡献；颜色：Kelvin｜RGB｜Tint｜冷暖关系；方向：正面｜侧面｜逆光｜顶光｜底光；光质：Hard/Soft｜Source Size｜Penumbra｜Falloff；阴影：Opacity｜Bias｜Contact｜Resolution｜Distance｜RT/VSM；GI：Indirect Intensity｜Bounce｜Lumen/RT/Path Tracing；体积：Fog Density｜Scattering｜Anisotropy｜God Rays；反射：Specular｜Roughness｜SSR/Lumen/RT；曝光：ISO｜Shutter｜Aperture｜EV｜Auto/Manual Exposure；后期：ACES｜Bloom｜Halation｜Flare｜Local Exposure；性能：Mobility｜Cull Distance｜Shadow Cost｜Samples｜GPU Cost；最终视觉：高调/低调｜冷暖｜对比度｜人物分离度｜氛围｜电影感｜游戏可读性。
+
+【§37 动态光源与光运动】
+效果：让光源自身随时间运动或变化，产出扫光、火光跳动与追光等活光｜取值：Flicker 0.5–4Hz；Sweep Speed｜写法：烛光 1900K 以 0.5–2Hz 不规律跳动染亮人脸｜联动：R1
+
+影视侧：追光 Follow Spot（舞台跟随主体）；扫光 Light Sweep（警车红蓝灯掠过墙面、探照灯横扫）；摇光 Pan Light（光源平移改变受光方向）；火光 Firelight（篝火/烛光 1800–2000K，0.5–3Hz 不规则跳动，墙面与脸同步受光）；水面反射光 Water Bounce（波光在天花板/墙面晃动）；荧光灯故障 Fluorescent Flicker（坏灯管 1–4Hz 间歇明灭）；灯光呼吸 Pulse（霓虹灯缓慢起伏）。
+游戏侧：Light Function（UE 光函数材质驱动闪烁/图案）；Flicker 曲线（正弦/噪声/随机步进调制）；动画序列 Sequencer 灯光关键帧；旋转警灯 Rotating Beacon（周期扫过）；脉冲光 Pulsing（警报/心跳/魔法节奏）。
+写法规则：动态光必须写明变化频率与扫过范围，并指明受影响的受光面（脸/墙/地面）；静止光源与动态光源分开声明。
+
+【§38 投影图案与光斑纹理】
+效果：在光路上加遮挡或图案，投出百叶窗影、树叶光斑与水波焦散｜取值：Gobo 图案；Dapple 密度｜写法：窗位加树影 gobo，墙面投出晃动叶影｜联动：R1
+
+影视侧：Gobo 图案投影（钢制镂空图案片：窗格/放射/几何纹理）；Cucoloris/Cookie（遮挡板剪影：百叶窗板影、窗框十字影）；树影 Dapple（树叶间隙光斑，随微风轻晃）；百叶窗影 Venetian Blind Shadow（平行条影，黑色电影经典）；焦散 Caustics（水下/泳池水波光网，可用实拍水箱投射）。
+游戏侧：Light Function Material（程序化图案：云影漂移、水波焦散、爆炸频闪）；投影贴图 Projected Texture；云影 Cloud Shadow（大面积缓慢移动暗斑）。
+写法规则：图案必须绑定到具体表面（投在墙/地/脸），写明边缘软硬与清晰度；光斑漂移速度与风/水动力一致。
+
+【§39 影视灯具与柔光附件】
+效果：按灯具类型与柔光附件名称组织布光，还原真实片场语汇｜取值：HMI 5600K；Fresnel 10°–60°｜写法：1.2kW HMI 逆光穿 4x4 柔光布，轮廓柔而不散｜联动：R1
+
+灯具类型：HMI（日光平衡 5600K，大功率，室外/窗光替代）；Tungsten 钨丝灯（3200K，暖室内基准）；Fresnel 菲涅尔聚光灯（透镜聚焦，光束角 10°–60° 可调，硬中带层次）；PAR 灯（抛物面反射，光硬且亮，远距离轮廓）；LED Panel（色温可调、轻量、大面积柔光）；Pixel/Tube 管灯（条形、可编程色彩）；Practical 实景灯。
+柔光与控光附件：柔光箱 Softbox；柔光布 Diffusion（1/4｜1/2｜Full 档）；反光板 Bounce（白/银/金面）；黑旗 Flag/Negative Fill（吸光加深暗侧）；蛋格 Grid（收束光散防溢光）；色纸 Gel（CTO 升暖｜CTB 降冷|Plus/Minus Green 校偏绿｜彩色纸）；追光 Follow Spot。
+写法规则：附件决定光质——写灯必写光质结果（Fresnel+半档柔光=边缘柔化的硬光）；色纸必须换算到最终到达色温再写（钨丝 3200K+Full CTB≈5600K）。
+
+【§40 风格化游戏灯光】
+效果：脱离物理写实的装饰性灯光，服务卡通/漫画/赛璐璐渲染｜取值：Ramp 2-tone/3-tone；Outline Width｜写法：双 ramp 明暗分界配 rim 描边，色块干净｜联动：R2
+
+参数：Ramp 光照分档（2-tone 二分明暗｜3-tone 三分｜多段色带）；Toon Shading 赛璐璐；Outline 描边光（宽度｜颜色｜法线外扩）；色块化 Color Blocking（高光/阴影/中间调三色卡）；夸张轮廓光 Stylized Rim；非物理色光（紫色阴影/青色高光等主观配色）。
+游戏实现：Toon Shader 光照阈值｜Cel Shading Steps｜Outline Post Process｜手绘 Halftone/Hatching 交叉影线。
+写法规则：风格化光仍须声明光源方向（保体积感），明暗分界线走向必须贴合结构（鼻侧/颧骨/锁骨）。
