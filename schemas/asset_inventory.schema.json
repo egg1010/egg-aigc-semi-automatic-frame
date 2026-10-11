@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "asset_inventory.schema.json",
+  "title": "资产清单",
+  "description": "图片提示词模块的结构化输入：已确认外观/服装/状态 + 提示词槽位（v2 §8.4）",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "assets"],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["asset_id", "entity_id", "prompt"],
+        "properties": {
+          "asset_id": {"type": "string", "minLength": 1},
+          "entity_id": {"type": "string", "minLength": 1},
+          "asset_version": {"type": "integer", "minimum": 1},
+          "prompt": {"type": "string", "minLength": 1},
+          "source_refs": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "提示词依据的原文块/状态来源；缺失则无法追溯"
+          }
+        }
+      }
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "资产图审核关口是否已通过；未通过不得进入视频阶段"
+    }
+  }
+}

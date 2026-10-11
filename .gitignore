@@ -1,2 +1,14 @@
 __pycache__/
 *.pyc
+
+# 受控记忆库与业务数据：不入版本库，保护剧本与模型输出（方案 v2 §10.1）
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# 规范版本快照（本地审核留痕）
+.rule_cache.json
+
+# 业务产出目录
+outputs/

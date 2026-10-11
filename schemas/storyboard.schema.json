@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "storyboard.schema.json",
+  "title": "分镜结果",
+  "description": "视频模块结构化分镜。先产出结构化对象，经验证后再渲染成既有基础格式文件（v2 §8.5）",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scene_id", "shots", "source_refs"],
+  "properties": {
+    "project_id": {"type": "string"},
+    "scene_id": {"type": "string", "minLength": 1},
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["shot_id", "description", "camera_movement", "characters"],
+        "properties": {
+          "shot_id": {"type": "string", "minLength": 1},
+          "description": {"type": "string", "minLength": 1},
+          "camera_movement": {
+            "enum": ["static", "pan", "tilt", "dolly", "tracking", "handheld"]
+          },
+          "characters": {"type": "array", "items": {"type": "string"}},
+          "entity_refs": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "本镜涉及的实体 ID，用于状态连续性校验"
+          },
+          "duration_sec": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"},
+      "description": "禁止无来源联想：每个分镜必须能指回原文"
+    }
+  }
+}

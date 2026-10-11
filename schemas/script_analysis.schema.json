@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "script_analysis.schema.json",
+  "title": "剧本分析结果",
+  "description": "文本模块结构化输出：实体清单 + 事件提案候选（v2 §8.3）",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "entities", "scenes", "event_proposals"],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entity_id", "kind", "name"],
+        "properties": {
+          "entity_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["character", "prop", "location", "asset"]},
+          "name": {"type": "string", "minLength": 1},
+          "attributes": {"type": "object"}
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["scene_id", "scene_order"],
+        "properties": {
+          "scene_id": {"type": "string", "minLength": 1},
+          "scene_order": {"type": "integer", "minimum": 1},
+          "title": {"type": "string"}
+        }
+      }
+    },
+    "event_proposals": {
+      "type": "array",
+      "items": {"$ref": "event_proposal.schema.json"}
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "本节结论引用的原文块 ID"
+    }
+  }
+}

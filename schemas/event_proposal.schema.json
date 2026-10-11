@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "event_proposal.schema.json",
+  "title": "事件提案",
+  "description": "AI 提取的事实变更候选。只有 explicit 且带证据的提案允许进入审批队列（v2 §5）",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "scene_id", "event_type", "evidence_chunk_id", "changes"],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "scene_id": {"type": "string", "minLength": 1},
+    "event_type": {
+      "enum": ["initial_state", "prop_transfer", "state_change", "costume_change",
+               "appearance_change", "location_change", "relationship_change", "end_state"]
+    },
+    "evidence_chunk_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "必须指向真实可追溯原文；摘要不能替代原文"
+    },
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "event_order": {"type": "integer", "minimum": 0},
+    "certainty": {"enum": ["explicit", "inferred", "unknown"]},
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entity_id", "field", "new"],
+        "properties": {
+          "entity_id": {"type": "string", "minLength": 1},
+          "field": {
+            "enum": ["owner", "state", "costume", "appearance", "location",
+                     "prop_hold", "prop_state", "timeline", "relationship", "end_state"]
+          },
+          "expected": {
+            "description": "预期旧值；null 表示该字段此前无状态（首次赋值）"
+          },
+          "new": {"description": "新值，任意 JSON 标量或对象"}
+        }
+      }
+    }
+  }
+}
