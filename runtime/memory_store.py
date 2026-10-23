@@ -141,7 +141,7 @@ class MemoryDB:
 
     @staticmethod
     def project_db_path(data_root: str, project_id: str) -> str:
-        """§2：data/projects/<project_id>/project.db"""
+        """§2：AI数据/data/projects/<project_id>/project.db"""
         _assert_safe_identifier(project_id, "project_id")
         return os.path.join(data_root, "projects", project_id, "project.db")
 

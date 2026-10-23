@@ -42,7 +42,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
-DEFAULT_DATA_ROOT = os.path.join(ROOT, "data")
+DEFAULT_DATA_ROOT = os.path.join(ROOT, "AI数据", "data")
 
 
 def _open(args):
@@ -218,7 +218,7 @@ def main(argv=None) -> int:
 
     def add_common(sp):
         sp.add_argument("--project", required=True, help="项目 ID")
-        sp.add_argument("--data-root", help="数据根目录（默认 data/）")
+        sp.add_argument("--data-root", help="数据根目录（默认 AI数据/data/）")
 
     s = sub.add_parser("init", help="初始化项目数据库")
     add_common(s)

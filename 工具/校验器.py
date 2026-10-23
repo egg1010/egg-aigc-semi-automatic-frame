@@ -31,7 +31,7 @@ STAGES = ["CREATED", "SCRIPT_PARSED", "ASSETS_INDEXED", "IMAGE_PROMPTS_READY",
 MODES = ["asset_reference", "text_only", "hybrid"]
 CONFIDENCE = ["confirmed", "inferred", "unknown"]
 
-STATE_DIR = "状态"
+STATE_DIR = os.path.join("AI数据", "状态")
 FLOW_STATE_FILE = "流程状态.json"
 LEDGER_FILE = "连续性台账.json"
 
@@ -122,7 +122,7 @@ def now_iso():
     return datetime.now().astimezone().strftime("%Y-%m-%dT%H:%M:%S%z")
 
 
-def walk_files(root, cfg, skip_dirs=("状态", "异常", ".git", ".workbuddy", "node_modules")):
+def walk_files(root, cfg, skip_dirs=("AI数据", "状态", "异常", ".git", ".workbuddy", "node_modules")):
     out = []
     root = os.path.abspath(root)
     base_depth = root.rstrip("\\/").count(os.sep)
@@ -183,7 +183,7 @@ def line_of(content, pos):
 # ---------------------------------------------------------------- 状态校验
 
 def check_state(ws, cfg, rep):
-    """校验 状态/流程状态.json 与 连续性台账.json。返回 (flow_dict or None, unit_mode_map)"""
+    """校验 AI数据/状态/流程状态.json 与 连续性台账.json。返回 (flow_dict or None, unit_mode_map)"""
     flow = None
     mode_map = {}
     state_dir = os.path.join(ws, cfg["state_dir"])
@@ -749,7 +749,7 @@ def cmd_selftest(_args):
     try:
         # fixture 1：合规工作区
         ws1 = os.path.join(tmp, "ws_ok")
-        _write(os.path.join(ws1, "状态", "流程状态.json"), json.dumps({
+        _write(os.path.join(ws1, STATE_DIR, "流程状态.json"), json.dumps({
             "schema_version": "1.0", "updated_at": now_iso(),
             "units": {"第1集": {"stage": "VIDEO_PROMPTS_READY",
                                 "stages_done": ["CREATED", "SCRIPT_PARSED", "ASSETS_INDEXED",
@@ -757,7 +757,7 @@ def cmd_selftest(_args):
                                 "stages_skipped": [], "video_input_mode": "asset_reference",
                                 "artifacts": {}, "failures": [], "history": []}}},
             ensure_ascii=False))
-        _write(os.path.join(ws1, "状态", "连续性台账.json"), json.dumps({
+        _write(os.path.join(ws1, STATE_DIR, "连续性台账.json"), json.dumps({
             "schema_version": "1.0", "updated_at": now_iso(), "facts": [{
                 "id": "第1集.ARES.costume", "unit": "第1集", "subject": "人物:ARES",
                 "field": "costume", "value": "黑铜胸甲", "source": "剧本:1-1",
@@ -801,12 +801,12 @@ def cmd_selftest(_args):
 
         # fixture 3：坏状态
         ws3 = os.path.join(tmp, "ws_bad")
-        _write(os.path.join(ws3, "状态", "流程状态.json"), json.dumps({
+        _write(os.path.join(ws3, STATE_DIR, "流程状态.json"), json.dumps({
             "schema_version": "1.0", "updated_at": now_iso(),
             "units": {"第1集": {"stage": "NOPE", "stages_done": ["BAD"],
                                 "video_input_mode": "zzz", "artifacts": {}, "failures": [], "history": []}}},
             ensure_ascii=False))
-        _write(os.path.join(ws3, "状态", "连续性台账.json"), json.dumps({
+        _write(os.path.join(ws3, STATE_DIR, "连续性台账.json"), json.dumps({
             "schema_version": "1.0", "updated_at": now_iso(),
             "facts": [{"id": "x", "subject": "s", "field": "f", "value": "v",
                        "source": "剧本:1-1", "confidence": "maybe", "verified": True, "version": 1}],
@@ -853,7 +853,7 @@ def cmd_selftest(_args):
                                      reason="缺图", stage=None, action="挂起")
         if cmd_fail(ns_fail) != 0:
             failures.append("fixture4 fail 记录失败")
-        led = load_json(os.path.join(ws4, "状态", "连续性台账.json"))
+        led = load_json(os.path.join(ws4, STATE_DIR, "连续性台账.json"))
         f0 = led["facts"][0] if led.get("facts") else {}
         if f0.get("version") != 2 or f0.get("value") != "黑铜胸甲+绷带":
             failures.append("fixture4 fact 版本/值不符：%s" % f0)
